@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'andi muhammad kemal',
             'username' => 'ketua',
             'password' => bcrypt('admin'),
-            'jenisAkun' => 'ketua',
+            'jenisAkun' => 'anggota',
         ]);
         Admin::create([
             'nama' => 'muhammad faidhul',
