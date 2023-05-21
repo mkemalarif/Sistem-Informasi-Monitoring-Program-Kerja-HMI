@@ -10,6 +10,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^5.2.3",
+    "bootstrap-vue": "^2.23.1",
     "bootswatch": "^5.2.3",
     "core-js": "^3.8.3",
     "jquery": "^3.7.0",
