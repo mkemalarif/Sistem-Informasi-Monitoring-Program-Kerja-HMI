@@ -131,6 +131,19 @@
         ],
       };
     },
+    mounted() {
+      this.$nextTick(() => {
+        this.initCarousel();
+      });
+    },
+    methods: {
+      initCarousel() {
+        // eslint-disable-next-line no-undef
+        $(this.$el)
+          .find(".carousel")
+          .carousel();
+      },
+    },
   };
   </script>
 
@@ -141,33 +154,33 @@
   .member-photo {
     width: 80%;
     height: auto;
-    margin-left: 30px; /* Add left margin for auto centering */
+    margin-left: 30px;
     margin-right: 0;
-    margin-top: 98px; /* Remove right margin */
+    margin-top: 98px;
   }
 
   .card {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
-    margin-bottom: 10px; /* Add a bit of spacing between cards */
+    margin-bottom: 10px;
   }
 
   .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px; /* Add padding to card-body */
+    padding: 10px;
   }
 
   .card-info {
     display: flex;
-    align-items: flex-start; /* Adjust vertical alignment to top */
-    margin-bottom: 3px; /* Reduce spacing between info */
+    align-items: flex-start;
+    margin-bottom: 3px;
   }
 
   .card-info-label {
-    width: 120px; /* Adjust label width */
+    width: 120px;
     font-weight: bold;
     margin-right: 10px;
     text-align: left;
@@ -178,25 +191,28 @@
     flex-grow: 1;
     margin: 0;
     text-align: left;
-    margin-left: 10px; /* Reduce left margin on content */
-    margin-bottom: 5px; /* Reduce spacing at the bottom of content */
+    margin-left: 10px;
+    margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: left; /* Set content text alignment to left */
+    text-align: left;
   }
 
   .card-title {
-    margin-bottom: 10px; /* Add spacing below card title */
-    text-align: center; /* Center the title text */
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 190px;
   }
 
   .card-description {
-    margin-top: 10px; /* Add spacing above card description */
+    margin-top: 10px;
   }
 
   .text-center {
-    text-align: center; /* Center the button text */
-    margin-top: 10px; /* Add some spacing above the button */
+    text-align: center;
+    margin-top: 10px;
   }
   </style>
