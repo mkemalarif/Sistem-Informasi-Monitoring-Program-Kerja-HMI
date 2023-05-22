@@ -14,9 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('HelloWorld');
-});
-
-Route::get('/LoginPageForm', function () {
     return view('LoginPageForm');
 });
+
+// Route::get('/about', function () {
+//     return view('about');
+// });
+
+// Route::get('/login', function () {
+//     return view('home');
+// });
+
+// Route::post('/login', function () {
+//     // Handle login form submission logic here
+// })->name('login');
+
+?>
