@@ -1,6 +1,3 @@
-import './bootstrap';
-
-
 import {createApp} from 'vue';
 import LoginPageForm from '../../vue/src/components/LoginPageForm';
 
