@@ -3,7 +3,8 @@
     <div class="login-container">
       <h1 class="title">Login Form</h1>
       <form>
-        <div class="form-group">
+        <div class="form-group" method="POST">
+        
           <label for="username">Username</label>
           <input type="text" id="username" name="username" class="input-field">
         </div>
