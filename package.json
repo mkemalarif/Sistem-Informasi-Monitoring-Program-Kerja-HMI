@@ -16,6 +16,7 @@
         "axios": "^1.4.0",
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^0.7.5",
+<<<<<<< HEAD
         "sass": "^1.56.1",
         "vite": "^4.0.0",
         "vue": "^3.2.37",
@@ -29,5 +30,14 @@
         "vite": "^4.0.0",
         "vue": "^3.3.4",
         "vue-router": "^4.2.1"
+=======
+        "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "@inertiajs/vue3": "^1.0.7",
+        "vite": "^4.0.0",
+        "vue": "^3.3.4",
+        "webpack-cli": "^5.1.1"
+>>>>>>> ac321b76e9a9e3f412e26e0999219fff061d5c0e
     }
 }
