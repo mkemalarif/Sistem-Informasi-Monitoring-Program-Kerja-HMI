@@ -1,0 +1,9 @@
+.card-img-top {
+    margin-bottom: 90px;
+    width: 10000px;
+  }
+  
+
+  .image-adjust {
+    transform: translateY(20px) translateX(10px);
+}
