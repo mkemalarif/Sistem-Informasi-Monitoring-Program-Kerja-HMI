@@ -44,7 +44,7 @@
                               <p class="card-info-content">{{ anggota.angkatan }}</p>
                             </div>
                           </div>
-                          <div class="d-flex justify-content-center">
+                          <div class="button">
                             <button class="btn btn-primary">Detail</button>
                           </div>
                         </div>
@@ -131,19 +131,6 @@
         ],
       };
     },
-    mounted() {
-      this.$nextTick(() => {
-        this.initCarousel();
-      });
-    },
-    methods: {
-      initCarousel() {
-        // eslint-disable-next-line no-undef
-        $(this.$el)
-          .find(".carousel")
-          .carousel();
-      },
-    },
   };
   </script>
 
@@ -154,33 +141,33 @@
   .member-photo {
     width: 80%;
     height: auto;
-    margin-left: 30px;
+    margin-left: 30px; /* Add left margin for auto centering */
     margin-right: 0;
-    margin-top: 98px;
+    margin-top: 98px; /* Remove right margin */
   }
 
   .card {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Add a bit of spacing between cards */
   }
 
   .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px; /* Add padding to card-body */
   }
 
   .card-info {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 3px;
+    align-items: flex-start; /* Adjust vertical alignment to top */
+    margin-bottom: 3px; /* Reduce spacing between info */
   }
 
   .card-info-label {
-    width: 120px;
+    width: 120px; /* Adjust label width */
     font-weight: bold;
     margin-right: 10px;
     text-align: left;
@@ -191,28 +178,32 @@
     flex-grow: 1;
     margin: 0;
     text-align: left;
-    margin-left: 10px;
-    margin-bottom: 5px;
+    margin-left: 10px; /* Reduce left margin on content */
+    margin-bottom: 5px; /* Reduce spacing at the bottom of content */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: left;
+    text-align: left; /* Set content text alignment to left */
   }
 
   .card-title {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Add spacing below card title */
     text-align: center;
     position: relative;
     margin-left: 10px;
-    margin-right: 190px;
+    margin-right: 190px; /* Center the title text */
   }
 
   .card-description {
-    margin-top: 10px;
+    margin-top: 10px; /* Add spacing above card description */
   }
 
   .text-center {
-    text-align: center;
-    margin-top: 10px;
+    text-align: center; /* Center the button text */
+    margin-top: 10px; /* Add some spacing above the button */
+  }
+
+  .button{
+    margin-right: 120px;
   }
   </style>
