@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
-                <div class="card shadow">
+                <div class="card login-card shadow">
                     <div class="card-body">
                         <h1 class="card-title text-center mb-4">Login Form</h1>
                         <form action="" method="POST">
@@ -28,7 +28,5 @@
                 </div>
             </div>
         </div>
-    </div
-
-    
+    </div>
 @endsection
