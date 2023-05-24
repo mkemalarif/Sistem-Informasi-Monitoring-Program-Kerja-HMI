@@ -1,0 +1,26 @@
+.fixed-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .banner {
+    background-image: url('../banner.png');
+    background-size: cover;
+    background-position: center;
+    height: 900px; /* Ubah tinggi banner sesuai kebutuhan Anda */
+  }
+
+  .container {
+    margin-top: 200px; /* Sesuaikan margin-top dengan tinggi banner */
+    padding: 20px;
+  }
+
+  /* Untuk mengatur jarak antara konten dengan banner */
+  @media screen and (max-width: 767px) {
+    .container {
+      margin-top: 600px; /* Sesuaikan margin-top dengan tinggi banner */
+    }
+  }
