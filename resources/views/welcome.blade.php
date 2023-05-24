@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -130,17 +129,4 @@
             </div>
         </div>
     </body>
-=======
-<html>
-<head>
-    <!-- Your head content -->
-</head>
-<body>
-    <div id="app"></div>
-    Welcome
-
-    <script src="../js/app.js"></script>
-</body>
-
->>>>>>> ced63d7e16985b436becfa3fce7f6e88e53278fc
 </html>
