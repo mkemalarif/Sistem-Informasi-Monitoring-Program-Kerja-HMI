@@ -8,14 +8,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/dtanggota.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/logout.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/registrasi.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/profileanggota.css') }}">
   <title>Document</title>
 </head>
 
 <body>
  {{-- Navbar --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <a class="navbar-brand" href="#">Your Brand</a>
+    <a class="navbar-brand" href="#">HMI MAKASSAR</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
