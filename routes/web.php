@@ -2,6 +2,8 @@
 
 use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Homepage;
+use App\Http\Controllers\ControllerAnggota;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,20 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [Homepage::class, "index"]);
+
+
+Route::get('/data-anggota', function () {
+    return view('DataAnggota');
+});
+
+Route::get('registrasi-member', function () {
+    return view('RegistrasiAnggota');
+});
+
+Route::get('registrasi-komisariat', function () {
+    return view('RegistrasiKomisariat');
+});
+
+Route::get('profile-set-anggota', function () {
     return view('ProfileSettingAnggota');
 });
 
-// Route::get('/about', function () {
-//     return view('about');
-// });
-
-// Route::get('/login', function () {
-//     return view('home');
-// });
-
-// Route::post('/login', function () {
-//     // Handle login form submission logic here
-// })->name('login');
-
-?>
+Route::resource('dashboard', ControllerAnggota::class);
