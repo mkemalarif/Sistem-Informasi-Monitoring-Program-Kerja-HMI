@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('ProfileSettingAnggota');
+    return view('HomePage');
 });
 
 // Route::get('/about', function () {
