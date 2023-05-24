@@ -10,4 +10,8 @@ class Artikel extends Model
     use HasFactory;
 
     protected $guarded = ['idArtikel'];
+
+    public function anggota() {
+        $this->belongsTo(Anggota::class);
+    }
 }
