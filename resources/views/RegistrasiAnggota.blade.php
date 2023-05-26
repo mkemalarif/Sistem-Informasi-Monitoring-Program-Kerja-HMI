@@ -34,13 +34,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="jenis_kelamin">JENIS KELAMIN:</label>
-                            <select id="jenis_kelamin" class="form-control @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin" required>
+                            <label for="jenisKelamin">JENIS KELAMIN:</label>
+                            <select id="jenisKelamin" class="form-control @error('jenisKelamin') is-invalid @enderror" name="jenisKelamin" required>
                                 <option value="">Pilih Jenis Kelamin</option>
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
                             </select>
-                            @error('jenis_kelamin')
+                            @error('jenisKelamin')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -48,9 +48,19 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="ttl">TTL:</label>
-                            <input id="ttl" type="text" class="form-control @error('ttl') is-invalid @enderror" name="ttl" value="{{ old('ttl') }}" required>
-                            @error('ttl')
+                            <label for="tempatLahir">TTL:</label>
+                            <input id="tempatLahir" type="text" class="form-control @error('tempatLahir') is-invalid @enderror" name="tempatLahir" value="{{ old('tempatLahir') }}" required>
+                            @error('tempatLahir')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tanggalLahir">Tanggal Lahir:</label>
+                            <input id="tanggalLahir" type="date" class="form-control @error('tanggalLahir') is-invalid @enderror" name="tanggalLahir" value="{{ old('tanggalLahir') }}" required>
+                            @error('tanggalLahir')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -71,6 +81,20 @@
                             <label for="angkatan">ANGKATAN:</label>
                             <input id="angkatan" type="text" class="form-control @error('angkatan') is-invalid @enderror" name="angkatan" value="{{ old('angkatan') }}" required>
                             @error('angkatan')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="komisariat_id">ASAL KOMISARIAT:</label>
+                            <select id="komisariat_id" class="form-control @error('komisariat_id') is-invalid @enderror" name="komisariat_id" required>
+                                <option value="">Pilih Asal komisariat</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                            @error('komisariat_id')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
