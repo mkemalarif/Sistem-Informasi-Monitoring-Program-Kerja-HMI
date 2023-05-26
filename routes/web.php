@@ -4,6 +4,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homepage;
 use App\Http\Controllers\ControllerAnggota;
+use App\Http\Controllers\ControllerRegister;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,7 @@ Route::get('/data-anggota', function () {
     return view('DataAnggota');
 });
 
-Route::get('registrasi-member', function () {
-    return view('RegistrasiAnggota');
-});
+Route::get('registrasi-member', [ControllerRegister::class, "index"]);
 
 Route::get('registrasi-komisariat', function () {
     return view('RegistrasiKomisariat');
