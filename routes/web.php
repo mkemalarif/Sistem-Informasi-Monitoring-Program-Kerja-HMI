@@ -16,11 +16,11 @@ use App\Http\Controllers\ControllerAnggota;
 |
 */
 
-// Route::get('/', [Homepage::class, "index"]);
+Route::get('/', [Homepage::class, "index"]);
 
-Route::get('/', function () {
-    return view('EditBerita');
-});
+// Route::get('/', function () {
+//     return view('EditBerita');
+// });
 
 Route::get('/data-anggota', function () {
     return view('DataAnggota');

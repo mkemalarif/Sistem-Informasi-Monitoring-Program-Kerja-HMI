@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('isiBerita');
+            $table->enum('status', ['acc', 'tunda']);
             $table->foreignId('anggota_id');
             // $table->binary('foto');
             $table->timestamps();

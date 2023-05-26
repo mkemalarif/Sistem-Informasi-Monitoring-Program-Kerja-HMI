@@ -17,6 +17,7 @@ class ArtikelSeeder extends Seeder
             'judul' => 'Lorem, ipsum dolor.',
             'isiBerita' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ducimus quae repellendus a possimus. Illo.',
             'anggota_id' => 1,
+            'status' => 'tunda',
         ]);
     }
 }
