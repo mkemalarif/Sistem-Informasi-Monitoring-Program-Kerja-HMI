@@ -37,27 +37,35 @@
 
                         <div class="form-group">
                             <label for="jenisKelamin">JENIS KELAMIN:</label>
-                            <select id="jenisKelamin" class="form-control @error('jenisKelamin') is-invalid @enderror"
-                                name="jenisKelamin" required>
+                            <select id="jenisKelamin" class="form-control @error('jenisKelamin') is-invalid @enderror" name="jenisKelamin" required>
                                 <option value="">Pilih Jenis Kelamin</option>
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
                             </select>
                             @error('jenisKelamin')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="ttl">TTL:</label>
-                            <input id="ttl" type="text" class="form-control @error('ttl') is-invalid @enderror"
-                                name="ttl" value="{{ old('ttl') }}" required>
-                            @error('ttl')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <label for="tempatLahir">TTL:</label>
+                            <input id="tempatLahir" type="text" class="form-control @error('tempatLahir') is-invalid @enderror" name="tempatLahir" value="{{ old('tempatLahir') }}" required>
+                            @error('tempatLahir')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tanggalLahir">Tanggal Lahir:</label>
+                            <input id="tanggalLahir" type="date" class="form-control @error('tanggalLahir') is-invalid @enderror" name="tanggalLahir" value="{{ old('tanggalLahir') }}" required>
+                            @error('tanggalLahir')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
                         </div>
 
@@ -81,6 +89,20 @@
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="komisariat_id">ASAL KOMISARIAT:</label>
+                            <select id="komisariat_id" class="form-control @error('komisariat_id') is-invalid @enderror" name="komisariat_id" required>
+                                <option value="">Pilih Asal komisariat</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                            @error('komisariat_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                             @enderror
                         </div>
 

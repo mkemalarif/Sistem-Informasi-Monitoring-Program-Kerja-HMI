@@ -17,14 +17,14 @@ use App\Http\Controllers\ControllerRegister;
 |
 */
 
-Route::get('/', [Homepage::class, "index"]);
+// Route::get('/', [Homepage::class, "index"]);
 
 // Route::get('/', function () {
 //     return view('EditBerita');
 // });
 
-Route::get('/data-anggota', function () {
-    return view('DataAnggota');
+Route::get('/', function () {
+    return view('RegistrasiAnggota');
 });
 
 Route::get('registrasi-member', [ControllerRegister::class, "regisAnggota"]);
