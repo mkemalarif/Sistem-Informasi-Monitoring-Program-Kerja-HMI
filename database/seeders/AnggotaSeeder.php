@@ -14,6 +14,7 @@ class AnggotaSeeder extends Seeder
     public function run(): void
     {
         Anggota::create([
+            'nokader' => '20180261',
             'nama' => 'rizal arsy',
             'jenisKelamin' => 'Perempuan',
             'tempatLahir' => 'Makassar',

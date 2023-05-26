@@ -27,11 +27,9 @@ Route::get('/data-anggota', function () {
     return view('DataAnggota');
 });
 
-Route::get('registrasi-member', [ControllerRegister::class, "index"]);
+Route::get('registrasi-member', [ControllerRegister::class, "regisAnggota"]);
 
-Route::get('registrasi-komisariat', function () {
-    return view('RegistrasiKomisariat');
-});
+Route::get('registrasi-komisariat', [ControllerRegister::class, "regisKomisariat"]);
 
 Route::get('profile-set-anggota', function () {
     return view('ProfileSettingAnggota');
