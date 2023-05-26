@@ -19,5 +19,11 @@ class KomisariatSeeder extends Seeder
             'status' => 'Aktif',
             'angkatan' => 11,
         ]);
+        Komisariat::create([
+            'namaKomisariat' => 'HMI Komisariat Teknik UMI',
+            'tahunBerdiri' => 2012,
+            'status' => 'Aktif',
+            'angkatan' => 11,
+        ]);
     }
 }
