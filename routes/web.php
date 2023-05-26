@@ -19,7 +19,7 @@ use App\Http\Controllers\ControllerAnggota;
 // Route::get('/', [Homepage::class, "index"]);
 
 Route::get('/', function () {
-    return view('EditBerita');
+    return view('ControlBeritaAdmin');
 });
 
 Route::get('/data-anggota', function () {
