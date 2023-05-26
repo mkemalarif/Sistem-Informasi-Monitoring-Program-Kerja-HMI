@@ -4,6 +4,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homepage;
 use App\Http\Controllers\ControllerAnggota;
+use App\Http\Controllers\ControllerRegister;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,19 +17,17 @@ use App\Http\Controllers\ControllerAnggota;
 |
 */
 
-// Route::get('/', [Homepage::class, "index"]);
+Route::get('/', [Homepage::class, "index"]);
 
-Route::get('/', function () {
-    return view('ControlBeritaAdmin');
-});
+// Route::get('/', function () {
+//     return view('EditBerita');
+// });
 
 Route::get('/data-anggota', function () {
     return view('DataAnggota');
 });
 
-Route::get('registrasi-member', function () {
-    return view('RegistrasiAnggota');
-});
+Route::get('registrasi-member', [ControllerRegister::class, "index"]);
 
 Route::get('registrasi-komisariat', function () {
     return view('RegistrasiKomisariat');

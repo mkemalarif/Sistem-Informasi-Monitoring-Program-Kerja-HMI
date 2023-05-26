@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class ControllerRegister extends Controller
 {
-    public function create(Request $request){
-        
+    public function create(Request $request)
+    {
+    }
+
+    public function index()
+    {
+        return view('RegistrasiAnggota');
     }
 }
