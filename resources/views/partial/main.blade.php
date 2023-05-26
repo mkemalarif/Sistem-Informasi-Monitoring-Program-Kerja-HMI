@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('assets/css/dtanggota.css') }}">
+  {{-- <link rel="stylesheet" href="{{ asset('assets/css/dtanggota.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/logout.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/registrasi.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/profileanggota.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/css/HomePage.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/HomePage.css') }}"> --}}
   <style>
 
   </style>
@@ -45,9 +45,9 @@
           </li>
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item me-2">
+        {{-- <li class="nav-item me-2">
           <img src="../assets/foto1.jpg" alt="Profile" class="rounded-circle me-2" style="height: 30px; width: 30px;">
-        </li>
+        </li> --}}
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item me-2">
