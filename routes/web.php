@@ -28,6 +28,7 @@ Route::get('/', function () {
 });
 
 Route::get('registrasi-member', [ControllerRegister::class, "regisAnggota"]);
+Route::post('registrasi-member', [ControllerRegister::class, "tambahAnggota"]);
 
 Route::get('registrasi-komisariat', [ControllerRegister::class, "regisKomisariat"]);
 

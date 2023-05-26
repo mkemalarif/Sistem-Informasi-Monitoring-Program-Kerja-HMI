@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Komisariat;
+use App\Models\Anggota;
+use App\Models\Admin;
 
 class ControllerRegister extends Controller
 {
@@ -33,6 +35,14 @@ class ControllerRegister extends Controller
             'komisariat_id' => 'required'
         ]);
 
-        dd($validate);
+        $validasi['nama'] = $validate['nama'];
+        $validasi['username'] = 'anggota';
+        $validasi['password'] = bcrypt($validate["nokader"]);
+        $validasi['jenisAkun'] = 'Anggota';
+
+        Anggota::create($validate);
+        Admin::create($validasi);
+
+        return redirect('/');
     }
 }
