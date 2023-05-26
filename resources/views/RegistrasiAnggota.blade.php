@@ -1,4 +1,4 @@
-{{-- @extends('partial.main')
+@extends('partial.main')
 
 @section('container')
 <div class="container">
@@ -117,4 +117,4 @@
         </div>
     </div>
 </div>
-@endsection --}}
+@endsection
