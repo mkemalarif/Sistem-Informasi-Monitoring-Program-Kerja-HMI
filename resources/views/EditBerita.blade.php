@@ -1,4 +1,4 @@
-@extends('partial.main')
+{{-- @extends('partial.main')
 
 @section('container')
 <div class="container mt-5 mb-5">
@@ -40,4 +40,4 @@
     CKEDITOR.replace('content');
 </script>
 
-@endsection
+@endsection --}}
