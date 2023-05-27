@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('komisariats', function (Blueprint $table) {
             $table->id();
+            $table->integer('nokomisariat');
             $table->string('namaKomisariat');
             $table->integer('tahunBerdiri');
             // form edit

@@ -25,7 +25,7 @@ class ControllerRegister extends Controller
     public function tambahAnggota(Request $request)
     {
         $validate = $request->validate([
-            'nokader' => 'required',
+            'nokader' => 'required|unique:anggotas',
             'nama' => 'required',
             'jenisKelamin' => 'required',
             'tempatLahir' => 'required',
@@ -42,6 +42,21 @@ class ControllerRegister extends Controller
 
         Anggota::create($validate);
         Admin::create($validasi);
+
+        return redirect('/');
+    }
+
+    public function tambahKomisariat(Request $request)
+    {
+        $validate = $request->validate([
+            'nokomisariat' => 'required|integer|unique:komisariats',
+            'namaKomisariat' => 'required',
+            'tahunBerdiri' => 'required|integer',
+            'status' => 'required',
+            'angkatan' => 'required|integer',
+        ]);
+
+        Komisariat::create($validate);
 
         return redirect('/');
     }

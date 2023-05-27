@@ -14,12 +14,14 @@ class KomisariatSeeder extends Seeder
     public function run(): void
     {
         Komisariat::create([
+            'nokomisariat' => 130,
             'namaKomisariat' => 'HMI Komisariat Fikom UMI',
             'tahunBerdiri' => 2012,
             'status' => 'Aktif',
             'angkatan' => 11,
         ]);
         Komisariat::create([
+            'nokomisariat' => 030,
             'namaKomisariat' => 'HMI Komisariat Teknik UMI',
             'tahunBerdiri' => 2012,
             'status' => 'Aktif',
