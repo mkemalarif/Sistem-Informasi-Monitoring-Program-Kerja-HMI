@@ -30,14 +30,16 @@ Route::get('/logout', [LoginController::class, "logout"]);
 
 
 // semua route untuk anggota
-Route::resource('/dashboard-anggota', ControllerAnggota::class)->middleware('auth');
+
 
 Route::get('/profile-set-anggota', function () {
     return view('ProfileSettingAnggota');
 });
 
 // semua route untuk admin
-Route::resource('/dashboard', ControllerAdmin::class)->middleware('admin');
+Route::resource('/dashboard-anggota', ControllerAnggota::class)->middleware('auth');
+Route::resource('/dashboard-admin', ControllerAdmin::class)->middleware('admin');
+Route::resource('/dashboard-ketua', ControllerKetua::class)->middleware('ketua');
 
 Route::get('/registrasi-member', [ControllerRegister::class, "regisAnggota"]);
 Route::post('/registrasi-member', [ControllerRegister::class, "tambahAnggota"]);
@@ -47,4 +49,3 @@ Route::post('/registrasi-komisariat', [ControllerRegister::class, "tambahKomisar
 
 
 // semua route untuk ketua
-Route::resource('/dashboard', ControllerKetua::class)->middleware('ketua');

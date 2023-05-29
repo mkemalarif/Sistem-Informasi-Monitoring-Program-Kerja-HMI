@@ -20,17 +20,39 @@ class LoginController extends Controller
             'username' => "required",
             "password" => "required"
         ]);
-        
 
 
-        // if (Auth::attempt($credentials)) {
 
-        //     $request->session()->regenerate();
+        if (Auth::attempt([
+            'username' => $credentials['username'],
+            'password' => $credentials['password'],
+            'jenisAkun' => 'anggota'
+        ])) {
+            $request->session()->regenerate();
 
-        //     return redirect()->intended('/dashboard');
-        // }
+            return redirect()->intended('/dashboard-anggota');
+        }
 
-        // return back();
+        if (Auth::attempt([
+            'username' => $credentials['username'],
+            'password' => $credentials['password'],
+            'jenisAkun' => 'admin'
+        ])) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/dashboard-admin');
+        }
+
+        if (Auth::attempt([
+            'username' => $credentials['username'],
+            'password' => $credentials['password'],
+            'jenisAkun' => 'ketua'
+        ])) {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard-ketua');
+        }
+
+        return back();
     }
 
     public function logout(Request $request)

@@ -18,6 +18,6 @@ class isKetua
         if (!auth()->check() || auth()->user()->jenisAkun !== 'ketua') {
             abort(403);
         }
-        return redirect('/dashboard');
+        return $next($request);
     }
 }
