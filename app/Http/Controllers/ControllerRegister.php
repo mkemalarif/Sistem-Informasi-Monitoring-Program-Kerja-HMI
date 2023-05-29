@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Komisariat;
 use App\Models\Anggota;
-use App\Models\Admin;
+use App\Models\User;
 
 class ControllerRegister extends Controller
 {
@@ -38,10 +38,10 @@ class ControllerRegister extends Controller
         $validasi['nama'] = $validate['nama'];
         $validasi['username'] = 'anggota';
         $validasi['password'] = bcrypt($validate["nokader"]);
-        $validasi['jenisAkun'] = 'Anggota';
+        $validasi['jenisAkun'] = 'anggota';
 
         Anggota::create($validate);
-        Admin::create($validasi);
+        User::create($validasi);
 
         return redirect('/');
     }

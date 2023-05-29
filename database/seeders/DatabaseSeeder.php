@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Admin;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,23 +19,23 @@ class DatabaseSeeder extends Seeder
             AnggotaSeeder::class,
             ArtikelSeeder::class,
         ]);
-        Admin::create([
+        User::create([
             'nama' => 'andi muhammad kemal',
             'username' => 'ketua',
-            'password' => bcrypt('admin'),
-            'jenisAkun' => 'anggota',
+            'password' => bcrypt('ketua'),
+            'jenisAkun' => 'ketua',
         ]);
-        Admin::create([
+        User::create([
             'nama' => 'muhammad faidhul',
             'username' => 'admin',
             'password' => bcrypt('admin'),
             'jenisAkun' => 'admin',
         ]);
-        Admin::create([
+        User::create([
             'nama' => 'rizal arsy',
             'username' => 'rizal',
             'password' => bcrypt('anggota'),
-            'jenisAkun' => 'ketua',
+            'jenisAkun' => 'anggota',
         ]);
     }
 }

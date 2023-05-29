@@ -12,7 +12,7 @@ class ControllerKetua extends Controller
      */
     public function index()
     {
-        //
+        return view('Ketua.DashboardKetua');
     }
 
     /**
