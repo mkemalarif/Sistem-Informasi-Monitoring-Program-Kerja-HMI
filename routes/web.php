@@ -17,8 +17,11 @@ use App\Http\Controllers\ControllerRegister;
 |
 */
 
-Route::get('/', [Homepage::class, "index"]);
+// Route::get('/', [Homepage::class, "index"]);
 
+Route::get('/', function () {
+    return view('AnggotaAddakun');
+});
 
 Route::get('registrasi-member', [ControllerRegister::class, "regisAnggota"]);
 Route::post('registrasi-member', [ControllerRegister::class, "tambahAnggota"]);
