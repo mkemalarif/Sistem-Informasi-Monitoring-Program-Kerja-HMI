@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class isAdmin
+class isAnggota
 {
     /**
      * Handle an incoming request.
@@ -15,14 +15,12 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-
         if (
             !auth()->check() || auth()->user()->jenisAkun !== 'admin' ||
             auth()->user()->jenisAkun === null
         ) {
             abort(403);
         }
-
         return $next($request);
     }
 }

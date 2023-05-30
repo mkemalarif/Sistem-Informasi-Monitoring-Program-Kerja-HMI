@@ -6,9 +6,9 @@
         <div class="col-md-12">
             <div class="card border-0 shadow-sm rounded">
                 <div class="card-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="/tambah-berita" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
+                        {{-- @method('PUT') --}}
 
                         <div class="form-group">
                             <label class="font-weight-bold">GAMBAR</label>
@@ -17,32 +17,34 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">JUDUL</label>
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="" placeholder="Masukkan Judul Post">
-                        
+                            <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul"
+                                value="" placeholder="Masukkan Judul Post">
+
                             <!-- error message untuk title -->
-                            @error('title')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
+                            @error('judul')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
                             @enderror
                         </div>
 
                         <div class="form-group">
                             <label class="font-weight-bold">KONTEN</label>
-                            <textarea class="form-control ckeditor @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Masukkan Konten Post"></textarea>
-                        
+                            <textarea class="form-control ckeditor @error('isiBerita') is-invalid @enderror"
+                                name="isiBerita" rows="5" placeholder="Masukkan Konten Post"></textarea>
+
                             <!-- error message untuk content -->
-                            @error('content')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
+                            @error('isiBerita')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
+                        <button type="submit" class="btn btn-md btn-primary">TAMBAH</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>
 
-                    </form> 
+                    </form>
                 </div>
             </div>
         </div>

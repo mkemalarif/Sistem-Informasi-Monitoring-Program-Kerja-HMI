@@ -11,7 +11,7 @@ class Artikel extends Model
 
     protected $guarded = ['idArtikel'];
 
-    public function anggota() {
-        $this->belongsTo(Anggota::class);
+    public function user() {
+        $this->belongsTo(Users::class);
     }
 }

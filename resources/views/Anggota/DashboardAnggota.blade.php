@@ -5,6 +5,8 @@
 
 @endsection --}}
 
+{{-- {{ auth()->user()->nama; }} --}}
+
 <form action="/logout">
   @csrf
   <button type="submit" class="nav-link btn text-light" href="#">

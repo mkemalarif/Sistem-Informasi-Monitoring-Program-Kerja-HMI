@@ -24,28 +24,38 @@ use App\Http\Controllers\LoginController;
 // route free for all dan semua kebutuhan homepage
 Route::get('/', [Homepage::class, "index"]);
 
-Route::get('/login', [LoginController::class, "index"]);
-Route::post('/login', [LoginController::class, "authenticate"]);
-Route::get('/logout', [LoginController::class, "logout"]);
 
+Route::controller(LoginController::class)->group(function () {
+    Route::get('login', "index")->name('login');
+    Route::post('/login', 'authenticate')->name('login');
+    Route::get('/logout', 'logout');
+});
 
 // semua route untuk anggota
-
-
-Route::get('/profile-set-anggota', function () {
-    return view('ProfileSettingAnggota');
+Route::middleware('anggota')->controller(ControllerAnggota::class)->group(function () {
+    Route::get('/dashboard-anggota', "index");
+    Route::get('/profile-setting', 'profileSet');
+    Route::get('/tambah-berita', 'create');
+    Route::get('/data-anggota', 'listAnggota');
+    Route::get('/program-kerja', 'proker');
+    Route::post('/tambah-berita', 'post');
 });
 
 // semua route untuk admin
-Route::resource('/dashboard-anggota', ControllerAnggota::class)->middleware('auth');
-Route::resource('/dashboard-admin', ControllerAdmin::class)->middleware('admin');
-Route::resource('/dashboard-ketua', ControllerKetua::class)->middleware('ketua');
-
-Route::get('/registrasi-member', [ControllerRegister::class, "regisAnggota"]);
-Route::post('/registrasi-member', [ControllerRegister::class, "tambahAnggota"]);
-
-Route::get('/registrasi-komisariat', [ControllerRegister::class, "regisKomisariat"]);
-Route::post('/registrasi-komisariat', [ControllerRegister::class, "tambahKomisariat"]);
-
+Route::middleware('admin')->controller(ControllerAdmin::class)->group(function () {
+    Route::get('/dashboard-admin', 'index');
+    Route::get('/registrasi-member', 'regisAnggota');
+    Route::get('/registrasi-komisariat', 'regisKomisariat');
+    Route::get('/tambah-proker', 'tambahProker');
+    Route::get('/validasi-berita', 'editBerita');
+    Route::post('/registrasi-member', 'tambahAnggota');
+    Route::post('/registrasi-komisariat', 'tambahKomisariat');
+});
 
 // semua route untuk ketua
+Route::middleware('ketua')->controller(ControllerKetua::class)->group(function () {
+    Route::get('/dashboard-ketua', 'index');
+    Route::get('/tambah-akun-admin', 'create');
+    Route::get('/tambah-proker', 'programKerja');
+    Route::get('/tambah-anggota', );
+});

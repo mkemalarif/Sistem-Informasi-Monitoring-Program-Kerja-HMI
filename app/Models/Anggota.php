@@ -15,8 +15,4 @@ class Anggota extends Model
     public function komisariat(){
         $this->belongsTo(Komisariat::class);
     }
-
-    public function artikel() {
-        $this->hasMany(Artikel::class);
-    }
 }
