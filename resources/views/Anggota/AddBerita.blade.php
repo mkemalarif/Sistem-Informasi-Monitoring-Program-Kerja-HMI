@@ -8,21 +8,23 @@
                 <div class="card-body">
                     <form action="/tambah-berita" method="POST" enctype="multipart/form-data">
                         @csrf
-                        {{-- @method('PUT') --}}
 
                         <div class="form-group">
                             <label class="font-weight-bold">GAMBAR</label>
-                            <input type="file" class="form-control" name="image">
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                            @error('')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <label class="font-weight-bold">JUDUL</label>
                             <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul"
-                                value="" placeholder="Masukkan Judul Post">
-
-                            <!-- error message untuk title -->
-                            @error('judul')
-                            <div class="alert alert-danger mt-2">
+                                value="{{ old('judul') }}" placeholder="Masukkan Judul Post">
+                            @error('')
+                            <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
@@ -31,11 +33,9 @@
                         <div class="form-group">
                             <label class="font-weight-bold">KONTEN</label>
                             <textarea class="form-control ckeditor @error('isiBerita') is-invalid @enderror"
-                                name="isiBerita" rows="5" placeholder="Masukkan Konten Post"></textarea>
-
-                            <!-- error message untuk content -->
-                            @error('isiBerita')
-                            <div class="alert alert-danger mt-2">
+                                name="isiBerita" rows="5" placeholder="Masukkan Konten Post">{{ old('isiBerita') }}</textarea>
+                            @error('')
+                            <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
