@@ -47,6 +47,7 @@ Route::middleware('anggota')->controller(ControllerAnggota::class)->group(functi
 Route::middleware('admin')->controller(ControllerAdmin::class)->group(function () {
     Route::get('/dashboard-admin', 'index');
     Route::get('/registrasi-member', 'regisAnggota');
+    // Route::get('/data-anggota', 'listAnggota');
     Route::get('/registrasi-komisariat', 'regisKomisariat');
     Route::get('/tambah-proker', 'tambahProker');
     Route::get('/validasi-berita', 'editBerita');
@@ -59,5 +60,5 @@ Route::middleware('ketua')->controller(ControllerKetua::class)->group(function (
     Route::get('/dashboard-ketua', 'index');
     Route::get('/tambah-akun-admin', 'create');
     Route::get('/tambah-proker', 'programKerja');
-    Route::get('/tambah-anggota', );
+    Route::get('/tambah-anggota',);
 });
