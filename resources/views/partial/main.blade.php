@@ -38,6 +38,9 @@
         <li class="nav-item me-2">
           <a class="nav-link" href="#">Kegiatan</a>
         </li>
+        <li class="nav-item me-2">
+          <a class="btn btn-primary" href="#">Logout</a>
+      </li>
       </ul>
       <ul class="navbar-nav">
         {{-- Tambahkan navbar sesuai dengan role --}}
