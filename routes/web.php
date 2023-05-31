@@ -24,6 +24,11 @@ use App\Http\Controllers\LoginController;
 // route free for all dan semua kebutuhan homepage
 Route::get('/', [Homepage::class, "index"]);
 
+// Routes default
+// Route::get('/', function () {
+//     return view('ControlBerita');
+// });
+
 
 
 
