@@ -11,6 +11,9 @@
   <li class="nav-item me-2">
     <a class="nav-link" href="#">Tambah Program Kerja</a>
   </li>
+  <li class="nav-item me-2">
+    <a class="btn btn-primary" href="#">Logout</a>
+</li>
 
 
   {{-- @yield('admin-navbar-items') --}}
