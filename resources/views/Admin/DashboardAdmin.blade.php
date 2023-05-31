@@ -1,6 +1,6 @@
 @extends('partial.main')
 
-@section('auth-navbar-items')
+{{-- @section('auth-navbar-items')
 @if(Auth::check())
 @if(Auth::user()->role == 'admin')
 @include('admin-navbar')
@@ -10,7 +10,7 @@
 @include('anggota-navbar')
 @endif
 @endif
-@endsection
+@endsection --}}
 
 @section('container')
 <!-- Konten dashboard -->

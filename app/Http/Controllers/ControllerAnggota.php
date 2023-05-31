@@ -27,13 +27,18 @@ class ControllerAnggota extends Controller
             'isiBerita' => 'required',
         ]);
 
-        $validate['anggota_id'] = auth()->user()->id;
+        $validate['user_id'] = auth()->user()->id;
 
-        $foto = $request->file('image');
 
-        dd($foto);
+        $id = Artikel::create($validate)->id;
 
-        // dd($validate);
+        $foto = $request->file('image')->storeAs(
+            'foto berita user ' . $request->user()->id,
+            'foto' . $id . '.jpg'
+        );
+
+
+        return redirect('/anggota/dashboard');
     }
 
     // menampilkan data anggota

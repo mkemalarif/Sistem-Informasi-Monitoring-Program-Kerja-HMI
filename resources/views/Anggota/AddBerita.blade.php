@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card border-0 shadow-sm rounded">
                 <div class="card-body">
-                    <form action="/tambah-berita" method="POST" enctype="multipart/form-data">
+                    <form action="/anggota/tambah-berita" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -33,7 +33,8 @@
                         <div class="form-group">
                             <label class="font-weight-bold">KONTEN</label>
                             <textarea class="form-control ckeditor @error('isiBerita') is-invalid @enderror"
-                                name="isiBerita" rows="5" placeholder="Masukkan Konten Post">{{ old('isiBerita') }}</textarea>
+                                name="isiBerita" rows="5"
+                                placeholder="Masukkan Konten Post">{{ old('isiBerita') }}</textarea>
                             @error('')
                             <div class="invalid-feedback">
                                 {{ $message }}

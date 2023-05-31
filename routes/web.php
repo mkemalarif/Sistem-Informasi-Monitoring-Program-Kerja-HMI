@@ -34,31 +34,34 @@ Route::controller(LoginController::class)->group(function () {
 });
 
 // semua route untuk anggota
-Route::middleware('anggota')->controller(ControllerAnggota::class)->group(function () {
-    Route::get('/dashboard-anggota', "index");
-    Route::get('/profile-setting', 'profileSet');
-    Route::get('/tambah-berita', 'create');
-    Route::get('/data-anggota', 'listAnggota');
-    Route::get('/program-kerja', 'proker');
-    Route::post('/tambah-berita', 'post');
-});
+Route::middleware('anggota')->prefix('anggota')
+    ->controller(ControllerAnggota::class)->group(function () {
+        Route::get('/dashboard', "index");
+        Route::get('/profile-setting', 'profileSet');
+        Route::get('/tambah-berita', 'create');
+        Route::get('/data-anggota', 'listAnggota');
+        Route::get('/program-kerja', 'proker');
+        Route::post('/tambah-berita', 'post');
+    });
 
 // semua route untuk admin
-Route::middleware('admin')->controller(ControllerAdmin::class)->group(function () {
-    Route::get('/dashboard-admin', 'index');
-    Route::get('/registrasi-member', 'regisAnggota');
-    // Route::get('/data-anggota', 'listAnggota');
-    Route::get('/registrasi-komisariat', 'regisKomisariat');
-    Route::get('/tambah-proker', 'tambahProker');
-    Route::get('/validasi-berita', 'editBerita');
-    Route::post('/registrasi-member', 'tambahAnggota');
-    Route::post('/registrasi-komisariat', 'tambahKomisariat');
-});
+Route::middleware('admin')->prefix('admin')
+    ->controller(ControllerAdmin::class)->group(function () {
+        Route::get('/dashboard', 'index');
+        Route::get('/registrasi-member', 'regisAnggota');
+        Route::get('/data-anggota', 'listAnggota');
+        Route::get('/registrasi-komisariat', 'regisKomisariat');
+        Route::get('/tambah-proker', 'tambahProker');
+        Route::get('/validasi-berita', 'editBerita');
+        Route::post('/registrasi-member', 'tambahAnggota');
+        Route::post('/registrasi-komisariat', 'tambahKomisariat');
+    });
 
 // semua route untuk ketua
-Route::middleware('ketua')->controller(ControllerKetua::class)->group(function () {
-    Route::get('/dashboard-ketua', 'index');
-    Route::get('/tambah-akun-admin', 'create');
-    Route::get('/tambah-proker', 'programKerja');
-    Route::get('/tambah-anggota',);
-});
+Route::middleware('ketua')->prefix('ketua')
+    ->controller(ControllerKetua::class)->group(function () {
+        Route::get('/dashboard', 'index');
+        Route::get('/tambah-akun-admin', 'create');
+        Route::get('/tambah-proker', 'programKerja');
+        Route::get('/tambah-anggota',);
+    });

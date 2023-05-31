@@ -30,7 +30,7 @@ class LoginController extends Controller
         ])) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard-anggota');
+            return redirect()->intended('/anggota/dashboard');
         }
 
         if (Auth::attempt([
@@ -40,7 +40,7 @@ class LoginController extends Controller
         ])) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard-admin');
+            return redirect()->intended('/admin/dashboard');
         }
 
         if (Auth::attempt([
@@ -49,7 +49,7 @@ class LoginController extends Controller
             'jenisAkun' => 'ketua'
         ])) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard-ketua');
+            return redirect()->intended('/ketua/dashboard');
         }
 
         return back();
