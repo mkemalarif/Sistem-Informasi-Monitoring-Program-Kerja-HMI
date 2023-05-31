@@ -25,6 +25,8 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [Homepage::class, "index"]);
 
 
+
+
 Route::controller(LoginController::class)->group(function () {
     Route::get('login', "index")->name('login');
     Route::post('/login', 'authenticate')->name('login');
