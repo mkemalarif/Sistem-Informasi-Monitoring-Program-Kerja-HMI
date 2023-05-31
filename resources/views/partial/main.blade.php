@@ -41,16 +41,16 @@
       </ul>
       <ul class="navbar-nav">
         {{-- Tambahkan navbar sesuai dengan role --}}
-        @if(Auth::check())
-          @if(Auth::user()->role == 'admin')
-            @include('admin-navbar')
-          @elseif(Auth::user()->role == 'ketua')
-            @include('ketua-navbar')
-          @elseif(Auth::user()->role == 'anggota')
-            @include('anggota-navbar')
-          @endif
+        @if(Auth()->check())
+        @if(Auth()->user()->jenisAkun == 'admin')
+        @include('partial.admin-navbar')
+        @elseif(Auth()->user()->jenisAkun == 'ketua')
+        @include('partial.ketua-navbar')
+        @elseif(Auth()->user()->jenisAkun == 'anggota')
+        @include('partial.anggota-navbar')
+        @endif
         @else
-          @yield('auth-navbar-items')
+        @yield('auth-navbar-items')
         @endif
       </ul>
     </div>
@@ -67,7 +67,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

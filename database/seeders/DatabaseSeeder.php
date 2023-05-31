@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         ]);
         User::create([
             'nama' => 'rizal arsy',
-            'username' => 'rizal',
+            'username' => 'anggota',
             'password' => bcrypt('anggota'),
             'jenisAkun' => 'anggota',
         ]);
