@@ -16,7 +16,7 @@ class isAnggota
     public function handle(Request $request, Closure $next): Response
     {
         if (
-            !auth()->check() || auth()->user()->jenisAkun !== 'admin' ||
+            !auth()->check() || auth()->user()->jenisAkun !== 'anggota' ||
             auth()->user()->jenisAkun === null
         ) {
             abort(403);
