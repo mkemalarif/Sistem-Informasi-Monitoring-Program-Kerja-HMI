@@ -1,49 +1,78 @@
-<!-- tasks.blade.php -->
+@extends('layouts.app')
 
-@extends('partial.main')
-
-@section('container')
+@section('content')
     <div class="container">
-        <h2 class="text-center mb-4">Daftar Program Kerja</h2>
-        <div class="card p-3 shadow">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Nama Program Kerja</th>
-                            <th>Deskripsi</th>
-                            <th>Status</th>
-                            <th>Persentase Selesai</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Program Kerja 1</td>
-                            <td>Deskripsi Program Kerja 1</td>
-                            <td><span class="badge badge-success">Selesai</span></td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Program Kerja 2</td>
-                            <td>Deskripsi Program Kerja 2</td>
-                            <td><span class="badge badge-warning">Belum Selesai</span></td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>Program Kerja 3</td>
-                            <td>Deskripsi Program Kerja 3</td>
-                            <td><span class="badge badge-success">Selesai</span></td>
-                            <td>75%</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Oktober</h5>
+                    <p class="card-text">Program Kerja</p>
+                    <p class="card-text">Siapa yang kerja</p>
+                    <div class="circle-bar blue">
+                        <svg class="circle" width="100" height="100">
+                            <circle class="bar" cx="50" cy="50" r="40"></circle>
+                        </svg>
+                        <span class="progress">22</span>
+                    </div>
+                    <p class="card-text">22 Oktober 2022</p>
+                    <p class="card-text">Presentasi pengerjaan</p>
+                    <p class="card-text">Status: Belum selesai, dalam progress</p>
+                </div>
             </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">Tambah Program Kerja</a>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">November</h5>
+                    <p class="card-text">Program Kerja</p>
+                    <p class="card-text">Siapa yang kerja</p>
+                    <div class="circle-bar green">
+                        <svg class="circle" width="100" height="100">
+                            <circle class="bar" cx="50" cy="50" r="40"></circle>
+                        </svg>
+                        <span class="progress">50</span>
+                    </div>
+                    <p class="card-text">22 November 2022</p>
+                    <p class="card-text">Presentasi pengerjaan</p>
+                    <p class="card-text">Status: Belum selesai, dalam progress</p>
+                </div>
             </div>
-            <div class="text-muted text-center mt-3">
-                <small>Last updated: {{ date('Y-m-d H:i:s') }}</small>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Desember</h5>
+                    <p class="card-text">Program Kerja</p>
+                    <p class="card-text">Siapa yang kerja</p>
+                    <div class="circle-bar orange">
+                        <svg class="circle" width="100" height="100">
+                            <circle class="bar" cx="50" cy="50" r="40"></circle>
+                        </svg>
+                        <span class="progress">80</span>
+                    </div>
+                    <p class="card-text">22 Desember 2022</p>
+                    <p class="card-text">Presentasi pengerjaan</p>
+                    <p class="card-text">Status: Belum selesai, dalam progress</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const progressElements = document.querySelectorAll(".progress");
+            const barElements = document.querySelectorAll(".bar");
+
+            for (let i = 0; i < progressElements.length; i++) {
+                const progressElement = progressElements[i];
+                const barElement = barElements[i];
+
+                const progress = parseInt(progressElement.innerText);
+                const radius = parseInt(barElement.getAttribute("r"));
+                const circumference = 2 * Math.PI * radius;
+
+                const offset = circumference - (progress / 100) * circumference;
+                barElement.style.strokeDasharray = `${circumference} ${circumference}`;
+                barElement.style.strokeDashoffset = offset;
+            }
+        });
+    </script>
 @endsection
