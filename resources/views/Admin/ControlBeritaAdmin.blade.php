@@ -7,7 +7,7 @@
             <div class="card border-0 shadow-sm rounded">
                 <div class="card-body">
                     <h1 class="mb-4">Tabel Entry Berita</h1>
-                    
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead class="thead-light">
@@ -19,33 +19,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data as $item)
                                 <tr>
-                                    <td class="align-middle">Judul Berita 1</td>
-                                    <td class="align-middle"><img src="gambar1.jpg" alt="Gambar Berita 1" class="img-thumbnail"></td>
-                                    <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
-                                    <td class="align-middle">
-                                        <a href="#" class="btn btn-sm btn-success"><i class="fas fa-check"></i> Terima</a>
-                                        <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Tolak</a>
+                                    <td class="align-middle">{{ $item->judul }}</td>
+                                    <td class="align-middle text-center"><img style="width:15rem"
+                                            src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}"
+                                            alt="">
+                                    </td>
+                                    <td class="align-middle">{{ $item->status }}</td>
+                                    <td class="align-middle text-center">
+                                        <form method="POST" action="/admin/validasi-berita/{{ $item->id }}">
+                                            @csrf
+                                            @method('PUT')
+
+                                            <button class="btn btn-sm btn-success" type="submit"><i
+                                                    class="fas fa-check"></i> Terima</a></button>
+                                        </form>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="align-middle">Judul Berita 2</td>
-                                    <td class="align-middle"><img src="gambar2.jpg" alt="Gambar Berita 2" class="img-thumbnail"></td>
-                                    <td class="align-middle"><span class="badge badge-success">Accepted</span></td>
-                                    <td class="align-middle">
-                                        <a href="#" class="btn btn-sm btn-success"><i class="fas fa-check"></i> Terima</a>
-                                        <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Tolak</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle">Judul Berita 3</td>
-                                    <td class="align-middle"><img src="gambar3.jpg" alt="Gambar Berita 3" class="img-thumbnail"></td>
-                                    <td class="align-middle"><span class="badge badge-danger">Rejected</span></td>
-                                    <td class="align-middle">
-                                        <a href="#" class="btn btn-sm btn-success"><i class="fas fa-check"></i> Terima</a>
-                                        <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Tolak</a>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
