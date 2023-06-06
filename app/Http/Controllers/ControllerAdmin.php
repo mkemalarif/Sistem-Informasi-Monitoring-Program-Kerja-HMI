@@ -25,7 +25,7 @@ class ControllerAdmin extends Controller
 
     public function regisKomisariat()
     {
-        return view('RegistrasiKomisariat');
+        return view('Admin.RegistrasiKomisariat');
     }
 
     public function tambahProker()

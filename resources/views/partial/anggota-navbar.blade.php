@@ -1,5 +1,5 @@
 <li class="nav-item me-2">
-  <a class="nav-link" href="/anggota/profile-setting">Edit Profil</a>
+  <a class="nav-link" href="/anggota/profile-setting/{{ auth()->user()->id }}">Edit Profil</a>
 </li>
 <li class="nav-item me-2">
   <a class="nav-link" href="/anggota/tambah-berita">Posting Berita</a>
