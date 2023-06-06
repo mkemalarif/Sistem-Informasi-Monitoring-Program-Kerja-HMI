@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Artikel;
 use App\Models\Anggota;
+use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -54,8 +55,29 @@ class ControllerAnggota extends Controller
         return view('ProkerCek');
     }
 
-    public function profileSet()
+    public function profileSet($id)
     {
-        return view("Anggota.ProfileSettingAnggota");
+        $data = User::find($id);
+        return view("Anggota.ProfileSettingAnggota", [
+            'data' => User::find($id)
+        ]);
+    }
+
+    public function profileEdit(Request $request, $id)
+    {
+        $validate = $request->validate([
+            'nama' => 'required',
+            'username' => 'required',
+            'password' => 'exclude_if:password,null'
+        ]);
+
+        $request->file('image')->storeAs(
+            'profil',
+            
+        );
+
+        User::where('id', $id)->update($validate);
+
+        return redirect('/anggota/dashboard');
     }
 }

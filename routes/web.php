@@ -48,11 +48,12 @@ Route::controller(LoginController::class)->group(function () {
 Route::middleware('anggota')->prefix('anggota')
     ->controller(ControllerAnggota::class)->group(function () {
         Route::get('/dashboard', "index");
-        Route::get('/profile-setting', 'profileSet');
+        Route::get('/profile-setting/{id}', 'profileSet');
         Route::get('/tambah-berita', 'create');
         Route::get('/data-anggota', 'listAnggota');
         Route::get('/program-kerja', 'proker');
         Route::post('/tambah-berita', 'post');
+        Route::put('/profile-setting/{id}', 'profileEdit');
     });
 
 // semua route untuk admin
