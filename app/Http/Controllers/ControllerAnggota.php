@@ -26,7 +26,7 @@ class ControllerAnggota extends Controller
             'judul' => 'required',
             'isiBerita' => 'required',
         ]);
-
+        $validate['status'] = 'tunda';
         $validate['user_id'] = auth()->user()->id;
 
 

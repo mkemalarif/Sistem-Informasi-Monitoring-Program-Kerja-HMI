@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Komisariat;
 use App\Models\Anggota;
+use App\Models\Artikel;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -27,12 +28,16 @@ class ControllerAdmin extends Controller
         return view('RegistrasiKomisariat');
     }
 
-    public function tambahProker(){
+    public function tambahProker()
+    {
         return view('Admin.ProkerAdd');
     }
 
-    public function editBerita(){
-        return view('Admin.editBerita');
+    public function editBerita()
+    {
+        return view('Admin.ControlBeritaAdmin', [
+            'data' => Artikel::latest()->get()
+        ]);
     }
 
     public function tambahAnggota(Request $request)
@@ -72,5 +77,17 @@ class ControllerAdmin extends Controller
         Komisariat::create($validate);
 
         return redirect('/');
+    }
+
+    public function validasiBerita(Request $request, Artikel $artikel)
+    {
+        $validate = $request->validate([
+            
+        ]);
+
+        $validate['status'] = 'acc';
+        Artikel::where('id', $artikel->id)->update($validate);
+
+        return redirect('/admin/validasi-berita');
     }
 }

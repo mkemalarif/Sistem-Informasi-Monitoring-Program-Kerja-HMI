@@ -60,6 +60,7 @@ Route::middleware('admin')->prefix('admin')
         Route::get('/validasi-berita', 'editBerita');
         Route::post('/registrasi-member', 'tambahAnggota');
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
+        Route::put('/validasi-berita/{id}', 'validasiBerita');
     });
 
 // semua route untuk ketua
