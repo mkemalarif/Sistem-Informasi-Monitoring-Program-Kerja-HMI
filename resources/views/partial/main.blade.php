@@ -31,18 +31,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">Berita</a>
-        </li>
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">Opini</a>
-        </li>
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">Kegiatan</a>
-        </li>
-
-      </ul>
-      <ul class="navbar-nav">
         {{-- Tambahkan navbar sesuai dengan role --}}
         @if(Auth()->check())
         @if(Auth()->user()->jenisAkun == 'admin')
@@ -53,7 +41,22 @@
         @include('partial.anggota-navbar')
         @endif
         @else
-        @yield('auth-navbar-items')
+        {{-- @yield('auth-navbar-items') --}}
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Berita</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Opini</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Kegiatan</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+
+        </ul>
         @endif
       </ul>
     </div>

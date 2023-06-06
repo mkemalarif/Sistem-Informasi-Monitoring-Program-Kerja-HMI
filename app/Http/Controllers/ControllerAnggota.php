@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Artikel;
 use App\Models\Anggota;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class ControllerAnggota extends Controller
 {
@@ -33,8 +34,8 @@ class ControllerAnggota extends Controller
         $id = Artikel::create($validate)->id;
 
         $foto = $request->file('image')->storeAs(
-            'foto berita user ' . $request->user()->id,
-            'foto' . $id . '.jpg'
+            'berita',
+            $request->user()->id . '_fotoberita_' . $id . '.jpg'
         );
 
 

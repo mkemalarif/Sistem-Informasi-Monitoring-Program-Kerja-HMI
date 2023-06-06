@@ -22,10 +22,13 @@
                                 @foreach ($data as $item)
                                 <tr>
                                     <td class="align-middle">{{ $item->judul }}</td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle text-center"><img style="width:15rem"
+                                            src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}"
+                                            alt="">
+                                    </td>
                                     <td class="align-middle">{{ $item->status }}</td>
-                                    <td>
-                                        <form method="POST" action="/admin/validasi-berita/{artikel}">
+                                    <td class="align-middle text-center">
+                                        <form method="POST" action="/admin/validasi-berita/{{ $item->id }}">
                                             @csrf
                                             @method('PUT')
 

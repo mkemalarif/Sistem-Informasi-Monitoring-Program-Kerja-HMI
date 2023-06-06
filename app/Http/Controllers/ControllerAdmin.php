@@ -18,7 +18,7 @@ class ControllerAdmin extends Controller
 
     public function regisAnggota()
     {
-        return view('RegistrasiAnggota', [
+        return view('Admin.RegistrasiAnggota', [
             "komisariat" => Komisariat::get(),
         ]);
     }
@@ -53,15 +53,17 @@ class ControllerAdmin extends Controller
             'komisariat_id' => 'required'
         ]);
 
-        $validasi['nama'] = $validate['nama'];
-        $validasi['username'] = 'anggota';
-        $validasi['password'] = bcrypt($validate["nokader"]);
-        $validasi['jenisAkun'] = 'anggota';
-
         Anggota::create($validate);
-        User::create($validasi);
 
-        return redirect('/');
+        $user = new User;
+        $user->nama = $validate['nama'];
+        $user->username = 'anggota';
+        $user->password = bcrypt($validate['nokader']);
+        $user->jenisAkun = 'anggota';
+
+        $user->save();
+
+        return redirect('/admin/dashboard');
     }
 
     public function tambahKomisariat(Request $request)
@@ -76,17 +78,16 @@ class ControllerAdmin extends Controller
 
         Komisariat::create($validate);
 
-        return redirect('/');
+        return redirect('/admin/dashboard');
     }
 
-    public function validasiBerita(Request $request, Artikel $artikel)
+    public function validasiBerita($id)
     {
-        $validate = $request->validate([
-            
+        // dd(Artikel::find($id));
+        Artikel::where('id', $id)->update([
+            'status' => 'acc',
         ]);
 
-        $validate['status'] = 'acc';
-        Artikel::where('id', $artikel->id)->update($validate);
 
         return redirect('/admin/validasi-berita');
     }
