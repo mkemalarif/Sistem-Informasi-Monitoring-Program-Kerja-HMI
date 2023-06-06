@@ -26,7 +26,7 @@ use App\Http\Controllers\LoginController;
 
 // Routes default
 Route::get('/', function () {
-    return view('ProkerCek');
+    return view('DashboardAdmin');
 });
 
 
