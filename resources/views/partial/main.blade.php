@@ -46,7 +46,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-<<<<<<< HEAD
         <li class="nav-item me-2">
           <a class="nav-link" href="#">Berita</a>
         </li>
@@ -58,12 +57,9 @@
         </li>
       </ul>
       <ul class="navbar-nav">
-=======
->>>>>>> ec3b358c2d1c9d02643c9a4add5d8685b2241594
         {{-- Tambahkan navbar sesuai dengan role --}}
         @if(Auth()->check())
         @if(Auth()->user()->jenisAkun == 'admin')
-        @include('partial.admin-navbar')
         @elseif(Auth()->user()->jenisAkun == 'ketua')
         @include('partial.ketua-navbar')
         @elseif(Auth()->user()->jenisAkun == 'anggota')

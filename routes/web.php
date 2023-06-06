@@ -22,18 +22,18 @@ use App\Http\Controllers\LoginController;
 
 
 // route free for all dan semua kebutuhan homepage
-Route::get('/', [Homepage::class, "index"]);
+// Route::get('/', [Homepage::class, "index"]);
 
 // Routes default
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('DashboardAdmin');
-});
-=======
+
+// Route::get('/', function () {
+//     return view('DashboardAdmin');
+// });
+
 // Route::get('/', function () {
 //     return view('ProkerCek');
 // });
->>>>>>> ec3b358c2d1c9d02643c9a4add5d8685b2241594
+
 
 
 

@@ -13,7 +13,9 @@ class ControllerAdmin extends Controller
 {
     public function index()
     {
-        return view('Admin.DashboardAdmin');
+        return view('DashboardAdmin', [
+            'data' => Artikel::latest()->get()
+        ]);
     }
 
     public function regisAnggota()
