@@ -14,7 +14,7 @@ class ControllerAnggota extends Controller
 {
     public function index()
     {
-        return view('Anggota.DashboardAnggota');
+        return view('DashboardAnggota');
     }
 
     public function create()
@@ -73,7 +73,7 @@ class ControllerAnggota extends Controller
 
         $request->file('image')->storeAs(
             'profil',
-            
+
         );
 
         User::where('id', $id)->update($validate);

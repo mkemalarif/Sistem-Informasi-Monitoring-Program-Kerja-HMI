@@ -39,13 +39,22 @@
 
   {{-- Navbar --}}
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <a class="navbar-brand" href="#">HMI MAKASSAR</a>
+    <a class="navbar-brand" @if(!auth()->check())
+      href="/"
+      @elseif(Auth()->user()->jenisAkun === 'ketua')
+      href='/ketua/dashboard'
+      @elseif(Auth()->user()->jenisAkun === 'admin')
+      href='/admin/dashboard'
+      @elseif(Auth()->user()->jenisAkun === 'anggota')
+      href='/anggota/dashboard'
+      @endif
+      >HMI MAKASSAR</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      {{-- <ul class="navbar-nav ms-auto">
         <li class="nav-item me-2">
           <a class="nav-link" href="#">Berita</a>
         </li>
@@ -55,12 +64,12 @@
         <li class="nav-item me-2">
           <a class="nav-link" href="#">Kegiatan</a>
         </li>
-      </ul>
-      <ul class="navbar-nav">
+      </ul> --}}
+      <ul class="navbar-nav ms-auto">
         {{-- Tambahkan navbar sesuai dengan role --}}
         @if(Auth()->check())
-        @if(Auth()->user()->jenisAkun == 'admin')
-        @elseif(Auth()->user()->jenisAkun == 'ketua')
+        {{-- @if(Auth()->user()->jenisAkun == 'admin') --}}
+        @if(Auth()->user()->jenisAkun == 'ketua')
         @include('partial.ketua-navbar')
         @elseif(Auth()->user()->jenisAkun == 'anggota')
         @include('partial.anggota-navbar')
@@ -80,7 +89,6 @@
           <li class="nav-item me-2">
             <a class="nav-link" href="/login">Login</a>
           </li>
-
         </ul>
         @endif
       </ul>

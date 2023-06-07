@@ -22,7 +22,7 @@ use App\Http\Controllers\LoginController;
 
 
 // route free for all dan semua kebutuhan homepage
-// Route::get('/', [Homepage::class, "index"]);
+Route::get('/', [Homepage::class, "index"])->middleware('login');
 
 // Routes default
 
@@ -38,11 +38,11 @@ use App\Http\Controllers\LoginController;
 
 
 
-Route::controller(LoginController::class)->group(function () {
+Route::middleware('login')->controller(LoginController::class)->group(function () {
     Route::get('login', "index")->name('login');
     Route::post('/login', 'authenticate')->name('login');
-    Route::get('/logout', 'logout');
 });
+Route::get('/logout', [LoginController::class, 'logout']);
 
 // semua route untuk anggota
 Route::middleware('anggota')->prefix('anggota')
