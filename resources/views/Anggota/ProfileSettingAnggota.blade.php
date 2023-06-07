@@ -6,13 +6,13 @@
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                 <img class="rounded-circle mt-5" width="150px"
-                    src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                <span class="font-weight-bold">Edogaru</span>
+                    src="{{ asset('profil/foto-profil'. $data->id. '.jpg') }}">
+                <span class="font-weight-bold">{{ $data->id }}</span>
                 <span></span>
             </div>
         </div>
         <div class="col-md-5 border-right">
-            <form action="/anggota/registrasi-member/{{ $data->id }}" method="POST">
+            <form action="/anggota/profile-setting/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="p-3 py-5">
@@ -39,12 +39,12 @@
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Unggah Profil</label>
-                            <input type="file" class="form-control-file" name='image' id="uploadImage">
+                            <input type="file" class="form-control-file" name="profile">
                         </div>
                     </div>
 
                     <div class="mt-5 text-center">
-                        <button class="btn btn-primary profile-button" type="button">Save Profile</button>
+                        <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
                     </div>
                 </div>
             </form>

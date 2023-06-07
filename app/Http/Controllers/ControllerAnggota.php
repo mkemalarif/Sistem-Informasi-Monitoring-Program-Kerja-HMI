@@ -71,9 +71,19 @@ class ControllerAnggota extends Controller
             'password' => 'exclude_if:password,null'
         ]);
 
-        $request->file('image')->storeAs(
-            'profil',
+        if ($request->password !== null) {
 
+            $validate['password'] = bcrypt($validate['password']);
+        }
+
+        // if ($request->hasFile('profile')) {
+
+        // dd($request->file('profile'));
+        // }
+
+        $request->file('profile')->storeAs(
+            'profil',
+            'foto-profil' . $request->user()->id . '.jpg'
         );
 
         User::where('id', $id)->update($validate);
