@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Komisariat;
 use App\Models\Anggota;
 use App\Models\Artikel;
+use App\Models\Agenda;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ControllerAdmin extends Controller
     public function index()
     {
         return view('Admin.DashboardAdmin', [
-            'data' => Artikel::latest()->get()
+            'data' => Artikel::latest()->get(),
+            'proker' => Agenda::latest()->get()
         ]);
     }
 

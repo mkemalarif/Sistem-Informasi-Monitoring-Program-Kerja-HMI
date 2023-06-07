@@ -1,92 +1,376 @@
-@extends('partial.main')
+@extends('layout.ketua')
 
 @section('container')
-    <div class="container mt-5">
-        <h1>Data Anggota</h1>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="{{ asset('assets/foto1.jpg') }}" class="card-img-top" alt="Member 1" style="height: auto; width: 90px;">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">NOK: 001</h5>
-                                            <p class="card-text">Nama: John Doe</p>
-                                            <p class="card-text">Jenis Kelamin: Laki-laki</p>
-                                            <p class="card-text">TTL: 1 January 1990</p>
-                                            <p class="card-text">Komisariat: Komisariat A</p>
-                                            <p class="card-text">Alamat: Jl. Contoh Alamat No. 1</p>
-                                            <p class="card-text">Angkatan: 2010</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<div class="container">
+    <div class="row mt-5">
+        <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
+
+        @php
+            $slicedProgramKerja = [
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Pare-Pare',
+                    'tanggal' => 'Selasa, 22 Oktober 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '22%',
+                    'deskripsi' => '22 Desember 2022',
+                    'keterangan' => 'Presentasi pengerjaan',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+                [
+                    'judul' => 'Program Kerja',
+                    'cabang' => 'HMI Cabang Maros',
+                    'tanggal' => 'Rabu, 22 Desember 2022',
+                    'status' => 'Status: Belum selesai, dalam progress',
+                    'progress' => '50%',
+                    'deskripsi' => '',
+                    'keterangan' => '',
+                ],
+
+                // Add more program kerja data here
+            ];
+
+            $limit = 10; // Limit the number of program kerja to display
+            $slicedProgramKerja = array_slice($slicedProgramKerja, 0, $limit);
+        @endphp
+
+        @foreach ($slicedProgramKerja as $item)
+            <div class="col-12 col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="circle-bar blue pr-1">
+                            <svg class="circle" width="80" height="80">
+                                <circle class="bar" cx="40" cy="40" r="36"></circle>
+                            </svg>
+                            <span class="progress">{{ $item['progress'] }}</span>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="{{ asset('assets/member2.jpg') }}" class="card-img-top" alt="Member 2" style="height: auto; width: 90px;">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">NOK: 002</h5>
-                                            <p class="card-text">Nama: Jane Smith</p>
-                                            <p class="card-text">Jenis Kelamin: Perempuan</p>
-                                            <p class="card-text">TTL: 15 February 1995</p>
-                                            <p class="card-text">Komisariat: Komisariat B</p>
-                                            <p class="card-text">Alamat: Jl. Contoh Alamat No. 2</p>
-                                            <p class="card-text">Angkatan: 2015</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col">
-                            <div class="card">
-                                <div class="row">
-                                    <div class="col-4 ">
-                                        <img src="{{ asset('assets/member3.jpg') }}" class="card-img-top " alt="Member 3" style="height: auto; width: 90px; image-adjust">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">NOK: 003</h5>
-                                            <p class="card-text">Nama: David Johnson</p>
-                                            <p class="card-text">Jenis Kelamin: Laki-laki</p>
-                                            <p class="card-text">TTL: 10 March 1992</p>
-                                            <p class="card-text">Komisariat: Komisariat C</p>
-                                            <p class="card-text">Alamat: Jl. Contoh Alamat No. 3</p>
-                                            <p class="card-text">Angkatan: 2012</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="divider"></div>
+                        <div>
+                            <h5 class="card-title">{{ $item['judul'] }}</h5>
+                            <p class="card-text">{{ $item['cabang'] }}</p>
+                            <p class="card-text date">{{ $item['tanggal'] }}</p>
+                            <p class="card-text status">{{ $item['status'] }}</p>
+                            @if ($item['deskripsi'])
+                                <p class="card-text">{{ $item['deskripsi'] }}</p>
+                            @endif
+                            @if ($item['keterangan'])
+                                <p class="card-text">{{ $item['keterangan'] }}</p>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
-        </div>
+        @endforeach
     </div>
+</div>
+
+<style>
+    .circle-bar {
+        position: relative;
+        display: inline-block;
+    }
+
+    .circle-bar .circle {
+        fill: none;
+        stroke-width: 6px;
+        stroke: #f1f1f1;
+    }
+
+    .circle-bar .bar {
+        fill: none;
+        stroke-width: 6px;
+        stroke-linecap: round;
+        stroke: #00b0f0;
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+        animation: circle-bar-progress 1s linear forwards;
+    }
+
+    .circle-bar .progress {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        overflow: visible;
+    }
+
+    .divider {
+        height: 100%;
+        border-left: 1px solid #ccc;
+        margin: 0 10px;
+    }
+
+    @keyframes circle-bar-progress {
+        0% {
+            stroke-dasharray: 0;
+        }
+        100% {
+            stroke-dasharray: 226.08;
+        }
+    }
+
+    .circle-bar.blue .bar {
+        stroke: #00b0f0;
+    }
+
+    .card {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .card-text {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .card-text.date,
+    .card-text.status {
+        font-size: 16px;
+        color: #777777;
+    }
+</style>
+
+<!-- Add this script tag to include jQuery -->
+<script>
+    // Ambil semua elemen circle-bar
+    var circleBars = document.querySelectorAll(".circle-bar");
+
+    // Loop melalui setiap elemen circle-bar
+    circleBars.forEach(function(circleBar) {
+        // Ambil persentase progres dari elemen circle-bar
+        var progress = parseInt(circleBar.querySelector(".progress").innerText);
+
+        // Hitung panjang garis bar berdasarkan persentase progres
+        var circumference = 2 * Math.PI * 36; // 36 adalah radius lingkaran
+
+        var offset = circumference - (progress / 100) * circumference;
+
+        // Ubah atribut stroke-dasharray dan stroke-dashoffset pada elemen .bar
+        var bar = circleBar.querySelector(".bar");
+        bar.style.strokeDasharray = circumference;
+        bar.style.strokeDashoffset = offset;
+    });
+</script>
 @endsection
