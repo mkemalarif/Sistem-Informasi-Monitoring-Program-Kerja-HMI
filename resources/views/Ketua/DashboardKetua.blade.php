@@ -54,7 +54,7 @@
                     </div>
                 @endforeach
             </div>
-            @endforeach
+
     </div>
 </div>
 
@@ -133,37 +133,4 @@
                 margin-bottom: 4px;
             }
 
-<<<<<<< HEAD
 @endsection
-=======
-            .card-text.date,
-            .card-text.status {
-                font-size: 16px;
-                color: #777777;
-            }
-        </style>
-
-        <!-- Add this script tag to include jQuery -->
-        <script>
-            // Ambil semua elemen circle-bar
-            var circleBars = document.querySelectorAll(".circle-bar");
-
-            // Loop melalui setiap elemen circle-bar
-            circleBars.forEach(function(circleBar) {
-                // Ambil persentase progres dari elemen circle-bar
-                var progress = parseInt(circleBar.querySelector(".progress").innerText);
-
-                // Hitung panjang garis bar berdasarkan persentase progres
-                var circumference = 2 * Math.PI * 36; // 36 adalah radius lingkaran
-
-                var offset = circumference - (progress / 100) * circumference;
-
-                // Ubah atribut stroke-dasharray dan stroke-dashoffset pada elemen .bar
-                var bar = circleBar.querySelector(".bar");
-                bar.style.strokeDasharray = circumference;
-                bar.style.strokeDashoffset = offset;
-            });
-        </script>
-
-    @endsection
->>>>>>> 5c40f8778f9f1981f289ce53e8a31393afd8dd99
