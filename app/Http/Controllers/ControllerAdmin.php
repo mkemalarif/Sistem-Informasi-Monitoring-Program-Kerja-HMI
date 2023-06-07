@@ -13,7 +13,7 @@ class ControllerAdmin extends Controller
 {
     public function index()
     {
-        return view('DashboardAdmin', [
+        return view('Admin.DashboardAdmin', [
             'data' => Artikel::latest()->get()
         ]);
     }
