@@ -76,5 +76,6 @@ Route::middleware('ketua')->prefix('ketua')
         Route::get('/dashboard', 'index');
         Route::get('/tambah-akun-admin', 'create');
         Route::get('/tambah-proker', 'programKerja');
-        Route::get('/tambah-anggota',);
+        // Route::get('/tambah-anggota',);
+        Route::post('/tambah-proker', 'tambahProker');
     });

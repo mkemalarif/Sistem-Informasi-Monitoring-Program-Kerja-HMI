@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
             $table->string('judulAgenda');
+            $table->string('masalah');
             $table->date('tanggalAgenda');
             // form edit
-            $table->enum('progressAgenda', ['belumJalan', 'sedangJalan', 'selesai']);
+            $table->integer('progressAgenda');
             $table->timestamps();
         });
     }
