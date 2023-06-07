@@ -6,40 +6,19 @@
         <h1 class="mb-4">Daftar Anggota</h1>
 
         <div class="row" id="anggota-list">
+            @foreach ($anggota as $key => $member)
             <div class="col-md-6">
-                <div class="card">
+                <div class="card fade-in">
                     <div class="card-body">
-                        <h5 class="card-title">Anggota 1</h5>
-                        <p class="card-text">Komisariat: Komisariat A</p>
-                        <p class="card-text">Tahun Berdiri: 2020</p>
-                        <p class="card-text">Status: Aktif</p>
-                        <p class="card-text">Angkatan: 2021</p>
+                        <h5 class="card-title">Anggota {{ $key + 1 }}</h5>
+                        <p class="card-text">Komisariat: {{ $member['komisariat'] }}</p>
+                        <p class="card-text">Tahun Berdiri: {{ $member['tahun'] }}</p>
+                        <p class="card-text">Status: {{ $member['status'] }}</p>
+                        <p class="card-text">Angkatan: {{ $member['angkatan'] }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Anggota 2</h5>
-                        <p class="card-text">Komisariat: Komisariat B</p>
-                        <p class="card-text">Tahun Berdiri: 2019</p>
-                        <p class="card-text">Status: Nonaktif</p>
-                        <p class="card-text">Angkatan: 2020</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Anggota 3</h5>
-                        <p class="card-text">Komisariat: Komisariat C</p>
-                        <p class="card-text">Tahun Berdiri: 2021</p>
-                        <p class="card-text">Status: Aktif</p>
-                        <p class="card-text">Angkatan: 2022</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add other member cards here -->
+            @endforeach
         </div>
     </div>
 </div>
@@ -52,4 +31,15 @@
         anggotaList.classList.add('fade-in');
     });
 </script>
+
+<style>
+    .fade-in {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+    }
+
+    .fade-in.show {
+        opacity: 1;
+    }
+</style>
 @endsection
