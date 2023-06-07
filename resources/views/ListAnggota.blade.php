@@ -51,5 +51,5 @@
         const anggotaList = document.getElementById('anggota-list');
         anggotaList.classList.add('fade-in');
     });
-</script>
+</script>sasd
 @endsection
