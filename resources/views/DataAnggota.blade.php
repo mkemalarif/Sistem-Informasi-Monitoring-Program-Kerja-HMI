@@ -105,13 +105,17 @@
     <style>
         .table {
             width: 100%;
+            table-layout: auto;
         }
 
         .table th,
         .table td {
             padding: 12px;
-            text-align: center;
-            vertical-align: middle;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         }
 
         .table thead th {
@@ -119,6 +123,7 @@
             color: #fff;
             font-weight: bold;
             text-transform: uppercase;
+
         }
 
         .table-striped tbody tr:nth-of-type(odd) {
