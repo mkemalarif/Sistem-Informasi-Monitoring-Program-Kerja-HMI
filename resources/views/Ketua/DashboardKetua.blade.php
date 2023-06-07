@@ -132,9 +132,6 @@
                 margin-bottom: 4px;
             }
 
-<<<<<<< HEAD
-@endsection
-=======
             .card-text.date,
             .card-text.status {
                 font-size: 16px;
@@ -165,4 +162,3 @@
         </script>
 
     @endsection
->>>>>>> 5c40f8778f9f1981f289ce53e8a31393afd8dd99
