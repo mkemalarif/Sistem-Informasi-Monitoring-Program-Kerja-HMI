@@ -1,376 +1,193 @@
-@extends('layout.ketua')
+@extends('layout.anggota')
 
 @section('container')
-<div class="container">
-    <div class="row mt-5">
-        <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
-
-        @php
-            $slicedProgramKerja = [
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Pare-Pare',
-                    'tanggal' => 'Selasa, 22 Oktober 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '22%',
-                    'deskripsi' => '22 Desember 2022',
-                    'keterangan' => 'Presentasi pengerjaan',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-                [
-                    'judul' => 'Program Kerja',
-                    'cabang' => 'HMI Cabang Maros',
-                    'tanggal' => 'Rabu, 22 Desember 2022',
-                    'status' => 'Status: Belum selesai, dalam progress',
-                    'progress' => '50%',
-                    'deskripsi' => '',
-                    'keterangan' => '',
-                ],
-
-                // Add more program kerja data here
-            ];
-
-            $limit = 10; // Limit the number of program kerja to display
-            $slicedProgramKerja = array_slice($slicedProgramKerja, 0, $limit);
-        @endphp
-
-        @foreach ($slicedProgramKerja as $item)
-            <div class="col-12 col-lg-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body d-flex align-items-center">
-                        <div class="circle-bar blue pr-1">
-                            <svg class="circle" width="80" height="80">
-                                <circle class="bar" cx="40" cy="40" r="36"></circle>
-                            </svg>
-                            <span class="progress">{{ $item['progress'] }}</span>
-                        </div>
-                        <div class="divider"></div>
-                        <div>
-                            <h5 class="card-title">{{ $item['judul'] }}</h5>
-                            <p class="card-text">{{ $item['cabang'] }}</p>
-                            <p class="card-text date">{{ $item['tanggal'] }}</p>
-                            <p class="card-text status">{{ $item['status'] }}</p>
-                            @if ($item['deskripsi'])
-                                <p class="card-text">{{ $item['deskripsi'] }}</p>
-                            @endif
-                            @if ($item['keterangan'])
-                                <p class="card-text">{{ $item['keterangan'] }}</p>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
+    <div class="container mt-5">
+        <h1>Data Anggota</h1>
+        <div class="table-responsive">
+            <table id="member-table" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>NOK</th>
+                        <th>Nama</th>
+                        <th>Jenis Kelamin</th>
+                        <th>TTL</th>
+                        <th>Komisariat</th>
+                        <th>Alamat</th>
+                        <th>Angkatan</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>NOK: 001</td>
+                        <td>John Doe</td>
+                        <td>Laki-laki</td>
+                        <td>1 January 1990</td>
+                        <td>Komisariat A</td>
+                        <td>Jl. Contoh Alamat No. 1</td>
+                        <td>2010</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>NOK: 002</td>
+                        <td>Jane Smith</td>
+                        <td>Perempuan</td>
+                        <td>15 February 1995</td>
+                        <td>Komisariat B</td>
+                        <td>Jl. Contoh Alamat No. 2</td>
+                        <td>2015</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>NOK: 003</td>
+                        <td>David Johnson</td>
+                        <td>Laki-laki</td>
+                        <td>10 March 1992</td>
+                        <td>Komisariat C</td>
+                        <td>Jl. Contoh Alamat No. 3</td>
+                        <td>2012</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
-<style>
-    .circle-bar {
-        position: relative;
-        display: inline-block;
-    }
+    <!-- Include the necessary scripts and stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
 
-    .circle-bar .circle {
-        fill: none;
-        stroke-width: 6px;
-        stroke: #f1f1f1;
-    }
+    <script>
+        $(document).ready(function() {
+            $('#member-table').DataTable({
+                "paging": true,
+                "lengthMenu": [5, 10, 25, 50],
+                "searching": true,
+                "language": {
+                    "lengthMenu": "Show _MENU_ entries per page",
+                    "zeroRecords": "No matching records found",
+                    "info": "Showing page _PAGE_ of _PAGES_",
+                    "infoEmpty": "No records available",
+                    "infoFiltered": "(filtered from _MAX_ total records)",
+                    "search": "Search:",
+                    "paginate": {
+                        "first": "First",
+                        "last": "Last",
+                        "next": "Next",
+                        "previous": "Previous"
+                    }
+                }
+            });
+        });
+    </script>
 
-    .circle-bar .bar {
-        fill: none;
-        stroke-width: 6px;
-        stroke-linecap: round;
-        stroke: #00b0f0;
-        transform-origin: 50% 50%;
-        transform: rotate(-90deg);
-        animation: circle-bar-progress 1s linear forwards;
-    }
-
-    .circle-bar .progress {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-        overflow: visible;
-    }
-
-    .divider {
-        height: 100%;
-        border-left: 1px solid #ccc;
-        margin: 0 10px;
-    }
-
-    @keyframes circle-bar-progress {
-        0% {
-            stroke-dasharray: 0;
+    <style>
+        .table {
+            width: 100%;
         }
-        100% {
-            stroke-dasharray: 226.08;
+
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: center;
+            vertical-align: middle;
         }
-    }
 
-    .circle-bar.blue .bar {
-        stroke: #00b0f0;
-    }
+        .table thead th {
+            background-color: #0d6efd;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-    .card {
-        background-color: #ffffff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f8f9fa;
+        }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        .table-bordered {
+            border: 1px solid #dee2e6;
+        }
 
-    .card-title {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
 
-    .card-text {
-        font-size: 18px;
-        margin-bottom: 4px;
-    }
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            padding: 0.5rem 0.75rem;
+            margin-left: 0.5rem;
+            font-size: 0.875rem;
+            border-radius: 0.25rem;
+            color: #fff;
+            background-color: #0d6efd;
+            border: none;
+            transition: background-color 0.3s;
+        }
 
-    .card-text.date,
-    .card-text.status {
-        font-size: 16px;
-        color: #777777;
-    }
-</style>
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
 
-<!-- Add this script tag to include jQuery -->
-<script>
-    // Ambil semua elemen circle-bar
-    var circleBars = document.querySelectorAll(".circle-bar");
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            background-color: #0b5ed7;
+            color: #fff;
+        }
 
-    // Loop melalui setiap elemen circle-bar
-    circleBars.forEach(function(circleBar) {
-        // Ambil persentase progres dari elemen circle-bar
-        var progress = parseInt(circleBar.querySelector(".progress").innerText);
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
 
-        // Hitung panjang garis bar berdasarkan persentase progres
-        var circumference = 2 * Math.PI * 36; // 36 adalah radius lingkaran
+        .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
 
-        var offset = circumference - (progress / 100) * circumference;
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: #fff;
+        }
 
-        // Ubah atribut stroke-dasharray dan stroke-dashoffset pada elemen .bar
-        var bar = circleBar.querySelector(".bar");
-        bar.style.strokeDasharray = circumference;
-        bar.style.strokeDashoffset = offset;
-    });
-</script>
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0b5ed7;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #c82333;
+        }
+    </style>
 @endsection

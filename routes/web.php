@@ -31,7 +31,7 @@ use App\Http\Controllers\LoginController;
 // });
 
 Route::get('/', function () {
-    return view('ListAnggota');
+    return view('DataAnggota');
 });
 
 
