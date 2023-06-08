@@ -67,24 +67,21 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/admin/tambah-proker" data-toggle="collapse"
-                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/admin/tambah-proker">
                     <span class=""></span>
                     <span>Tambah Program Kerja</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/admin/registrasi-member" data-toggle="collapse"
-                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/admin/registrasi-member">
                     <span class=""></span>
                     <span>Registrasi Anggota</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/admin/registrasi-komisariat" data-toggle="collapse"
-                    data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="/admin/registrasi-komisariat">
                     <span class=""></span>
                     <span>Registrasi Komisariat</span>
                 </a>

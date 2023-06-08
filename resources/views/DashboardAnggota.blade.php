@@ -1,4 +1,4 @@
-@extends('partial.main')
+@extends('layout.anggota')
 
 @section('container')
 <div class="container">
