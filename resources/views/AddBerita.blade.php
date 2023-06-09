@@ -51,10 +51,10 @@
         </div>
     </div>
 </div>
+@endsection
 
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('content');
 </script>
 
-@endsection

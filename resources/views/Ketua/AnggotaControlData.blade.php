@@ -1,4 +1,4 @@
-@extends('partial.main')
+@extends('layout.anggota')
 
 @section('container')
 
@@ -263,7 +263,7 @@
                         <div class="col-sm-6">
                             <h2>Tambah akun <b>Anggota</b></h2>
                         </div>
-                        
+
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
