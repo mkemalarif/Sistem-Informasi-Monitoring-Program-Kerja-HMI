@@ -46,7 +46,9 @@ class ControllerAnggota extends Controller
     // menampilkan data anggota
     public function listAnggota()
     {
-        return view('DataAnggota');
+        return view('DataAnggota', [
+            'data' => Anggota::get()
+        ]);
     }
 
     // list proker
