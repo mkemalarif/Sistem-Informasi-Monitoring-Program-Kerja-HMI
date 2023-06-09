@@ -27,39 +27,33 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sb-admin-2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
 
 
-<style>
-    /* Ubah warna latar belakang sidebar */
-    .sidebar {
-        background-color: #e9ecef;
-    }
 
-    /* Ubah warna teks pada sidebar */
-    .sidebar .sidebar-brand-text {
-        color: #fff;
-    }
+    <style>
+        /* Ubah warna latar belakang sidebar */
+        .sidebar {
+            background-color: #e9ecef;
+        }
 
-    /* Tambahkan efek hover pada item sidebar */
-    .sidebar .nav-item:hover {
-        background-color: #ccc;
-    }
-</style>
+        /* Ubah warna teks pada sidebar */
+        .sidebar .sidebar-brand-text {
+            color: #fff;
+        }
+
+        /* Tambahkan efek hover pada item sidebar */
+        .sidebar .nav-item:hover {
+            background-color: #ccc;
+        }
+    </style>
 
 
 
 
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sb-admin-2.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
 
 </head>
 
@@ -156,7 +150,8 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle"
+                                    src="{{ asset('assets/aldi-taher.jpg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -166,12 +161,14 @@
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <span class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></span>
                                     Logout
                                 </a>
                             </div>
                         </li>
+
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
@@ -261,8 +258,8 @@
     </script> --}}
     <script>
         // Tambahkan script jQuery untuk menutup sub-menu ketika salah satu item sub-menu di klik
-        $(document).ready(function () {
-            $('.collapse-item').click(function () {
+        $(document).ready(function() {
+            $('.collapse-item').click(function() {
                 $(this).closest('.collapse').collapse('hide');
             });
         });
