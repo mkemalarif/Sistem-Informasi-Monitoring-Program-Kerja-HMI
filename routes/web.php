@@ -31,7 +31,7 @@ use App\Http\Controllers\LoginController;
 // });
 
 Route::get('/', function () {
-    return view('AddBerita');
+    return view('HomePage');
 });
 
 

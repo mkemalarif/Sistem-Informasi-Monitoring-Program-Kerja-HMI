@@ -1,10 +1,47 @@
 @extends('partial.main')
 
 @section('container')
+  <style>
+    /* Tambahkan gaya tata letak berikut di sini */
+    .carousel-container {
+      margin-top: 30px;
+    }
+
+    .info-box-container {
+      margin-top: 30px;
+    }
+
+    .info-box-container .row {
+      margin-bottom: 30px;
+    }
+
+    .info-box {
+      padding: 20px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .info-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-box h5 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      font-size: 18px;
+    }
+  </style>
+
   <div class="container">
     <h1 class="mt-5">Berita</h1>
-
-    <img src="../../public/assets/kata2.png" class="d-block mx-auto mt-4" alt="Gambar di atas informasi box">
 
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
@@ -58,45 +95,36 @@
       </div>
 
       <!-- Information Boxes -->
-      <div class="container mt-4">
+      <div class="container info-box-container mt-4">
         <div class="row">
           <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Badan Koordinasi (Badko)</h5>
-                <p class="card-text">6</p>
-              </div>
+            <div class="info-box">
+              <h5 class="card-title">Badan Koordinasi (Badko)</h5>
+              <p class="card-text">6</p>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Cabang</h5>
-                <p class="card-text">40</p>
-              </div>
+            <div class="info-box">
+              <h5 class="card-title">Cabang</h5>
+              <p class="card-text">40</p>
             </div>
           </div>
         </div>
-        <div class="row mt-4">
+        <div class="row">
           <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Komisariat</h5>
-                <p class="card-text">76</p>
-              </div>
+            <div class="info-box">
+              <h5 class="card-title">Komisariat</h5>
+              <p class="card-text">76</p>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Total Anggota</h5>
-                <p class="card-text">5000</p>
-              </div>
+            <div class="info-box">
+              <h5 class="card-title">Total Anggota</h5>
+              <p class="card-text">5000</p>
             </div>
           </div>
         </div>
       </div>
-
 
       <!-- Controls -->
       <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
@@ -109,10 +137,4 @@
       </a>
     </div>
   </div>
-
-  <script>
-    // Inisialisasi carousel dengan JavaScript
-    var myCarousel = document.querySelector('#myCarousel');
-    var carousel = new bootstrap.Carousel(myCarousel);
-  </script>
 @endsection

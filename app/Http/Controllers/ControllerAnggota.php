@@ -14,7 +14,7 @@ class ControllerAnggota extends Controller
 {
     public function index()
     {
-        return view('DashboardAnggota');
+        return view('Anggota.DashboardAnggota');
     }
 
     public function controlBerita()

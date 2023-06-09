@@ -15,6 +15,13 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
+
+
 
   {{-- <style>
     body {
@@ -31,7 +38,7 @@
     }
   </style> --}}
 
-  <title>Validasi Berita</title>
+  <title>HomePage</title>
 </head>
 
 <body>
@@ -39,16 +46,7 @@
 
   {{-- Navbar --}}
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <a class="navbar-brand" @if(!auth()->check())
-      href="/"
-      @elseif(Auth()->user()->jenisAkun === 'ketua')
-      href='/ketua/dashboard'
-      @elseif(Auth()->user()->jenisAkun === 'admin')
-      href='/admin/dashboard'
-      @elseif(Auth()->user()->jenisAkun === 'anggota')
-      href='/anggota/dashboard'
-      @endif
-      >HMI MAKASSAR</a>
+    <a class="navbar-brand">HMI MAKASSAR</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -217,6 +215,23 @@
       retina_detect: true
     });
   </script> --}}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var myCarousel = document.querySelector("#myCarousel");
+    var carousel = new bootstrap.Carousel(myCarousel, {
+      interval: 5000, // Ubah kecepatan geser slide sesuai keinginan
+    });
+  });
+</script>
+
+<script>
+    // Inisialisasi carousel dengan JavaScript
+    var myCarousel = document.querySelector('#myCarousel');
+    var carousel = new bootstrap.Carousel(myCarousel, {
+      interval: 5000 // Interval waktu antara slide (dalam milidetik)
+    });
+
+
 
 </body>
 
