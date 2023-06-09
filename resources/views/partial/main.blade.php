@@ -16,7 +16,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-  <style>
+  {{-- <style>
     body {
       margin: 0;
       overflow-x: hidden;
@@ -29,13 +29,13 @@
       top: 0;
       left: 0;
     }
-  </style>
+  </style> --}}
 
-  <title>Document</title>
+  <title>Validasi Berita</title>
 </head>
 
 <body>
-  <div id="particles-js"></div>
+  {{-- <div id="particles-js"></div> --}}
 
   {{-- Navbar --}}
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
@@ -67,14 +67,14 @@
       </ul> --}}
       <ul class="navbar-nav ms-auto">
         {{-- Tambahkan navbar sesuai dengan role --}}
-        @if(Auth()->check())
+        {{-- @if(Auth()->check()) --}}
         {{-- @if(Auth()->user()->jenisAkun == 'admin') --}}
-        @if(Auth()->user()->jenisAkun == 'ketua')
+        {{-- @if(Auth()->user()->jenisAkun == 'ketua')
         @include('partial.ketua-navbar')
         @elseif(Auth()->user()->jenisAkun == 'anggota')
         @include('partial.anggota-navbar')
         @endif
-        @else
+        @else --}}
         {{-- @yield('auth-navbar-items') --}}
         <ul class="navbar-nav ms-auto">
           <li class="nav-item me-2">
@@ -90,7 +90,7 @@
             <a class="nav-link" href="/login">Login</a>
           </li>
         </ul>
-        @endif
+        {{-- @endif --}}
       </ul>
     </div>
   </nav>
@@ -105,7 +105,7 @@
     @yield('container')
   </div>
 
-  <script>
+  {{-- <script>
     particlesJS("particles-js", {
       particles: {
         number: {
@@ -216,7 +216,7 @@
       },
       retina_detect: true
     });
-  </script>
+  </script> --}}
 
 </body>
 

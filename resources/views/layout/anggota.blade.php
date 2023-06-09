@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Admin Dashboard</title>
+    <title>Anggota Dashboard</title>
 
     <!-- Custom fonts for this template -->
     <link
@@ -27,6 +27,32 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+<style>
+    /* Ubah warna latar belakang sidebar */
+    .sidebar {
+        background-color: #e9ecef;
+    }
+
+    /* Ubah warna teks pada sidebar */
+    .sidebar .sidebar-brand-text {
+        color: #fff;
+    }
+
+    /* Tambahkan efek hover pada item sidebar */
+    .sidebar .nav-item:hover {
+        background-color: #ccc;
+    }
+</style>
+
 
 
 
@@ -50,7 +76,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
 
                 </div>
-                <div class="sidebar-brand-text mx-3">Admin </div>
+                <div class="sidebar-brand-text mx-3">Anggota </div>
             </a>
 
             <!-- Divider -->
@@ -78,32 +104,13 @@
                 <a class="nav-link collapsed" href="/admin/tambah-proker" data-toggle="collapse"
                     data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <span class=""></span>
-                    <span>Tambah Program Kerja</span>
+                    <span>Posting Berita</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="/admin/registrasi-member" data-toggle="collapse"
-                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <span class=""></span>
-                    <span>Registrasi Anggota</span>
-                </a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="/admin/registrasi-komisariat" data-toggle="collapse"
-                    data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <span class=""></span>
-                    <span>Registrasi Komisariat</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Registrasi</h6>
-                        <a class="collapse-item" href="buttons.html">Registrasi Anggota</a>
-                        <a class="collapse-item" href="cards.html">Registrasi Komisariat</a>
-                    </div>
-                </div>
-            </li>
+
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -238,7 +245,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
-    <script>
+    {{-- <script>
         $(document).ready(function () {
         $('#beritaTable').DataTable({
             "pagingType": "numbers",
@@ -251,7 +258,16 @@
             }
         });
     });
+    </script> --}}
+    <script>
+        // Tambahkan script jQuery untuk menutup sub-menu ketika salah satu item sub-menu di klik
+        $(document).ready(function () {
+            $('.collapse-item').click(function () {
+                $(this).closest('.collapse').collapse('hide');
+            });
+        });
     </script>
+
 
 
 </body>

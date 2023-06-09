@@ -1,4 +1,5 @@
-=@extends('partial.main')
+{{-- @extends('partial.main') --}}
+@extends('layout.anggota')
 
 @section('container')
 
@@ -58,7 +59,5 @@
 @push('styles')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
 @endpush
-Pastikan Anda telah membuat rute `berita.edit` di dalam file `web.php` dengan mengarahkannya ke fungsi yang sesuai dalam kontroler Anda. Misalnya, jika Anda menggunakan kontroler `BeritaController` dengan fungsi `edit`, berikut adalah contoh rute yang dapat Anda tambahkan:
 
-```php
-Route::get('/berita/{id}/edit', 'BeritaController@edit')->name('berita.edit');
+
