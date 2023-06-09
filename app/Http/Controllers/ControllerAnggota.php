@@ -17,9 +17,36 @@ class ControllerAnggota extends Controller
         return view('DashboardAnggota');
     }
 
-    public function create()
+    public function controlBerita()
+    {
+        return view('Anggota.ControlBerita');
+    }
+
+    public function addBerita()
     {
         return view('Anggota.AddBerita');
+    }
+
+    // menampilkan data anggota
+    public function listAnggota()
+    {
+        return view('DataAnggota', [
+            'data' => Anggota::get()
+        ]);
+    }
+
+    public function profileSet($id)
+    {
+        $data = User::find($id);
+        return view("Anggota.ProfileSettingAnggota", [
+            'data' => User::find($id)
+        ]);
+    }
+
+    // list proker
+    public function proker()
+    {
+        return view('ProkerCek');
     }
 
     public function post(Request $request)
@@ -43,28 +70,6 @@ class ControllerAnggota extends Controller
         return redirect('/anggota/dashboard');
     }
 
-    // menampilkan data anggota
-    public function listAnggota()
-    {
-        return view('DataAnggota', [
-            'data' => Anggota::get()
-        ]);
-    }
-
-    // list proker
-    public function proker()
-    {
-        return view('ProkerCek');
-    }
-
-    public function profileSet($id)
-    {
-        $data = User::find($id);
-        return view("Anggota.ProfileSettingAnggota", [
-            'data' => User::find($id)
-        ]);
-    }
-
     public function profileEdit(Request $request, $id)
     {
         $validate = $request->validate([
@@ -77,11 +82,6 @@ class ControllerAnggota extends Controller
 
             $validate['password'] = bcrypt($validate['password']);
         }
-
-        // if ($request->hasFile('profile')) {
-
-        // dd($request->file('profile'));
-        // }
 
         $request->file('profile')->storeAs(
             'profil',
