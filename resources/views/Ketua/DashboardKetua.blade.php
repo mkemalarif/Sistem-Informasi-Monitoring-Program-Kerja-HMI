@@ -5,7 +5,7 @@
             <div class="row mt-5">
                 <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-        {{-- @php
+                {{-- @php
         $slicedProgramKerja = [
         foreach ($data as $proker) {
         # code...
@@ -24,38 +24,44 @@
             $slicedProgramKerja = array_slice($slicedProgramKerja, 0, $limit);
             @endphp --}}
 
-            @foreach ($data as $item)
-            <div class="col-12 col-lg-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body d-flex align-items-center">
-                        <div class="circle-bar blue pr-1">
-                            <svg class="circle" width="80" height="80">
-                                <circle class="bar" cx="40" cy="40" r="36"></circle>
-                            </svg>
-                            <span class="progress">{{ $item->progressAgenda }}</span>
-                        </div>
-                        <div class="divider"></div>
-                        <div>
-                            <h5 class="card-title">{{ $item->judulAgenda }}</h5>
-                            <p class="card-text">HMI CABANG MAKASSAR</p>
-                            <p class="card-text date">{{ $item->tanggalAgenda }}</p>
-                            <p class="card-text status">
-                                @if($item->progressAgenda < 100) Belum Selesai @elseif($item->progressAgenda = 100)
-                                    Selesai
-                                    @endif
-                            </p>
-                            {{-- @if ($item['deskripsi'])
+                @foreach ($data as $item)
+                    <div class="col-12 col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="circle-bar blue pr-1">
+                                    <svg class="circle" width="80" height="80">
+                                        <circle class="bar" cx="40" cy="40" r="36"></circle>
+                                    </svg>
+                                    <span class="progress">{{ $item->progressAgenda }}</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div>
+                                    <h5 class="card-title">{{ $item->judulAgenda }}</h5>
+                                    <p class="card-text">HMI CABANG MAKASSAR</p>
+                                    <p class="card-text date">{{ $item->tanggalAgenda }}</p>
+                                    <p class="card-text status">
+                                        @if ($item->progressAgenda < 100)
+                                            Belum Selesai
+                                        @elseif($item->progressAgenda = 100)
+                                            Selesai
+                                        @endif
+                                    </p>
+                                    {{-- @if ($item['deskripsi'])
                             <p class="card-text">{{ $item['deskripsi'] }}</p>
                             @endif --}}
-                            {{-- @if ($item['keterangan'])
+                                    {{-- @if ($item['keterangan'])
                             <p class="card-text">{{ $item['keterangan'] }}</p>
                             @endif --}}
-                        </div>
-                    </div>
+                                </div>
+
+                            </div>
+                @endforeach
+
             </div>
 
-    </div>
-</div>
+
+        </div>
+        </div>
 
         <style>
             .circle-bar {
@@ -100,6 +106,7 @@
                 0% {
                     stroke-dasharray: 0;
                 }
+
                 100% {
                     stroke-dasharray: 226.08;
                 }
@@ -132,4 +139,4 @@
                 margin-bottom: 4px;
             }
 
-@endsection
+        @endsection
