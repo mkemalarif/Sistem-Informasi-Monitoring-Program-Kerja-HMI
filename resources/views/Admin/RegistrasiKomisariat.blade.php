@@ -1,4 +1,31 @@
-@extends('partial.main')
+@extends('layout.admin')
+<style>
+        .card {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: slide-up 0.5s ease;
+        background-color: #f9fafb;
+    }
+    .card-header {
+        background-color: #007bff !important;
+        border-bottom: none;
+        padding: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+    }
+
+     @keyframes slide-up {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+    }
+
+</style>
 
 @section('container')
 <div class="container">
@@ -6,7 +33,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">Registrasi Komisariat</h5>
+                    <h5 class="card-title mb-0" style="color: #fff;">Registrasi Komisariat</h5>
                 </div>
 
                 <div class="card-body">

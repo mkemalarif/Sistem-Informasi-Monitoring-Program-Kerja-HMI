@@ -1,4 +1,4 @@
-@extends('layout.ketua')
+@extends('layout.admin')
 @section('container')
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
