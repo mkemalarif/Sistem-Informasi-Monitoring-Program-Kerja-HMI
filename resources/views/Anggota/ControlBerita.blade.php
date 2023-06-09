@@ -15,26 +15,31 @@
                             <tr>
                                 <th>Judul</th>
                                 <th>Tanggal</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($data as $item)
+
                             <tr>
-                                <td>Judul Berita 1</td>
-                                <td>2023-05-31</td>
+                                <td>{{ $item->judul }}</td>
+                                <td>{{ $item->created_at }}</td>
+                                <td>{{ $item->status }}</td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="/anggota/edit-berita/{{ $item->id }}"
+                                        class="btn btn-sm btn-primary">Edit</a>
+                                        <form action="/anggota/kontrol-berita/{{ $item->id }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method("DELETE")
+                                            <button class="btn btn-danger border-0" type="submit"
+                                                onclick="return confirm('hapus data?')" name="delete">
+                                                Hapus
+                                            </button>
+                                        </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Judul Berita 2</td>
-                                <td>2023-05-30</td>
-                                <td>
-                                    <a href="" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
+                            @endforeach
                             <!-- Tambahkan baris sesuai dengan jumlah berita yang ada -->
 
                         </tbody>
@@ -59,5 +64,3 @@
 @push('styles')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
 @endpush
-
-

@@ -50,12 +50,14 @@ Route::middleware('anggota')->prefix('anggota')
         Route::get('/dashboard', "index");
         Route::get('/profile-setting/{id}', 'profileSet');
         Route::get('/tambah-berita', 'addBerita');
+        Route::get('/edit-berita/{id}', 'beritaEdit');
         Route::get('/data-anggota', 'listAnggota');
         Route::get('/program-kerja', 'proker');
         Route::get('/kontrol-berita', 'controlBerita');
         Route::post('/tambah-berita', 'post');
         Route::put('/profile-setting/{id}', 'profileEdit');
         Route::put('/edit-berita/{id}', 'editBerita');
+        Route::delete('/kontrol-berita/{id}', 'hapusBerita');
     });
 
 // semua route untuk admin

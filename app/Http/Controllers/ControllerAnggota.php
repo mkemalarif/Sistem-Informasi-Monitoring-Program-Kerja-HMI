@@ -19,12 +19,20 @@ class ControllerAnggota extends Controller
 
     public function controlBerita()
     {
-        return view('Anggota.ControlBerita');
+        return view('Anggota.ControlBerita', [
+            'data' => Artikel::latest()->get()
+        ]);
     }
 
     public function addBerita()
     {
         return view('Anggota.AddBerita');
+    }
+    public function beritaEdit($id)
+    {
+        return view('Anggota.EditBerita', [
+            'data' => Artikel::find($id)
+        ]);
     }
 
     // menampilkan data anggota
@@ -89,6 +97,36 @@ class ControllerAnggota extends Controller
         );
 
         User::where('id', $id)->update($validate);
+
+        return redirect('/anggota/dashboard');
+    }
+
+    public function editBerita(Request $request, $id)
+    {
+        $update = $request->validate([
+            'judul' => 'required',
+            'isiBerita' => 'required'
+        ]);
+
+        $update['status'] = 'tunda';
+
+        // dd($update);
+
+        Artikel::where('id', $id)->update($update);
+
+        if ($request->hasFile('image')) {
+            $request->file('image')->storeAs(
+                'berita',
+                $request->user()->id . '_fotoberita_' . $id . '.jpg'
+            );
+        }
+
+        return redirect('/anggota/dashboard');
+    }
+
+    public function hapusBerita($id)
+    {
+        Artikel::find($id)->delete();
 
         return redirect('/anggota/dashboard');
     }

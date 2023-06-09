@@ -1,4 +1,4 @@
-@extends('partial.main')
+@extends('layout.anggota')
 
 @section('container')
 
@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <h1 class="mb-4">Edit Berita</h1>
 
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="/anggota/edit-berita/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -20,27 +20,29 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">JUDUL</label>
-                            <input type="text" class="form-control" name="title" value="" placeholder="Masukkan Judul Post">
+                            <input type="text" class="form-control" name="judul"
+                                value="{{ old('judul', $data->judul) }}" placeholder="Masukkan Judul Post">
                         </div>
 
                         <div class="form-group">
                             <label class="font-weight-bold">KONTEN</label>
-                            <textarea class="form-control ckeditor" name="content" rows="5" placeholder="Masukkan Konten Post"></textarea>
+                            <textarea class="form-control ckeditor" name="isiBerita" rows="5"
+                                placeholder="Masukkan Konten Post">{{ $data->isiBerita }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>
 
-                    </form> 
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
+@endsection
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('content');
 </script>
-
-@endsection

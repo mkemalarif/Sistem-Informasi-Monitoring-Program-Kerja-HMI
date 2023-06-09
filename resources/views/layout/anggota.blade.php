@@ -79,7 +79,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/admin/dashboard">
+                <a class="nav-link" href="/anggota/dashboard">
                     <span class=""></span>
                     <span>Dashboard</span></a>
             </li>
@@ -99,6 +99,12 @@
                 <a class="nav-link collapsed" href="/anggota/tambah-berita">
                     <span class=""></span>
                     <span>Posting Berita</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/anggota/kontrol-berita">
+                    <span class=""></span>
+                    <span>Berita</span>
                 </a>
             </li>
 
