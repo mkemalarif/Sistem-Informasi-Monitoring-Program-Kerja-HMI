@@ -49,11 +49,13 @@ Route::middleware('anggota')->prefix('anggota')
     ->controller(ControllerAnggota::class)->group(function () {
         Route::get('/dashboard', "index");
         Route::get('/profile-setting/{id}', 'profileSet');
-        Route::get('/tambah-berita', 'create');
+        Route::get('/tambah-berita', 'addBerita');
         Route::get('/data-anggota', 'listAnggota');
         Route::get('/program-kerja', 'proker');
+        Route::get('/kontrol-berita', 'controlBerita');
         Route::post('/tambah-berita', 'post');
         Route::put('/profile-setting/{id}', 'profileEdit');
+        Route::put('/edit-berita/{id}', 'editBerita');
     });
 
 // semua route untuk admin
