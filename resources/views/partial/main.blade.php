@@ -39,11 +39,12 @@
         }
 
         .banner {
-            background-image: url('https://example.com/banner-image.jpg');
-            /* Replace with your actual image URL */
+            background-image: url('{{ asset('assets/banner.png') }}');
             background-size: cover;
             background-position: center;
-            height: 300px;
+            /* Menyesuaikan posisi banner, misalnya center top */
+            height: 700px;
+            over;
         }
 
         .container {
@@ -95,7 +96,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="50" height="50" class="d-inline-block">
+                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="50" height="50"
+                    class="d-inline-block">
                 HMI MAKASSAR
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
