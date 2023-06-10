@@ -2,237 +2,142 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.5rem;
+        }
 
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
 
+        .navbar {
+            background-color: #4CAF50;
+        }
 
-  {{-- <style>
-    body {
-      margin: 0;
-      overflow-x: hidden;
-    }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
 
-    #particles-js {
-      height: 100vh;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  </style> --}}
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
 
-  <title>HomePage</title>
+        .banner {
+            background-image: url('https://example.com/banner-image.jpg');
+            /* Replace with your actual image URL */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        /* Additional styling for better UI */
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+            border-color: #45a049;
+        }
+
+        .btn-primary:active {
+            background-color: #3c903d;
+            border-color: #3c903d;
+        }
+
+        /* Additional styling for carousel */
+        .carousel-item {
+            min-height: 280px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+        }
+
+        .carousel-caption h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .carousel-caption p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+    </style>
+
+    <title>HomePage</title>
 </head>
 
 <body>
-  {{-- <div id="particles-js"></div> --}}
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="50" height="50" class="d-inline-block">
+                HMI MAKASSAR
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Berita</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Opini</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kegiatan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  {{-- Navbar --}}
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <a class="navbar-brand">HMI MAKASSAR</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      {{-- <ul class="navbar-nav ms-auto">
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">Berita</a>
-        </li>
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">Opini</a>
-        </li>
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">Kegiatan</a>
-        </li>
-      </ul> --}}
-      <ul class="navbar-nav ms-auto">
-        {{-- Tambahkan navbar sesuai dengan role --}}
-        {{-- @if(Auth()->check()) --}}
-        {{-- @if(Auth()->user()->jenisAkun == 'admin') --}}
-        {{-- @if(Auth()->user()->jenisAkun == 'ketua')
-        @include('partial.ketua-navbar')
-        @elseif(Auth()->user()->jenisAkun == 'anggota')
-        @include('partial.anggota-navbar')
-        @endif
-        @else --}}
-        {{-- @yield('auth-navbar-items') --}}
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item me-2">
-            <a class="nav-link" href="#">Berita</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link" href="#">Opini</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link" href="#">Kegiatan</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-        </ul>
-        {{-- @endif --}}
-      </ul>
+    <div class="banner">
+        <!-- Content for the banner -->
     </div>
-  </nav>
 
-  {{-- Banner --}}
-  <div class="banner">
-    <!-- Konten banner -->
-  </div>
+    <div class="container">
+        @yield('container')
+    </div>
 
-  {{-- Container --}}
-  <div class="container">
-    @yield('container')
-  </div>
-
-  {{-- <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 100,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: "#ffffff" // Set the color to white
-        },
-        shape: {
-          type: "circle",
-          stroke: {
-            width: 0,
-            color: "#000000"
-          },
-          polygon: {
-            nb_sides: 5
-          },
-          image: {
-            src: "img/github.svg",
-            width: 100,
-            height: 100
-          }
-        },
-        opacity: {
-          value: 0.5,
-          random: false,
-          anim: {
-            enable: false,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: false,
-            speed: 40,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 6,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200
-          }
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse"
-          },
-          onclick: {
-            enable: true,
-            mode: "push"
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          bubble: {
-            distance: 400,
-            size: 40,
-            duration: 2,
-            opacity: 8,
-            speed: 3
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
-      },
-      retina_detect: true
-    });
-  </script> --}}
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var myCarousel = document.querySelector("#myCarousel");
-    var carousel = new bootstrap.Carousel(myCarousel, {
-      interval: 5000, // Ubah kecepatan geser slide sesuai keinginan
-    });
-  });
-</script>
-
-<script>
-    // Inisialisasi carousel dengan JavaScript
-    var myCarousel = document.querySelector('#myCarousel');
-    var carousel = new bootstrap.Carousel(myCarousel, {
-      interval: 5000 // Interval waktu antara slide (dalam milidetik)
-    });
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myCarousel = document.querySelector("#myCarousel");
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 5000, // Adjust slide transition speed as desired
+            });
+        });
+    </script>
 </body>
 
 </html>
