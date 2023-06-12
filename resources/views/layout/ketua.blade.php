@@ -74,16 +74,14 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/ketua/tambah-proker" data-toggle="collapse"
-                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/ketua/tambah-proker">
                     <span class=""></span>
                     <span>Tambah Program Kerja</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/ketua/tambah-akun-admin" data-toggle="collapse"
-                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/ketua/tambah-akun-admin">
                     <span class="">Registrasi Akun</span>
                     <span></span>
                 </a>
