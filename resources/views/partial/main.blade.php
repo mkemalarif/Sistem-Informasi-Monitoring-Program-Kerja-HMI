@@ -123,9 +123,9 @@
         </div>
     </nav>
 
-    <div class="banner">
+    {{-- <div class="banner">
         <!-- Content for the banner -->
-    </div>
+    </div> --}}
 
     <div class="container">
         @yield('container')

@@ -22,7 +22,7 @@ use App\Http\Controllers\LoginController;
 
 
 // route free for all dan semua kebutuhan homepage
-Route::get('/', [Homepage::class, "index"])->middleware('login');
+// Route::get('/', [Homepage::class, "index"])->middleware('login');
 
 // Routes default
 
