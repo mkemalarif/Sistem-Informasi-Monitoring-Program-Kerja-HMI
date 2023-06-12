@@ -43,6 +43,10 @@
     <div class="container">
         <h1 class="mt-5">Berita</h1>
 
+        <div class="banner">
+            <!-- Content for the banner -->
+        </div>
+
         <!-- Carousel -->
         <div id="myCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
             <!-- Slides -->
