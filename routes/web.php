@@ -31,7 +31,7 @@ use App\Http\Controllers\LoginController;
 // });
 
 Route::get('/', function () {
-    return view('HomePage');
+    return view('Opini');
 });
 
 
