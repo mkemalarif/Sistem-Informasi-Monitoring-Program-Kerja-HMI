@@ -10,7 +10,7 @@ class ControllerKetua extends Controller
 {
     public function index()
     {
-        return view('Ketua.DashboardKetua',[
+        return view('Ketua.DashboardKetua', [
             'data' => Agenda::latest()->get()
         ]);
     }
@@ -25,7 +25,7 @@ class ControllerKetua extends Controller
         return view('Admin.ProkerAdd');
     }
 
-    public function tambahProker(Request $request)
+    public function ketuaTambahProker(Request $request)
     {
         $validate = $request->validate([
             'judulAgenda' => 'required',

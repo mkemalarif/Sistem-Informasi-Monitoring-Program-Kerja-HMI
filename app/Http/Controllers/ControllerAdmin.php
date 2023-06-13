@@ -44,6 +44,23 @@ class ControllerAdmin extends Controller
         ]);
     }
 
+    public function adminTambahProker(Request $request)
+    {
+        $validate = $request->validate([
+            'judulAgenda' => 'required',
+            'tanggalAgenda' => 'required',
+            'progressAgenda' => 'required|min:0|max:100'
+        ]);
+
+        $validate['masalah'] = '';
+
+        // dd($validate);
+
+        Agenda::create($validate);
+
+        return redirect('/admin/dashboard');
+    }
+
     public function tambahAnggota(Request $request)
     {
         $validate = $request->validate([

@@ -22,7 +22,7 @@ use App\Http\Controllers\LoginController;
 
 
 // route free for all dan semua kebutuhan homepage
-// Route::get('/', [Homepage::class, "index"])->middleware('login');
+Route::get('/', [Homepage::class, "index"])->middleware('login');
 
 // Routes default
 
@@ -30,9 +30,9 @@ use App\Http\Controllers\LoginController;
 //     return view('DashboardAdmin');
 // });
 
-Route::get('/opini', function () {
-    return view('Opini');
-});
+// Route::get('/opini', function () {
+//     return view('Opini');
+// });
 
 
 
@@ -71,6 +71,7 @@ Route::middleware('admin')->prefix('admin')
         Route::get('/validasi-berita', 'editBerita');
         Route::post('/registrasi-member', 'tambahAnggota');
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
+        Route::post('/tambah-proker', 'adminTambahProker');
         Route::put('/validasi-berita/{id}', 'validasiBerita');
     });
 
@@ -81,5 +82,5 @@ Route::middleware('ketua')->prefix('ketua')
         Route::get('/tambah-akun-admin', 'create');
         Route::get('/tambah-proker', 'programKerja');
         // Route::get('/tambah-anggota',);
-        Route::post('/tambah-proker', 'tambahProker');
+        Route::post('/tambah-proker', 'ketuaTambahProker');
     });
