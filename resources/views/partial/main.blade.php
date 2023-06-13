@@ -68,7 +68,7 @@
         }
 
         /* Additional styling for carousel */
-        .carousel-item {
+        /* .carousel-item {
             min-height: 280px;
         }
 
@@ -86,8 +86,9 @@
         .carousel-caption p {
             font-size: 1rem;
             margin-bottom: 0;
-        }
+        } */
     </style>
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 
     <title>HomePage</title>
 </head>
@@ -96,7 +97,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="50" height="50"
+                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="70" height="70"
                     class="d-inline-block">
                 HMI MAKASSAR
             </a>
@@ -107,10 +108,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Berita</a>
+                        <a class="nav-link active" aria-current="page" href="/">Berita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Opini</a>
+                        <a class="nav-link" href="">Opini</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kegiatan</a>
@@ -128,7 +129,10 @@
     </div> --}}
 
     <div class="container">
+
+
         @yield('container')
+         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

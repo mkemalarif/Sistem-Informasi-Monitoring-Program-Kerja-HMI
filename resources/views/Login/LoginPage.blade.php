@@ -9,17 +9,17 @@
                         <h1 class="card-title text-center mb-4">Login Form</h1>
                         <form action="" method="POST" class="needs-validation" novalidate>
                             @csrf
-                            <div class="mb-3">
+                            <div class="mb-3 shadow-sm">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
                                 <div class="invalid-feedback">Please enter your username.</div>
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
+                            <div class="mb-3 shadow-sm">
+                                <label for="password" class="form-label ">Password</label>
                                 <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
                                 <div class="invalid-feedback">Please enter your password.</div>
                             </div>
-                            <div class="d-grid">
+                            <div class="d-grid shadow-sm">
                                 <button type="submit" class="btn btn-primary btn-block">Login</button>
                             </div>
                             <div class="text-center mt-3">
@@ -28,7 +28,7 @@
                         </form>
                     </div>
                     <div class="card-footer text-center bg-white">
-                        <small>&copy; 2023 Your Company. All rights reserved.</small>
+                        <small>&copy; 2023 Himpunan Mahasiswa Makassar. All rights reserved.</small>
                     </div>
                 </div>
             </div>

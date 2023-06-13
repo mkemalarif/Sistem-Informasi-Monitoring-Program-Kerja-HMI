@@ -138,5 +138,8 @@
                 font-size: 18px;
                 margin-bottom: 4px;
             }
+            </style>
+            @endsection
 
-        @endsection
+
+
