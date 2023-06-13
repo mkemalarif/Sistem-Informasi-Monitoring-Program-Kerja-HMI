@@ -55,7 +55,7 @@
 
 
     <!-- Custom styles for this template -->
-
+ <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 </head>
 
 <body id="page-top">

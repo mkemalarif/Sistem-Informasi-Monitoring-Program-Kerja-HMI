@@ -30,15 +30,9 @@ Route::get('/', [Homepage::class, "index"])->middleware('login');
 //     return view('DashboardAdmin');
 // });
 
-<<<<<<< Updated upstream
-Route::get('/opini', function () {
-    return view('Opini');
-});
-=======
-// Route::get('/', function () {
-//     return view('HomePage');
+// Route::get('/opini', function () {
+//     return view('Opini');
 // });
->>>>>>> Stashed changes
 
 
 

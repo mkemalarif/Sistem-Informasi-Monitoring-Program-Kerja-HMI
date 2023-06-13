@@ -25,7 +25,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<<<<<<< Updated upstream
     {{--
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/css/bootstrap.min.css">
@@ -40,11 +39,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sb-admin-2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
-=======
-    <script src="{{ asset('assets/js/sb-admin-2.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
->>>>>>> Stashed changes
+     <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 
 </head>
 
@@ -80,22 +75,14 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="/ketua/tambah-proker">
-=======
-                <a class="nav-link collapsed" href="/ketua/tambah-proker" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
->>>>>>> Stashed changes
                     <span class=""></span>
                     <span>Tambah Program Kerja</span>
                 </a>
             </li>
 
             <li class="nav-item">
-<<<<<<< Updated upstream
                 <a class="nav-link collapsed" href="/ketua/tambah-akun-admin">
-=======
-                <a class="nav-link collapsed" href="/ketua/tambah-akun-admin" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
->>>>>>> Stashed changes
                     <span class="">Registrasi Akun</span>
                     <span></span>
                 </a>
@@ -136,7 +123,6 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-<<<<<<< Updated upstream
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->nama
@@ -146,15 +132,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-=======
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="{{ asset('assets/aldi-taher.jpg') }}">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <div class="dropdown-divider"></div>
->>>>>>> Stashed changes
                                 <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <span class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></span>
                                     Logout
@@ -241,7 +218,6 @@
         </div>
     </div>
 
-<<<<<<< Updated upstream
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -271,12 +247,6 @@
     });
     </script>
 
-=======
-    <!-- Scripts -->
-    <script src="{{ asset('assets/vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('assets/js/demo/chart-pie-demo.js') }}"></script>
->>>>>>> Stashed changes
 
 </body>
 

@@ -88,6 +88,7 @@
             margin-bottom: 0;
         } */
     </style>
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 
     <title>HomePage</title>
 </head>
@@ -96,7 +97,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="50" height="50"
+                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="70" height="70"
                     class="d-inline-block">
                 HMI MAKASSAR
             </a>
@@ -123,14 +124,9 @@
         </div>
     </nav>
 
-<<<<<<< Updated upstream
     {{-- <div class="banner">
         <!-- Content for the banner -->
     </div> --}}
-=======
- {{-- <div class="banner">
-</div> --}}
->>>>>>> Stashed changes
 
     <div class="container">
 
