@@ -22,7 +22,7 @@ use App\Http\Controllers\LoginController;
 
 
 // route free for all dan semua kebutuhan homepage
-// Route::get('/', [Homepage::class, "index"])->middleware('login');
+Route::get('/', [Homepage::class, "index"])->middleware('login');
 
 // Routes default
 
@@ -30,9 +30,15 @@ use App\Http\Controllers\LoginController;
 //     return view('DashboardAdmin');
 // });
 
+<<<<<<< Updated upstream
 Route::get('/opini', function () {
     return view('Opini');
 });
+=======
+// Route::get('/', function () {
+//     return view('HomePage');
+// });
+>>>>>>> Stashed changes
 
 
 

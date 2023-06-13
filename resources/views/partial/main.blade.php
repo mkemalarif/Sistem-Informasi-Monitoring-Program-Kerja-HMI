@@ -68,7 +68,7 @@
         }
 
         /* Additional styling for carousel */
-        .carousel-item {
+        /* .carousel-item {
             min-height: 280px;
         }
 
@@ -86,7 +86,7 @@
         .carousel-caption p {
             font-size: 1rem;
             margin-bottom: 0;
-        }
+        } */
     </style>
 
     <title>HomePage</title>
@@ -107,10 +107,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Berita</a>
+                        <a class="nav-link active" aria-current="page" href="/">Berita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Opini</a>
+                        <a class="nav-link" href="">Opini</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kegiatan</a>
@@ -123,12 +123,20 @@
         </div>
     </nav>
 
+<<<<<<< Updated upstream
     {{-- <div class="banner">
         <!-- Content for the banner -->
     </div> --}}
+=======
+ {{-- <div class="banner">
+</div> --}}
+>>>>>>> Stashed changes
 
     <div class="container">
+
+
         @yield('container')
+         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
