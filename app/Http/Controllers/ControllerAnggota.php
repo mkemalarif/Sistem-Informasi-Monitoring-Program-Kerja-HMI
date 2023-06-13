@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Artikel;
 use App\Models\Anggota;
 use App\Models\User;
+use App\Models\Komisariat;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -40,6 +41,13 @@ class ControllerAnggota extends Controller
     {
         return view('DataAnggota', [
             'data' => Anggota::get()
+        ]);
+    }
+
+    public function komisariat()
+    {
+        return view('ListKomisariat', [
+            'data' => Komisariat::get()
         ]);
     }
 

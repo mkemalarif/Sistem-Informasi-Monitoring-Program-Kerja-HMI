@@ -27,5 +27,12 @@ class KomisariatSeeder extends Seeder
             'status' => 'Aktif',
             'angkatan' => 11,
         ]);
+        Komisariat::create([
+            'nokomisariat' => 050,
+            'namaKomisariat' => 'HMI Komisariat Kesmas UMI',
+            'tahunBerdiri' => 2012,
+            'status' => 'Nonaktif',
+            'angkatan' => 11,
+        ]);
     }
 }

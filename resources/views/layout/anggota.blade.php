@@ -55,7 +55,7 @@
 
 
     <!-- Custom styles for this template -->
- <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 </head>
 
 <body id="page-top">
@@ -97,7 +97,7 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/anggota/tambah-berita">
-                     <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-cog"></i>
                     <span>Posting Berita</span>
                 </a>
             </li>
@@ -162,13 +162,12 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/anggota/profile-setting/{{ auth()->user()->id }}">
                                     <span class=""></span>
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logout" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <span class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></span>
                                     Logout
                                 </a>
