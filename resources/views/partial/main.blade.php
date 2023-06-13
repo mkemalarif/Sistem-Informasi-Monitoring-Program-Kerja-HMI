@@ -39,7 +39,7 @@
         }
 
         .banner {
-            background-image: url('{{ asset('assets/banner.png') }}');
+            background-image: url('{{ asset(' assets/banner.png') }}');
             background-size: cover;
             background-position: center;
             /* Menyesuaikan posisi banner, misalnya center top */
@@ -96,9 +96,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="70" height="70"
-                    class="d-inline-block">
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="70" height="70" class="d-inline-block">
                 HMI MAKASSAR
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -132,7 +131,7 @@
 
 
         @yield('container')
-         </div>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

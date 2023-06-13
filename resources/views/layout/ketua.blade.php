@@ -10,7 +10,9 @@
     <title>Ketua Dashboard</title>
 
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -39,7 +41,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sb-admin-2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
-     <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 
 </head>
 
@@ -49,7 +51,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-         <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15"></div>
@@ -89,7 +91,8 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <span class=""></span>
                     <span>Registrasi</span>
                 </a>
@@ -146,9 +149,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
- <div class="container">
-                    @yield('container')
-                </div>
+                    <div class="container">
+                        @yield('container')
+                    </div>
 
 
                     <!-- Page Heading -->
@@ -161,35 +164,35 @@
 
 
 
-                    <!-- Content Row -->
+                        <!-- Content Row -->
 
-                    <!-- Content Row -->
-                    <div class="row">
+                        <!-- Content Row -->
+                        <div class="row">
 
-                        <!-- Area Chart -->
+                            <!-- Area Chart -->
 
 
-                        <!-- Pie Chart -->
+                            <!-- Pie Chart -->
 
-                                <!-- Card Body -->
+                            <!-- Card Body -->
 
-                            </div>
                         </div>
                     </div>
-                    <!-- Content Row -->
-
                 </div>
-                <!-- /.container-fluid -->
+                <!-- Content Row -->
 
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -200,7 +203,8 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -212,7 +216,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
                 </div>
             </div>
         </div>
