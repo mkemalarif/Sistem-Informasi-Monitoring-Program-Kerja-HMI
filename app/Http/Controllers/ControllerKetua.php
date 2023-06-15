@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Agenda;
+use App\Models\Komisariat;
 
 class ControllerKetua extends Controller
 {
     public function index()
     {
         return view('Ketua.DashboardKetua', [
-            'data' => Agenda::latest()->get()
+            'data' => Agenda::latest()->get(),
+            'komisariat' => Komisariat::get()
         ]);
     }
 
