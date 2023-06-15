@@ -250,7 +250,14 @@
         });
     });
     </script>
-
+ <script>
+        // Tambahkan script jQuery untuk menutup sub-menu ketika salah satu item sub-menu di klik
+        $(document).ready(function() {
+            $('.collapse-item').click(function() {
+                $(this).closest('.collapse').collapse('hide');
+            });
+        });
+    </script>
 
 </body>
 
