@@ -1,4 +1,4 @@
-@if(auth()->user()->jenisAkun === "ketua")
+{{-- @if(auth()->user()->jenisAkun === "ketua")
 @extends('layout.ketua')
 @elseif(auth()->user()->jenisAkun === "admin")
 @extends('layout.admin')
@@ -102,4 +102,4 @@
         color: #333333;
     }
 </style>
-@endsection
+@endsection --}}

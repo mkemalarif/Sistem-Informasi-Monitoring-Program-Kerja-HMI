@@ -30,7 +30,8 @@
                             <div class="card-body d-flex align-items-center">
                                 <div class="circle-bar blue pr-1">
                                     <svg class="circle" width="80" height="80">
-                                        <circle class="bar" cx="40" cy="40" r="36"></circle>
+                                        <circle class="bar progress-bar" cx="40" cy="40" r="36">
+                                        </circle>
                                     </svg>
                                     <span class="progress">{{ $item->progressAgenda }}</span>
                                 </div>
@@ -46,20 +47,18 @@
                                             Selesai
                                         @endif
                                     </p>
-                                    {{-- @if ($item['deskripsi'])
-                            <p class="card-text">{{ $item['deskripsi'] }}</p>
-                            @endif --}}
-                                    {{-- @if ($item['keterangan'])
-                            <p class="card-text">{{ $item['keterangan'] }}</p>
-                            @endif --}}
                                 </div>
-
                             </div>
+                        </div>
+                    </div>
                 @endforeach
 
             </div>
 
-<div class="container">
+
+        </div>
+        </div>
+        <div class="container">
     <div class="row mt-5">
         <h1 class="mb-4">Daftar Komisariat</h1>
 
@@ -83,9 +82,6 @@
         </div>
     </div>
 </div>
-        </div>
-
-        </div>
 
 
 
@@ -134,7 +130,7 @@
                 }
 
                 100% {
-                    stroke-dasharray: 226.08;
+                    stroke-dasharray: calc(226.08 * {{ $item->progressAgenda }} / 100) 226.08;
                 }
             }
 
@@ -164,8 +160,75 @@
                 font-size: 18px;
                 margin-bottom: 4px;
             }
-            </style>
-            @endsection
 
+            <style>
+    .card {
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        height: 100%;
+    }
 
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333333;
+    }
+
+    .card-body hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .card-text {
+        font-size: 16px;
+        margin-bottom: 6px;
+        color: #777777;
+    }
+
+    .badge {
+        padding: 6px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 20px;
+    }
+
+    .badge-success {
+        background-color: #28a745;
+        color: #ffffff;
+    }
+
+    .badge-danger {
+        background-color: #dc3545;
+        color: #ffffff;
+    }
+
+    .row {
+        justify-content: center;
+    }
+
+    .mt-5 {
+        margin-top: 50px;
+    }
+
+    .mb-4 {
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: #333333;
+    }
+        </style>
+    @endsection

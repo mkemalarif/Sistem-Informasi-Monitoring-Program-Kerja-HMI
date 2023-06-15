@@ -27,7 +27,7 @@ Route::get('/', [Homepage::class, "index"])->middleware('login');
 // Routes default
 
 // Route::get('/', function () {
-//     return view('DashboardAdmin');
+//     return view('ListKomisariat');
 // });
 
 // Route::get('/opini', function () {
