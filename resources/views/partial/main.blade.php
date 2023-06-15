@@ -87,6 +87,10 @@
             font-size: 1rem;
             margin-bottom: 0;
         } */
+
+          .navbar {
+        margin: 0 auto;
+    }
     </style>
     <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 
@@ -95,33 +99,35 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="70" height="70" class="d-inline-block">
-                HMI MAKASSAR
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Berita</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Opini</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kegiatan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="70" height="70" class="d-inline-block align-top">
+            HMI MAKASSAR
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Berita</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Opini</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kegiatan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+
 
     {{-- <div class="banner">
         <!-- Content for the banner -->

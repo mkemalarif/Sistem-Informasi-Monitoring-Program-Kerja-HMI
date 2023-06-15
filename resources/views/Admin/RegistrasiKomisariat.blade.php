@@ -10,7 +10,7 @@
         background-color: #f9fafb;
     }
     .card-header {
-        background-color: #007bff !important;
+        background-color: #4CAF50 !important;
         border-bottom: none;
         padding: 20px;
         border-top-left-radius: 10px;
@@ -24,6 +24,8 @@
             opacity: 0;
         }
     }
+
+
 
 </style>
 
@@ -104,7 +106,7 @@
                         </div>
 
                         <div class="form-group mb-0">
-                            <button type="submit" class="btn btn-primary btn-block">
+                            <button type="submit " class="btn btn-primary btn-block", style="background-color: #4CAF50">
                                 Simpan Data
                             </button>
                         </div>

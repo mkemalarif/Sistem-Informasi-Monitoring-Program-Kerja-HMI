@@ -155,7 +155,7 @@
 
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Ketua Dashboard</h1>
+                    {{-- <h1 class="h3 mb-4 text-gray-800">Ketua Dashboard</h1> --}}
 
                     <!-- Content Row -->
                     <div class="row">

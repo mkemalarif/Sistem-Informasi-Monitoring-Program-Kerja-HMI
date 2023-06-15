@@ -67,6 +67,10 @@
         .sidebar .sidebar-divider {
             margin: 10px 0;
         }
+
+          .sidebar {
+        background-color: #4CAF50 !important;
+    }
     </style>
 
      <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
@@ -79,7 +83,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
+       <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #4CAF50;">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">

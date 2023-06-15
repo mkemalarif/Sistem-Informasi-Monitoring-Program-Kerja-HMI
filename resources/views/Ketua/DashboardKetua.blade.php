@@ -59,9 +59,35 @@
 
             </div>
 
+<div class="container">
+    <div class="row mt-5">
+        <h1 class="mb-4">Daftar Komisariat</h1>
+
+        <div class="row" id="anggota-list">
+            @foreach ($data as $item)
+            <div class="col-md-4 mb-4">
+                <a class="card" href="#" style="text-decoration: none">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><i class="fas fa-users"></i>{{ $item->namaKomisariat }}</h5>
+                        <hr>
+                        <p class="card-text"><strong>Tahun Berdiri:</strong>{{ $item->tahunBerdiri }}</p>
+                        <p class="card-text"><strong>Status:</strong> <span
+                                class="badge @if($item->status === 'Aktif') badge-success @elseif($item->status === 'Nonaktif') badge-danger @endif">{{
+                                $item->status
+                                }}</span></p>
+                        <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+        </div>
 
         </div>
-        </div>
+
+
 
         <style>
             .circle-bar {

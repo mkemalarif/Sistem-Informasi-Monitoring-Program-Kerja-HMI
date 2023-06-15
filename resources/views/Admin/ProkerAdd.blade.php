@@ -14,12 +14,13 @@
     }
 
     .card-header {
-        background-color: #007bff !important;
+        background-color: #4CAF50!important;
         border-bottom: none;
         padding: 20px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         text-align: center;
+
     }
 
     .card-body {
@@ -117,8 +118,8 @@
                     <label for="persentase">Persentase Selesai</label>
                     <input type="number" name="progressAgenda" id="persentase" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <button type="submit" class="btn btn-primary">Batal</button>
+                <button type="submit" class="btn btn-primary", style="background-color: #4CAF50">Simpan</button>
+                <button type="submit" class="btn btn-primary", style="background-color: #4CAF50">Batal</button>
             </form>
         </div>
     </div>
