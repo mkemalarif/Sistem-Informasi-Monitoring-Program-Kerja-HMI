@@ -74,6 +74,7 @@ Route::middleware('admin')->prefix('admin')
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
         Route::post('/tambah-proker', 'adminTambahProker');
         Route::put('/validasi-berita/{id}', 'validasiBerita');
+        Route::put('//{id}', 'validasiBerita');
     });
 
 // semua route untuk ketua
