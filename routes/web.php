@@ -52,7 +52,7 @@ Route::middleware('anggota')->prefix('anggota')
         Route::get('/tambah-berita', 'addBerita');
         Route::get('/edit-berita/{id}', 'beritaEdit');
         Route::get('/list-komisariat', 'komisariat');
-        Route::get('/data-anggota', 'listAnggota');
+        Route::get('/data-anggota/{id}', 'listAnggota');
         Route::get('/program-kerja', 'proker');
         Route::get('/kontrol-berita', 'controlBerita');
         Route::post('/tambah-berita', 'post');

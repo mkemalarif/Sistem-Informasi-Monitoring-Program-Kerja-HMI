@@ -14,7 +14,7 @@
         <div class="row" id="anggota-list">
             @foreach ($data as $item)
             <div class="col-md-4 mb-4">
-                <a class="card" href="#" style="text-decoration: none">
+                <a class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}" style="text-decoration: none">
                     <div class="card-body">
                         <h5 class="card-title text-center"><i class="fas fa-users"></i>{{ $item->namaKomisariat }}</h5>
                         <hr>

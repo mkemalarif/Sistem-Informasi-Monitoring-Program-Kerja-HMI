@@ -15,14 +15,16 @@
                     <th>Komisariat</th>
                     <th>Alamat</th>
                     <th>Angkatan</th>
+                    @if(auth()->user()->jenisAkun !== 'anggota')
                     <th>Action</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
                 @foreach ($data as $item)
                 <tr>
                     @php
-                    $i = 0;
+                    $i = 1;
                     @endphp
                     <td>{{ $i++ }}</td>
                     <td>NOK: {{ $item->nokader }}</td>
@@ -32,12 +34,14 @@
                     <td>Komisariat A</td>
                     <td>{{ $item->alamat }}</td>
                     <td>{{ $item->angkatan }}</td>
+                    @if(auth()->user()->jenisAkun !== 'anggota')
                     <td>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-primary">Edit</button>
                             <button type="button" class="btn btn-danger">Delete</button>
                         </div>
                     </td>
+                    @endif
                 </tr>
                 @endforeach
             </tbody>

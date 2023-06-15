@@ -37,10 +37,10 @@ class ControllerAnggota extends Controller
     }
 
     // menampilkan data anggota
-    public function listAnggota()
+    public function listAnggota($id)
     {
         return view('DataAnggota', [
-            'data' => Anggota::get()
+            'data' => Anggota::where('komisariat_id', $id)->get()
         ]);
     }
 
