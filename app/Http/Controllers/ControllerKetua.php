@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Agenda;
 use App\Models\Komisariat;
+use App\Models\Anggota;
 
 class ControllerKetua extends Controller
 {
@@ -27,18 +28,32 @@ class ControllerKetua extends Controller
         return view('Admin.ProkerAdd');
     }
 
+    public function dataAnggota($id)
+    {
+        return view('DataAnggota', [
+            'data' => Anggota::where('komisariat_id', $id)->get()
+        ]);
+    }
+
     public function ketuaTambahProker(Request $request)
     {
         $validate = $request->validate([
             'judulAgenda' => 'required',
             'tanggalAgenda' => 'required',
-            'progressAgenda' => 'required|min:0|max:100'
+            'deskripsi' => 'required'
         ]);
+
+        $validate['progressAgenda'] = 0;
 
         // dd($validate);
 
         Agenda::create($validate);
 
         return redirect('/ketua/dashboard');
+    }
+
+    public function ketuaEditProker(Request $request, $id)
+    {
+        $update = $request->validate([]);
     }
 }

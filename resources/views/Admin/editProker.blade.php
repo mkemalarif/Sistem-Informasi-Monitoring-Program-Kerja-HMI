@@ -100,9 +100,10 @@
         <div class="card-body">
             <form action="/{{ auth()->user()->jenisAkun }}/tambah-proker" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="form-group">
                     <label for="nama">Nama Program Kerja</label>
-                    <input type="text" name="judulAgenda" id="judulAgenda" class="form-control" required>
+                    <input type="text" name="judulAgenda" id="judulAgenda" value="{{ old('judulAgenda', $data->judulAgenda) }}" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="deskripsi">Deskripsi</label>

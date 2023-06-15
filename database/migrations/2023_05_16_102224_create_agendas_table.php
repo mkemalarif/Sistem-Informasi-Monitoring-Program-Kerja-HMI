@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
             $table->string('judulAgenda');
-            $table->string('masalah');
+            $table->string('deskripsi');
+            $table->string('masalah')->nullable();
             $table->date('tanggalAgenda');
             // form edit
             $table->integer('progressAgenda');
