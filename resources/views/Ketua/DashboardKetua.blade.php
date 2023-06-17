@@ -84,8 +84,22 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             @endforeach
         </div>
+=======
+            </div>
+            @endforeach
+
+    </div>
+
+
+</div>
+</div>
+<div class="container">
+    <div class="row mt-5">
+        <h1 class="mb-4">Daftar Komisariat</h1>
+>>>>>>> 588176d0d3f6ad125d14f6a97f42f621ae541b09
 
         <div class="row mt-5">
             <h1 class="mb-4">Daftar Komisariat</h1>
