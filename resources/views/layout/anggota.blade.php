@@ -48,6 +48,9 @@
         .sidebar .nav-item:hover {
             background-color: #ccc;
         }
+           .sidebar {
+        background-color: #4CAF50 !important;
+    }
     </style>
 
 
@@ -64,7 +67,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar", style="background-color: #4CAF50 ">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">

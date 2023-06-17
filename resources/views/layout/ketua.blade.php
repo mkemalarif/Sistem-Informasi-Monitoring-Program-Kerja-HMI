@@ -42,6 +42,25 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sb-admin-2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
+     <style>
+        /* Ubah warna latar belakang sidebar */
+        .sidebar {
+            background-color: #e9ecef;
+        }
+
+        /* Ubah warna teks pada sidebar */
+        .sidebar .sidebar-brand-text {
+            color: #fff;
+        }
+
+        /* Tambahkan efek hover pada item sidebar */
+        .sidebar .nav-item:hover {
+            background-color: #ccc;
+        }
+           .sidebar {
+        background-color: #4CAF50 !important;
+    }
+    </style>
 
 </head>
 
@@ -235,6 +254,9 @@
     <script src="{{ asset('assets/js/sb-admin-2.js') }}"></script>
     <!-- Include DataTables CSS and JS files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 
     <script>
         $(document).ready(function () {
