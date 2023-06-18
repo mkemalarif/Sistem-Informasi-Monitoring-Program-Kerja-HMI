@@ -340,5 +340,4 @@
             attachCloseButtonListeners();
         });
 </script>
-</script>
 @endsection
