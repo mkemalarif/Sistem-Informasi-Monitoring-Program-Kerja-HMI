@@ -1,97 +1,91 @@
 @extends('layout.ketua')
 
 @section('container')
-    <div class="container">
-        <div class="row mt-5">
-            <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
+<div class="container">
+    <div class="row mt-5">
+        <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-            @foreach ($data as $item)
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="card h-100 expanded" onclick="expandCard(this)">
-                        <div class="card-body d-flex align-items-center">
-                            <div class="circle-bar blue pr-1">
-                                <svg class="circle" width="80" height="80">
-                                    <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40"
-                                        r="36" stroke-dasharray="226"
-                                        stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
-                                </svg>
-                                <span class="progress">{{ $item->progressAgenda }}</span>
-                            </div>
-                            <div class="divider"></div>
-                            <div>
-                                <h5 class="card-title">{{ $item->judulAgenda }}</h5>
-                                <p class="card-text">HMI CABANG MAKASSAR</p>
-                                <p class="card-text date">{{ $item->tanggalAgenda }}</p>
-                                <p class="card-text status">
-                                    @if ($item->progressAgenda < 100)
-                                        Belum Selesai
-                                    @elseif ($item->progressAgenda == 100)
-                                        Selesai
-                                    @endif
-                                </p>
-                                <div class="card-text description">
-                                    <p class="short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Sed
-                                        at
-                                        nunc vitae sem mattis maximus in nec tortor. Fusce eget ipsum vitae ex finibus
-                                        efficitur.
-                                        Nam
-                                        non libero sed risus feugiat consectetur. Cras ac malesuada mi. Vestibulum ante
-                                        ipsum
-                                        primis
-                                        in
-                                        faucibus orci luctus et ultrices posuere cubilia curae; Morbi a sapien id turpis
-                                        hendrerit
-                                        egestas. Vivamus sit amet elit massa. Proin id volutpat nisi. Curabitur sagittis
-                                        justo
-                                        id
-                                        arcu
-                                        mollis varius. Phasellus ut lectus non elit ultrices eleifend. Sed et arcu
-                                        ullamcorper,
-                                        pulvinar
-                                        ante vel, ultrices dolor. Sed ac rhoncus enim, id pulvinar ligula. Curabitur
-                                        tincidunt
-                                        nunc
-                                        nec
-                                        tortor sollicitudin sollicitudin. Nullam convallis neque in purus aliquam
-                                        sollicitudin</p>
-                                    <p class="full-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                        at
-                                        nunc vitae sem mattis maximus in nec tortor. Fusce eget ipsum vitae ex finibus
-                                        efficitur.
-                                        Nam
-                                        non libero sed risus feugiat consectetur. Cras ac malesuada mi. Vestibulum ante
-                                        ipsum
-                                        primis
-                                        in
-                                        faucibus orci luctus et ultrices posuere cubilia curae; Morbi a sapien id turpis
-                                        hendrerit
-                                        egestas. Vivamus sit amet elit massa. Proin id volutpat nisi. Curabitur sagittis
-                                        justo
-                                        id
-                                        arcu
-                                        mollis varius. Phasellus ut lectus non elit ultrices eleifend. Sed et arcu
-                                        ullamcorper,
-                                        pulvinar
-                                        ante vel, ultrices dolor. Sed ac rhoncus enim, id pulvinar ligula. Curabitur
-                                        tincidunt
-                                        nunc
-                                        nec
-                                        tortor sollicitudin sollicitudin. Nullam convallis neque in purus aliquam
-                                        sollicitudin.</p>
-                                </div>
-                            </div>
+        @foreach ($data as $item)
+        <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100 expanded" onclick="expandCard(this)">
+                <div class="card-body d-flex align-items-center">
+                    <div class="circle-bar blue pr-1">
+                        <svg class="circle" width="80" height="80">
+                            <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40" r="36"
+                                stroke-dasharray="226"
+                                stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
+                        </svg>
+                        <span class="progress">{{ $item->progressAgenda }}</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div>
+                        <h5 class="card-title">{{ $item->judulAgenda }}</h5>
+                        <p class="card-text">HMI CABANG MAKASSAR</p>
+                        <p class="card-text date">{{ $item->tanggalAgenda }}</p>
+                        <p class="card-text status">
+                            @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progressAgenda == 100)
+                                Selesai
+                                @endif
+                        </p>
+                        <div class="card-text description">
+                            <p class="short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed
+                                at
+                                nunc vitae sem mattis maximus in nec tortor. Fusce eget ipsum vitae ex finibus
+                                efficitur.
+                                Nam
+                                non libero sed risus feugiat consectetur. Cras ac malesuada mi. Vestibulum ante
+                                ipsum
+                                primis
+                                in
+                                faucibus orci luctus et ultrices posuere cubilia curae; Morbi a sapien id turpis
+                                hendrerit
+                                egestas. Vivamus sit amet elit massa. Proin id volutpat nisi. Curabitur sagittis
+                                justo
+                                id
+                                arcu
+                                mollis varius. Phasellus ut lectus non elit ultrices eleifend. Sed et arcu
+                                ullamcorper,
+                                pulvinar
+                                ante vel, ultrices dolor. Sed ac rhoncus enim, id pulvinar ligula. Curabitur
+                                tincidunt
+                                nunc
+                                nec
+                                tortor sollicitudin sollicitudin. Nullam convallis neque in purus aliquam
+                                sollicitudin</p>
+                            <p class="full-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                                at
+                                nunc vitae sem mattis maximus in nec tortor. Fusce eget ipsum vitae ex finibus
+                                efficitur.
+                                Nam
+                                non libero sed risus feugiat consectetur. Cras ac malesuada mi. Vestibulum ante
+                                ipsum
+                                primis
+                                in
+                                faucibus orci luctus et ultrices posuere cubilia curae; Morbi a sapien id turpis
+                                hendrerit
+                                egestas. Vivamus sit amet elit massa. Proin id volutpat nisi. Curabitur sagittis
+                                justo
+                                id
+                                arcu
+                                mollis varius. Phasellus ut lectus non elit ultrices eleifend. Sed et arcu
+                                ullamcorper,
+                                pulvinar
+                                ante vel, ultrices dolor. Sed ac rhoncus enim, id pulvinar ligula. Curabitur
+                                tincidunt
+                                nunc
+                                nec
+                                tortor sollicitudin sollicitudin. Nullam convallis neque in purus aliquam
+                                sollicitudin.</p>
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-            @endforeach
-        </div>
-=======
             </div>
-            @endforeach
-
+        </div>
     </div>
+    @endforeach
+
+</div>
 
 
 </div>
@@ -99,31 +93,31 @@
 <div class="container">
     <div class="row mt-5">
         <h1 class="mb-4">Daftar Komisariat</h1>
->>>>>>> 588176d0d3f6ad125d14f6a97f42f621ae541b09
 
         <div class="row mt-5">
             <h1 class="mb-4">Daftar Komisariat</h1>
 
             <div class="row" id="anggota-list">
                 @foreach ($komisariat as $item)
-                    <div class="col-md-4 mb-4">
-                        <a class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
-                            style="text-decoration: none">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">
-                                    <i class="fas fa-users"></i>
-                                    <span class="space-between-icon">{{ $item->namaKomisariat }}</span>
-                                </h5>
+                <div class="col-md-4 mb-4">
+                    <a class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
+                        style="text-decoration: none">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <i class="fas fa-users"></i>
+                                <span class="space-between-icon">{{ $item->namaKomisariat }}</span>
+                            </h5>
 
-                                <hr>
-                                <p class="card-text"><strong>Tahun Berdiri:</strong>{{ $item->tahunBerdiri }}</p>
-                                <p class="card-text"><strong>Status:</strong> <span
-                                        class="badge @if ($item->status === 'Aktif') badge-success @elseif($item->status === 'Nonaktif') badge-danger @endif">{{ $item->status }}</span>
-                                </p>
-                                <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
-                            </div>
-                        </a>
-                    </div>
+                            <hr>
+                            <p class="card-text"><strong>Tahun Berdiri:</strong>{{ $item->tahunBerdiri }}</p>
+                            <p class="card-text"><strong>Status:</strong> <span
+                                    class="badge @if ($item->status === 'Aktif') badge-success @elseif($item->status === 'Nonaktif') badge-danger @endif">{{
+                                    $item->status }}</span>
+                            </p>
+                            <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
+                        </div>
+                    </a>
+                </div>
                 @endforeach
             </div>
         </div>
@@ -214,7 +208,7 @@
             transform: scale(1.2);
             z-index: 999;
             transform-origin: center center;
-             grid-column: span ;
+            grid-column: span;
         }
 
         .card.expanded .card-text.description .short-description {
@@ -247,7 +241,13 @@
             }
 
             100% {
-                stroke-dasharray: calc(226.08 * {{ $item->progressAgenda }} / 100) 226.08;
+                stroke-dasharray: calc(226.08 * {
+                            {
+                            $item->progressAgenda
+                        }
+                    }
+
+                    / 100) 226.08;
             }
         }
 
@@ -350,4 +350,4 @@
             });
         });
     </script>
-@endsection
+    @endsection
