@@ -1,8 +1,10 @@
-@if(auth()->user()->jenisAkun === 'admin')
-@extends('layout.admin')
-@elseif(auth()->user()->jenisAkun === 'ketua')
-@extends('layout.ketua')
-@endif
+<?php
+
+$section = 'layout.'. auth()->user()->jenisAkun
+
+?>
+
+@extends($section)
 <style>
         .card {
         max-width: 600px;

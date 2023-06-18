@@ -28,12 +28,29 @@ class ControllerKetua extends Controller
         return view('Admin.ProkerAdd');
     }
 
-    public function dataAnggota($id)
+    public function ketuaTambahAnggota()
     {
-        return view('DataAnggota', [
-            'data' => Anggota::where('komisariat_id', $id)->get()
+        return view('Admin.RegistrasiAnggota', [
+            'komisariat' => Komisariat::get()
         ]);
     }
+    public function ketuaTambahKomisariat()
+    {
+        return view('Admin.RegistrasiKomisariat', [
+            'komisariat' => Komisariat::get()
+        ]);
+    }
+    public function ketuaTambahAdmin()
+    {
+        return view('Admin.RegistrasiKomisariat');
+    }
+
+    // public function dataAnggota($id)
+    // {
+    //     return view('DataAnggota', [
+    //         'data' => Anggota::where('komisariat_id', $id)->get()
+    //     ]);
+    // }
 
     public function ketuaEditProker($id)
     {

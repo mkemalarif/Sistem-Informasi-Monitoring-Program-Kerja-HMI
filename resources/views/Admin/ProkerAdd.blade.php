@@ -1,8 +1,10 @@
-@if(auth()->user()->jenisAkun === 'admin')
-@extends('layout.admin')
-@elseif(auth()->user()->jenisAkun === 'ketua')
-@extends('layout.ketua')
-@endif
+<?php
+
+$section = 'layout.'. auth()->user()->jenisAkun
+
+?>
+
+@extends($section)
 @section('container')
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">

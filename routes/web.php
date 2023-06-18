@@ -84,6 +84,8 @@ Route::middleware('ketua')->prefix('ketua')
         Route::get('/dashboard', 'index');
         Route::get('/tambah-akun-admin', 'create');
         Route::get('/tambah-proker', 'programKerja');
+        Route::get('/tambah-anggota', 'ketuaTambahAnggota');
+        Route::get('/tambah-komisariat', 'ketuaTambahKomisariat');
         Route::get('/edit-proker/{id}', 'ketuaEditProker');
         Route::get('/data-anggota/{id}', 'dataAnggota');
         // Route::get('/tambah-anggota',);

@@ -1,12 +1,21 @@
-@if(auth()->user()->jenisAkun === 'admin')
+{{-- @if(auth()->user()->jenisAkun === 'admin')
 @extends('layout.admin')
-@elseif(auth()->user()->jenisAkun === 'ketua')
-@extends('layout.ketua')
-@endif
-
 @section('container')
+@endif
+@if(auth()->user()->jenisAkun !== 'admin')
+@extends('layout.ketua')
+@endif --}}
+<?php
+
+$section = 'layout.'. auth()->user()->jenisAkun
+
+?>
+
+@extends($section)
+@section('container')
+
 <style>
-        .card {
+    .card {
         max-width: 600px;
         margin: 0 auto;
         margin-top: 20px;
@@ -15,6 +24,7 @@
         animation: slide-up 0.5s ease;
         background-color: #f9fafb;
     }
+
     .card-header {
         background-color: #4CAF50 !important;
         border-bottom: none;
@@ -24,13 +34,12 @@
         text-align: center;
     }
 
-     @keyframes slide-up {
+    @keyframes slide-up {
         0% {
             transform: translateY(20px);
             opacity: 0;
         }
     }
-
 </style>
 
 <div class="container-fluid">
@@ -153,7 +162,7 @@
                         </div>
 
                         <div class="form-group mb-0">
-                            <button type="submit" class="btn btn-primary btn-block", style="background-color: #4CAF50">
+                            <button type="submit" class="btn btn-primary btn-block" , style="background-color: #4CAF50">
                                 Simpan Data
                             </button>
                         </div>
