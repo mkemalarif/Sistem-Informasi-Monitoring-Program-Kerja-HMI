@@ -1,4 +1,8 @@
+@if(auth()->user()->jenisAkun === 'admin')
 @extends('layout.admin')
+@elseif(auth()->user()->jenisAkun === 'ketua')
+@extends('layout.ketua')
+@endif
 @section('container')
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
@@ -103,21 +107,34 @@
                 @method('PUT')
                 <div class="form-group">
                     <label for="nama">Nama Program Kerja</label>
-                    <input type="text" name="judulAgenda" id="judulAgenda" value="{{ old('judulAgenda', $data->judulAgenda) }}" class="form-control" required>
+                    <input type="text" name="judulAgenda" id="judulAgenda"
+                        value="{{ old('judulAgenda', $data->judulAgenda) }}" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="deskripsi">Deskripsi</label>
-                    <textarea name="deskripsi" id="deskripsi" class="form-control" rows="4" required></textarea>
+                    <textarea name="deskripsi" id="deskripsi" class="form-control" rows="4"
+                        required>{{ old('deskripsi', $data->deskripsi) }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="deskripsi">Masalah</label>
+                    <textarea name="masalah" id="masalah" class="form-control" rows="4"
+                        required>{{ old('masalah', $data->masalah) }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="tanggalLahir">Tanggal Terlaksana:</label>
                     <input id="tanggalAgenda" name="tanggalAgenda" type="date"
-                        class="form-control @error('tanggalAgenda') is-invalid @enderror" value="" required>
+                        class="form-control @error('tanggalAgenda') is-invalid @enderror"
+                        value="{{ old('tanggalAgenda', $data->tanggalAgenda) }}" required>
                     @error('tanggalLahir')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
+                </div>
+                <div class="form-group">
+                    <label for="nama">Progress Agenda</label>
+                    <input type="number" name="progressAgenda" id="progressAgenda"
+                        value="{{ old('progressAgenda', $data->progressAgenda) }}" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Simpan</button>
                 <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Batal</button>

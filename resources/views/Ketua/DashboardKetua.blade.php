@@ -30,12 +30,19 @@
                         <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
                             <span class="short-description">{{ Str::limit($item->deskripsi, 100) }}</span>
                         </p>
-                        <p>{{ $item->judulAgenda }}</p>
+                        <p>{{ $item->masalah }}</p>
+
+                        <div class="card-buttons">
+                            <a href="/{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
+                                class="btn btn-primary">Edit</a>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         @endforeach
+
 
 
         <div id="popup" class="popup">

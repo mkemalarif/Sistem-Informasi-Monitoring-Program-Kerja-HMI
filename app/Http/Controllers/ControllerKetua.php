@@ -35,6 +35,13 @@ class ControllerKetua extends Controller
         ]);
     }
 
+    public function ketuaEditProker($id)
+    {
+        return view('Admin.editProker', [
+            'data' => Agenda::find($id)
+        ]);
+    }
+
     public function ketuaTambahProker(Request $request)
     {
         $validate = $request->validate([
@@ -52,8 +59,13 @@ class ControllerKetua extends Controller
         return redirect('/ketua/dashboard');
     }
 
-    public function ketuaEditProker(Request $request, $id)
+    public function ketuaProkerEdit(Request $request, $id)
     {
-        $update = $request->validate([]);
+        $update = $request->validate([
+            'judulAgenda' => 'required',
+            'deskripsi' => 'required',
+            'tanggalAgenda' => 'required',
+            ''
+        ]);
     }
 }
