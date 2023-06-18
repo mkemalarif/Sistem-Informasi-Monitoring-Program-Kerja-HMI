@@ -5,37 +5,43 @@
     <div class="row mt-5">
         <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-        @foreach ($data as $item)
-        <div class="col-12 col-lg-6 mb-4">
-            <div class="card h-100">
-                <div class="card-body d-flex align-items-center">
-                    <div class="circle-bar blue pr-1">
-                        <svg class="circle" width="80" height="80">
-                            <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40" r="36"
-                                stroke-dasharray="226"
-                                stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
-                        </svg>
-                        <span class="progress">{{ $item->progressAgenda }}</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div>
-                        <h5 class="card-title">{{ $item->judulAgenda }}</h5>
-                        <p class="card-text">HMI CABANG MAKASSAR</p>
-                        <p class="card-text date">{{ $item->tanggalAgenda }}</p>
-                        <p class="card-text status">
-                            @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progressAgenda == 100)
-                                Selesai
-                                @endif
-                        </p>
-                        <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
-                            <span class="short-description">{{ Str::limit($item->deskripsi, 100) }}</span>
-                        </p>
-                        <p>{{ $item->judulAgenda }}</p>
-                    </div>
+       @foreach ($data as $item)
+<div class="col-12 col-lg-6 mb-4">
+    <div class="card h-100">
+        <div class="card-body d-flex align-items-center">
+            <div class="circle-bar blue pr-1">
+                <svg class="circle" width="80" height="80">
+                    <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40" r="36"
+                        stroke-dasharray="226"
+                        stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
+                </svg>
+                <span class="progress">{{ $item->progressAgenda }}</span>
+            </div>
+            <div class="divider"></div>
+            <div>
+                <h5 class="card-title">{{ $item->judulAgenda }}</h5>
+                <p class="card-text">HMI CABANG MAKASSAR</p>
+                <p class="card-text date">{{ $item->tanggalAgenda }}</p>
+                <p class="card-text status">
+                    @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progressAgenda == 100)
+                        Selesai
+                    @endif
+                </p>
+                <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
+                    <span class="short-description">{{ Str::limit($item->deskripsi, 100) }}</span>
+                </p>
+                <p>asdasdasd</p>
+
+                <div class="card-buttons">
+                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
                 </div>
             </div>
         </div>
-        @endforeach
+    </div>
+</div>
+@endforeach
+
 
 
         <div id="popup" class="popup">
