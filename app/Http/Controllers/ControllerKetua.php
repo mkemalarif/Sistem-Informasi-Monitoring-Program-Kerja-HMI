@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Agenda;
+use App\Models\User;
 use App\Models\Komisariat;
 use App\Models\Anggota;
 
@@ -20,12 +21,29 @@ class ControllerKetua extends Controller
 
     public function create()
     {
-        return view('Ketua.AnggotaAddakun');
+        return view('Ketua.AkunAdmin');
     }
 
     public function programKerja()
     {
         return view('Admin.ProkerAdd');
+    }
+
+    public function ketuaTambahAdmin(Request $request)
+    {
+        $validate = $request->validate([
+            'nama' => 'required',
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        $validate['password'] = bcrypt($validate['password']);
+        $validate['jenisAkun'] = 'admin';
+
+        // dd($validate);
+        User::create($validate);
+
+        return redirect('/ketua/dashboard');
     }
 
     public function ketuaTambahAnggota()
@@ -40,17 +58,47 @@ class ControllerKetua extends Controller
             'komisariat' => Komisariat::get()
         ]);
     }
-    public function ketuaTambahAdmin()
+
+    public function ketuaAnggotaTambah(Request $request)
     {
-        return view('Admin.RegistrasiKomisariat');
+        $validate = $request->validate([
+            'nokader' => 'required|unique:anggotas',
+            'nama' => 'required',
+            'jenisKelamin' => 'required',
+            'tempatLahir' => 'required',
+            'tanggalLahir' => 'required|date',
+            'alamat' => 'required',
+            'angkatan' => 'required|integer',
+            'komisariat_id' => 'required'
+        ]);
+
+        Anggota::create($validate);
+
+        $user = new User;
+        $user->nama = $validate['nama'];
+        $user->username = 'anggota';
+        $user->password = bcrypt($validate['nokader']);
+        $user->jenisAkun = 'anggota';
+
+        $user->save();
+
+        return redirect('/admin/dashboard');
     }
 
-    // public function dataAnggota($id)
-    // {
-    //     return view('DataAnggota', [
-    //         'data' => Anggota::where('komisariat_id', $id)->get()
-    //     ]);
-    // }
+    public function ketuaKomisariatTambah(Request $request)
+    {
+        $validate = $request->validate([
+            'nokomisariat' => 'required|integer|unique:komisariats',
+            'namaKomisariat' => 'required',
+            'tahunBerdiri' => 'required|integer',
+            'status' => 'required',
+            'angkatan' => 'required|integer',
+        ]);
+
+        Komisariat::create($validate);
+
+        return redirect('/admin/dashboard');
+    }
 
     public function ketuaEditProker($id)
     {
