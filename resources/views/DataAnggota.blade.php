@@ -1,5 +1,10 @@
-@extends('layout.anggota')
+<?php
 
+$section = 'layout.'. auth()->user()->jenisAkun
+
+?>
+
+@extends($section)
 @section('container')
 <div class="container mt-5">
     <h1>Data Anggota</h1>
@@ -37,7 +42,8 @@
                     @if(auth()->user()->jenisAkun !== 'anggota')
                     <td>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <a href="/{{ auth()->user()->jenisAkun }}/edit-data-anggota/{{ $item->id }}" type="button"
+                                class="btn btn-primary">Edit</a>
                             <button type="button" class="btn btn-danger">Delete</button>
                         </div>
                     </td>

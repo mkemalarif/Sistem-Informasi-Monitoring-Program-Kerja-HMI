@@ -115,6 +115,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/list-komisariat">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>List Komisariat</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="/admin/registrasi-member">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Registrasi Anggota</span>

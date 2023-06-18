@@ -70,12 +70,16 @@ Route::middleware('admin')->prefix('admin')
         Route::get('/registrasi-komisariat', 'regisKomisariat');
         Route::get('/tambah-proker', 'tambahProker');
         Route::get('/edit-proker/{id}', 'adminEditProker');
-        Route::get('/validasi-berita', 'editBerita');
+        Route::get('/list-komisariat', 'komisariat');
+        Route::get('/data-anggota/{id}', 'dataAnggota');
+        Route::get('/edit-data-anggota/{id}', 'adminEditAnggota');
+        // Route::get('/validasi-berita', 'editBerita');
         Route::post('/registrasi-member', 'tambahAnggota');
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
         Route::post('/tambah-proker', 'adminTambahProker');
         Route::put('/validasi-berita/{id}', 'validasiBerita');
         Route::put('/edit-proker/{id}', 'editProker');
+        Route::put('/edit-data-anggota/{id}', 'adminEditDataAnggota');
     });
 
 // semua route untuk ketua

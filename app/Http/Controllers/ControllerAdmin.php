@@ -37,13 +37,29 @@ class ControllerAdmin extends Controller
         return view('Admin.ProkerAdd');
     }
 
-    public function editBerita()
+    public function komisariat()
     {
-        return view('Admin.ControlBeritaAdmin', [
-            'data' => Artikel::latest()->get()
+        return view('Admin.komisariat', [
+            'komisariat' => Komisariat::get()
         ]);
     }
 
+    public function dataAnggota($id)
+    {
+        return view('DataAnggota', [
+            'data' => Anggota::where('id', $id)->get(),
+        ]);
+    }
+
+    public function adminEditAnggota($id)
+    {
+        return view('editDataAnggota', [
+            'data' => Anggota::find($id),
+            'komisariat' => Komisariat::get()
+        ]);
+    }
+
+    // post function
     public function adminTambahProker(Request $request)
     {
         $validate = $request->validate([
@@ -102,6 +118,7 @@ class ControllerAdmin extends Controller
         return redirect('/admin/dashboard');
     }
 
+    // put function
     public function validasiBerita($id)
     {
         // dd(Artikel::find($id));
@@ -110,6 +127,6 @@ class ControllerAdmin extends Controller
         ]);
 
 
-        return redirect('/admin/validasi-berita');
+        return redirect('/admin/dashboard');
     }
 }
