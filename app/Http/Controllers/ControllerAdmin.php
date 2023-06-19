@@ -59,6 +59,13 @@ class ControllerAdmin extends Controller
         ]);
     }
 
+    public function adminEditProker($id)
+    {
+        return view('Admin.editProker', [
+            'data' => Agenda::find($id)
+        ]);
+    }
+
     // post function
     public function adminTambahProker(Request $request)
     {
@@ -76,6 +83,7 @@ class ControllerAdmin extends Controller
 
         return redirect('/admin/dashboard');
     }
+
 
     public function tambahAnggota(Request $request)
     {
@@ -126,6 +134,23 @@ class ControllerAdmin extends Controller
             'status' => 'acc',
         ]);
 
+
+        return redirect('/admin/dashboard');
+    }
+
+    public function adminProkerEdit(Request $request, $id)
+    {
+        $update = $request->validate([
+            'judulAgenda' => 'required',
+            'deskripsi' => 'required',
+            'masalah' => 'required',
+            'tanggalAgenda' => 'required',
+            'progressAgenda' => 'required|integer'
+        ]);
+
+        // dd($update);
+
+        Agenda::where('id', $id)->update($update);
 
         return redirect('/admin/dashboard');
     }

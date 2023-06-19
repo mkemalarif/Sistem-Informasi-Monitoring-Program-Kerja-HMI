@@ -55,7 +55,8 @@
         <div class="carousel-inner">
             @foreach($data as $item)
             <div class="carousel-item active">
-                <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" class="d-block w-100" alt="Slide 1">
+                <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" class="d-block w-100"
+                    alt="Slide 1">
                 <div class="carousel-caption">
                     <h5>{{ $item->judul }}</h5>
                     <p>{{ Str::limit($item->deskripsi, 10) }}</p>
@@ -93,7 +94,7 @@
                 <div class="col-md-6">
                     <div class="info-box">
                         <h5 class="card-title">Cabang</h5>
-                        <p class="card-text"></p>
+                        <p class="card-text">1</p>
                     </div>
                 </div>
             </div>
@@ -101,13 +102,13 @@
                 <div class="col-md-6">
                     <div class="info-box">
                         <h5 class="card-title">Komisariat</h5>
-                        <p class="card-text">76</p>
+                        <p class="card-text">{{ $komisariat }}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="info-box">
                         <h5 class="card-title">Total Anggota</h5>
-                        <p class="card-text">5000</p>
+                        <p class="card-text">{{ $anggota }}</p>
                     </div>
                 </div>
             </div>
