@@ -8,6 +8,7 @@ use App\Models\Artikel;
 use App\Models\Anggota;
 use App\Models\User;
 use App\Models\Komisariat;
+use App\Models\Agenda;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,7 +16,10 @@ class ControllerAnggota extends Controller
 {
     public function index()
     {
-        return view('Anggota.DashboardAnggota');
+        return view('Anggota.DashboardAnggota', [
+            'data' => Agenda::latest()->get(),
+            'komisariat' => Komisariat::get()
+        ]);
     }
 
     public function controlBerita()

@@ -5,19 +5,6 @@
     <div class="row mt-5">
         <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-        {{-- @php
-        $data = [];
-        foreach ($item as $isi) {
-        $data[] = [
-        'judulProker' => $isi->judulAgenda ,
-        'progressProker' => $isi->progressAgenda,
-        'tanggalProker' => $isi->tanggalAgenda ,
-        'penjelasan' => $isi->deskripsi,
-        'problem' => $isi->masalah
-        ]
-        }
-        @endphp --}}
-
         @foreach ($data as $item)
         <div class="col-12 col-lg-6 mb-4">
             <div class="card horizontal-card">
