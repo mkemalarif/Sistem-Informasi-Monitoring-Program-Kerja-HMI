@@ -26,9 +26,9 @@ use App\Http\Controllers\LoginController;
 
 // Routes default
 
-Route::get('/', function () {
-    return view('DetailBerita');
-});
+    Route::get('/', function () {
+        return view('DetailBerita');
+    });
 
 // Route::get('/opini', function () {
 //     return view('Opini');

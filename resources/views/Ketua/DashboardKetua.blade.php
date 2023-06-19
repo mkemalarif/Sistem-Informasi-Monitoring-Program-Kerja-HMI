@@ -5,26 +5,21 @@
         <div class="row mt-5">
             <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-<<<<<<< HEAD
             @php
                 $data = [
                     [
                         'judulProker' => 'Program Kerja 1',
                         'progressProker' => 75,
                         'tanggalProker' => '2023-06-19',
-                        'penjelasan' =>
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
-                        'masalah' =>
-                        '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
-                        ],
+                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
+                        'problem' => '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
+                    ],
                     [
                         'judulProker' => 'Program Kerja 2',
                         'progressProker' => 100,
                         'tanggalProker' => '2023-06-20',
-                        'penjelasan' =>
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
-                        'masalah' =>
-                        '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
+                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
+                        'problem' => '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
                     ],
                 ];
             @endphp
@@ -66,16 +61,15 @@
                                     @endif
                                 </p>
 
-                                <p class="card-text masalah" data-full-description="{{ $item['masalah'] }}">
-                                    @if (strlen($item['masalah']) > 0)
+                                <p class="card-text problem" data-full-problem="{{ $item['problem'] }}">
+                                    @if (strlen($item['problem']) > 0)
                                         <span
-                                            class="short-descriptionM">{{ substr($item['masalah'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
-                                        @if (strlen($item['masalah']) > 100)
-                                            <span class="full-descriptionM"
-                                                style="display: none;">{{ $item['masalah'] }}</span>
+                                            class="short-problem">{{ substr($item['problem'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
+                                        @if (strlen($item['problem']) > 100)
+                                            <span class="full-problem" style="display: none;">{{ $item['problem'] }}</span>
                                         @endif
                                     @else
-                                        {{ $item['penjelasan'] }}
+                                        {{ $item['problem'] }}
                                     @endif
                                 </p>
 
@@ -88,64 +82,25 @@
                                     <button class="btn btn-danger">Delete</button>
                                 </div>
                             </div>
-=======
-        @foreach ($data as $item)
-        <div class="col-12 col-lg-6 mb-4">
-            <div class="card h-100">
-                <div class="card-body d-flex align-items-center">
-                    <div class="circle-bar blue pr-1">
-                        <svg class="circle" width="80" height="80">
-                            <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40" r="36"
-                                stroke-dasharray="226"
-                                stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
-                        </svg>
-                        <span class="progress">{{ $item->progressAgenda }}</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div>
-                        <h5 class="card-title">{{ $item->judulAgenda }}</h5>
-                        <p class="card-text">HMI CABANG MAKASSAR</p>
-                        <p class="card-text date">{{ $item->tanggalAgenda }}</p>
-                        <p class="card-text status">
-                            @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progressAgenda == 100)
-                                Selesai
-                                @endif
-                        </p>
-                        <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
-                            <span class="short-description">{{ Str::limit($item->deskripsi, 100) }}</span>
-                        </p>
-                        <p>{{ $item->masalah }}</p>
-
-                        <div class="card-buttons">
-                            <a href="/{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
-                                class="btn btn-primary">Edit</a>
-                            <button class="btn btn-danger">Delete</button>
->>>>>>> 3a442b709eecbcc5f2d00479b0129f5bfa17b3ff
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-<<<<<<< HEAD
     </div>
-=======
-        @endforeach
->>>>>>> 3a442b709eecbcc5f2d00479b0129f5bfa17b3ff
 
     <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
-            <p id="popup-hmi-cabang" class="card-text"></p>
-            <p id="popup-date" class="card-text"></p>
-            <p id="popup-status" class="card-text"></p>
-            <!-- Menambahkan bagian untuk menampilkan deskripsi pada popup -->
-            <p id="popup-description" class="card-text"></p>
-            <div id="popup-full-description" style="display: none;"></div>
-            <p id="popup-descriptionM" class="card-text"></p>
-            <div id="popup-full-descriptionM" style="display: none;"></div>
-        </div>
-    </div>
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
+    <p id="popup-hmi-cabang" class="card-text"></p>
+    <p id="popup-date" class="card-text"></p>
+    <p id="popup-status" class="card-text"></p>
+    <p id="popup-description" class="card-text"></p>
+    <p id="popup-problem" class="card-text"></p>
+  </div>
+</div>
+
     </div>
     </div>
 
@@ -384,73 +339,46 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script>
-    // Menangani tampilan popup saat mengklik kartu
-    const cards = document.querySelectorAll('.card');
-    const popup = document.getElementById('popup');
-    const popupTitle = document.getElementById('popup-title');
-    const popupHMICabang = document.getElementById('popup-hmi-cabang');
-    const popupDate = document.getElementById('popup-date');
-    const popupStatus = document.getElementById('popup-status');
-    const popupDescription = document.getElementById('popup-description');
-    const popupFullDescription = document.getElementById('popup-full-description');
+    <script>
+  const cards = document.querySelectorAll('.card');
+  const popup = document.getElementById('popup');
+  const popupTitle = document.getElementById('popup-title');
+  const popupHMICabang = document.getElementById('popup-hmi-cabang');
+  const popupDate = document.getElementById('popup-date');
+  const popupStatus = document.getElementById('popup-status');
+  const popupDescription = document.getElementById('popup-description');
+  const popupProblem = document.getElementById('popup-problem');
+  const closeBtn = document.querySelector('.close');
 
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            // Menampilkan data pada popup sesuai dengan kartu yang diklik
-            const title = card.querySelector('.card-title').textContent;
-            const hmiCabang = card.querySelector('.card-text').textContent;
-            const date = card.querySelector('.date').textContent;
-            const status = card.querySelector('.status').textContent;
-            const description = card.querySelector('.description .short-description').textContent;
-            const fullDescription = card.querySelector('.description .full-description').textContent;
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.querySelector('.card-title').textContent;
+      const hmiCabang = card.querySelector('.card-text').textContent;
+      const date = card.querySelector('.date').textContent;
+      const status = card.querySelector('.status').textContent;
+      const description = card.querySelector('.description').dataset.fullDescription;
+      const problem = card.querySelector('.problem').dataset.fullProblem;
 
-            const descriptionM = card.querySelector('.description .short-description').textContent;
-            const fullDescriptionM = card.querySelector('.description .full-description').textContent;
+      popupTitle.textContent = title;
+      popupHMICabang.textContent = hmiCabang;
+      popupDate.textContent = date;
+      popupStatus.textContent = status;
+      popupDescription.textContent = description;
+      popupProblem.textContent = problem;
 
-
-            popupTitle.textContent = title;
-            popupHMICabang.textContent = hmiCabang;
-            popupDate.textContent = date;
-            popupStatus.textContent = status;
-            popupDescription.innerHTML = description; // Menggunakan innerHTML agar deskripsi penuh tampil sepenuhnya
-            popupFullDescription.innerHTML = fullDescription;
-
-             popupDescription.innerHTML = descriptionM; // Menggunakan innerHTML agar deskripsi penuh tampil sepenuhnya
-            popupFullDescription.innerHTML = fullDescriptionM;// Menggunakan innerHTML agar deskripsi penuh tampil sepenuhnya
-
-            // Menampilkan atau menyembunyikan deskripsi penuh pada popup
-            if (fullDescription.length > 0) {
-                popupDescription.style.display = 'block';
-            } else {
-                popupDescription.style.display = 'none';
-            }
-
-            popup.style.display = 'block';
-        });
+      popup.style.display = 'block';
     });
+  });
 
-    // Menangani tombol close pada popup
-    const closeButton = document.querySelector('.close');
-    closeButton.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
 
-    // Menampilkan deskripsi penuh saat mengklik deskripsi yang disingkat pada kartu
-    const descriptions = document.querySelectorAll('.description, .descriptionM');
-    descriptions.forEach(description, descriptionsM => {
-        description.addEventListener('click', () => {
-            const fullDescription = description.querySelector('.full-description, .full-descriptionM').textContent;
-            popupFullDescription.innerHTML = fullDescription, fullDescriptionM; // Menggunakan innerHTML agar deskripsi penuh tampil sepenuhnya
-        });
-    });
-
-
-
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
 </script>
-<<<<<<< HEAD
 
 @endsection
-=======
-@endsection
->>>>>>> 3a442b709eecbcc5f2d00479b0129f5bfa17b3ff
