@@ -1,9 +1,7 @@
 @extends('layout.admin')
 
 @section('container')
-
 <div class="container">
-    <div class="container">
     <div class="row mt-5">
         <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
@@ -127,8 +125,12 @@
     </div>
 </div>
 
+
+
+
+
 <style>
-    .circle-bar {
+   .circle-bar {
         position: relative;
         display: inline-block;
     }
@@ -349,7 +351,6 @@
             bar.style.strokeDashoffset = offset;
         });
 </script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     const cards = document.querySelectorAll('.card');
@@ -392,6 +393,7 @@
             }
         });
 </script>
+
 
 
 @endsection
