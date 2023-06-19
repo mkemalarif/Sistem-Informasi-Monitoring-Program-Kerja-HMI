@@ -3,6 +3,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         /* Tambahkan gaya tata letak berikut di sini */
+        .fancy-paragraph {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .fancy-paragraph p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
         .carousel-container {
             margin-top: 30px;
         }
@@ -38,8 +51,112 @@
         .info-box p {
             font-size: 18px;
         }
+
+        .container-content {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            margin-right: 20px;
+        }
+
+        .content-container {
+            flex: 1;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+        .logo-container{
+            margin-left: 20px;
+        }
     </style>
 
+    <div class="container-content">
+        <div class="logo-container">
+            <img src="{{ asset('assets/titlelogo.png') }}" width="150px" alt="Logo">
+        </div>
+        <div class="content-container">
+            <h2>HMI Dalam Angka</h2>
+            <p>
+                Terhitung sejak awal Tahun 2022 PBHMI berinisiasi untuk merapihkan data keanggotaan secara digital. Data ini
+                adalah data anggota terbaru dari semua Badan Kordinasi (Badko), Cabang, dan Komisariat yang ada di bawah
+                Makassar.
+                <br>
+                <br>
+                Data ini akan selalu ter-update secara otomatis berdasarkan Program kerja yang diadakan oleh setiap Badan
+                Kordinasi, Cabang, dan Komisariat.
+                <br>
+                <br>
+                <em>*Statistik akan ter-update secara periodik.</em>
+            </p>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+    <div class="container-content">
+
+    <div class="content-container">
+        <h2 class="section-title">Sejarah HMI</h2>
+        <div class="fancy-paragraph">
+            <p>
+                HMI adalah organisasi mahasiswa yang didirikan di Yogyakarta pada tanggal 14 Rabiul Awal 1366 H bertepatan
+                dengan tanggal 5 Februari 1947.
+            </p>
+
+            <p>
+                HMI terbentuk atas prakarsa Lafran Pane beserta 14 orang mahasiswa Sekolah Tinggi Islam yang sekarang
+                bernama Universitas Islam Indonesia.
+            </p>
+        </div>
+
+
+    </div>
+        <div class="logo-container">
+       <span class="img mt-lg-3"><img src="{{ asset('assets/sejarah.png') }}" width="150px"  alt="Logo" ></span>
+    </div>
+</div>
+
+
+
+
+
+    <div class="container info-box-container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h5 class="card-title">Badan Koordinasi (Badko)</h5>
+                    <p class="card-text">6</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h5 class="card-title">Cabang</h5>
+                    <p class="card-text">40</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h5 class="card-title">Komisariat</h5>
+                    <p class="card-text">76</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h5 class="card-title">Total Anggota</h5>
+                    <p class="card-text">5000</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="container">
@@ -80,36 +197,7 @@
             </div>
 
             <!-- Information Boxes -->
-            <div class="container info-box-container mt-4">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="info-box">
-                            <h5 class="card-title">Badan Koordinasi (Badko)</h5>
-                            <p class="card-text">6</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="info-box">
-                            <h5 class="card-title">Cabang</h5>
-                            <p class="card-text">40</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="info-box">
-                            <h5 class="card-title">Komisariat</h5>
-                            <p class="card-text">76</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="info-box">
-                            <h5 class="card-title">Total Anggota</h5>
-                            <p class="card-text">5000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Controls -->
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
