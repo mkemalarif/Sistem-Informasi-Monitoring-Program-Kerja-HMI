@@ -29,6 +29,13 @@ class ControllerKetua extends Controller
         return view('Admin.ProkerAdd');
     }
 
+    public function ketuaDataAnggota($id)
+    {
+        return view('DataAnggota', [
+            'data' => Anggota::where('id', $id)->get(),
+        ]);
+    }
+
     public function ketuaTambahAdmin(Request $request)
     {
         $validate = $request->validate([
@@ -129,8 +136,15 @@ class ControllerKetua extends Controller
         $update = $request->validate([
             'judulAgenda' => 'required',
             'deskripsi' => 'required',
+            'masalah' => 'required',
             'tanggalAgenda' => 'required',
-            ''
+            'progressAgenda' => 'required|integer'
         ]);
+
+        // dd($update);
+
+        Agenda::where('id', $id)->update($update);
+
+        return redirect('/ketua/dashboard');
     }
 }

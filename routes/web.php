@@ -26,9 +26,9 @@ use App\Http\Controllers\LoginController;
 
 // Routes default
 
-    Route::get('/', function () {
-        return view('DetailBerita');
-    });
+Route::get('/', function () {
+    return view('DetailBerita');
+});
 
 // Route::get('/opini', function () {
 //     return view('Opini');
@@ -90,8 +90,8 @@ Route::middleware('ketua')->prefix('ketua')
         Route::get('/tambah-proker', 'programKerja');
         Route::get('/tambah-anggota', 'ketuaTambahAnggota');
         Route::get('/tambah-komisariat', 'ketuaTambahKomisariat');
-        Route::get('/edit-proker/{id}', 'ketuaEditProker');
-        Route::get('/data-anggota/{id}', 'dataAnggota');
+        Route::get('/ketua/edit-proker/{id}', 'ketuaEditProker');
+        Route::get('/data-anggota/{id}', 'ketuaDataAnggota');
         Route::post('/tambah-akun-admin', 'ketuaTambahAdmin');
         Route::post('/registrasi-member', 'ketuaAnggotaTambah');
         Route::post('/registrasi-komisariat', 'ketuaKomisariatTambah');

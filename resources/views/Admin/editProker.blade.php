@@ -104,7 +104,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
             <h2 class="mb-0" style="color: #fff;">Tambah Program Kerja</h2>
         </div>
         <div class="card-body">
-            <form action="/{{ auth()->user()->jenisAkun }}/tambah-proker" method="POST">
+            <form action="/{{ auth()->user()->jenisAkun }}/edit-proker/{{ $data->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
