@@ -11,14 +11,27 @@
                         'judulProker' => 'Program Kerja 1',
                         'progressProker' => 75,
                         'tanggalProker' => '2023-06-19',
-                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
-                        'problem' => '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
+                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.adipiscing elit.adipiscing elit.adipiscing elit.adipiscing elit.adipiscing elit.adipiscing elit.adipiscing elit.',
+                        'problem' => '1 list masalah
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                       2. List Masalah
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH',
                     ],
                     [
                         'judulProker' => 'Program Kerja 2',
                         'progressProker' => 100,
                         'tanggalProker' => '2023-06-20',
-                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
+                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit . ',
                         'problem' => '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
                     ],
                 ];
@@ -49,29 +62,27 @@
                                     @endif
                                 </p>
                                 <p class="card-text description" data-full-description="{{ $item['penjelasan'] }}">
-                                    @if (strlen($item['penjelasan']) > 0)
-                                        <span
-                                            class="short-description">{{ substr($item['penjelasan'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
-                                        @if (strlen($item['penjelasan']) > 100)
-                                            <span class="full-description"
-                                                style="display: none;">{{ $item['penjelasan'] }}</span>
-                                        @endif
-                                    @else
-                                        {{ $item['penjelasan'] }}
-                                    @endif
-                                </p>
+    @if (strlen($item['penjelasan']) > 0)
+        <span class="short-description">{{ substr($item['penjelasan'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
+        @if (strlen($item['penjelasan']) > 100)
+            <span class="full-description" style="display: none;">{{ $item['penjelasan'] }}</span>
+        @endif
+    @else
+        {{ $item['penjelasan'] }}
+    @endif
+</p>
 
-                                <p class="card-text problem" data-full-problem="{{ $item['problem'] }}">
-                                    @if (strlen($item['problem']) > 0)
-                                        <span
-                                            class="short-problem">{{ substr($item['problem'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
-                                        @if (strlen($item['problem']) > 100)
-                                            <span class="full-problem" style="display: none;">{{ $item['problem'] }}</span>
-                                        @endif
-                                    @else
-                                        {{ $item['problem'] }}
-                                    @endif
-                                </p>
+<p class="card-text problem" data-full-problem="{{ $item['problem'] }}">
+    @if (strlen($item['problem']) > 0)
+        <span class="short-problem">{{ substr($item['problem'], 0, 100) . (strlen($item['problem']) > 100 ? '...' : '') }}</span>
+        @if (strlen($item['problem']) > 100)
+            <span class="full-problem" style="display: none;">{{ $item['problem'] }}</span>
+        @endif
+    @else
+        {{ $item['problem'] }}
+    @endif
+</p>
+
 
 
 
