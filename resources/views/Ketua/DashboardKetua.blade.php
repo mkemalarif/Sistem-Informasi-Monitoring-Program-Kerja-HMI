@@ -62,26 +62,29 @@
                                     @endif
                                 </p>
                                 <p class="card-text description" data-full-description="{{ $item['penjelasan'] }}">
-    @if (strlen($item['penjelasan']) > 0)
-        <span class="short-description">{{ substr($item['penjelasan'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
-        @if (strlen($item['penjelasan']) > 100)
-            <span class="full-description" style="display: none;">{{ $item['penjelasan'] }}</span>
-        @endif
-    @else
-        {{ $item['penjelasan'] }}
-    @endif
-</p>
+                                    @if (strlen($item['penjelasan']) > 0)
+                                        <span
+                                            class="short-description">{{ substr($item['penjelasan'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
+                                        @if (strlen($item['penjelasan']) > 100)
+                                            <span class="full-description"
+                                                style="display: none;">{{ $item['penjelasan'] }}</span>
+                                        @endif
+                                    @else
+                                        {{ $item['penjelasan'] }}
+                                    @endif
+                                </p>
 
-<p class="card-text problem" data-full-problem="{{ $item['problem'] }}">
-    @if (strlen($item['problem']) > 0)
-        <span class="short-problem">{{ substr($item['problem'], 0, 100) . (strlen($item['problem']) > 100 ? '...' : '') }}</span>
-        @if (strlen($item['problem']) > 100)
-            <span class="full-problem" style="display: none;">{{ $item['problem'] }}</span>
-        @endif
-    @else
-        {{ $item['problem'] }}
-    @endif
-</p>
+                                <p class="card-text problem" data-full-problem="{{ $item['problem'] }}">
+                                    @if (strlen($item['problem']) > 0)
+                                        <span
+                                            class="short-problem">{{ substr($item['problem'], 0, 100) . (strlen($item['problem']) > 100 ? '...' : '') }}</span>
+                                        @if (strlen($item['problem']) > 100)
+                                            <span class="full-problem" style="display: none;">{{ $item['problem'] }}</span>
+                                        @endif
+                                    @else
+                                        {{ $item['problem'] }}
+                                    @endif
+                                </p>
 
 
 
@@ -101,16 +104,16 @@
     </div>
 
     <div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close">&times;</span>
-    <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
-    <p id="popup-hmi-cabang" class="card-text"></p>
-    <p id="popup-date" class="card-text"></p>
-    <p id="popup-status" class="card-text"></p>
-    <p id="popup-description" class="card-text"></p>
-    <p id="popup-problem" class="card-text"></p>
-  </div>
-</div>
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
+            <p id="popup-hmi-cabang" class="card-text"></p>
+            <p id="popup-date" class="card-text"></p>
+            <p id="popup-status" class="card-text"></p>
+            <p id="popup-description" class="card-text"></p>
+            <p id="popup-problem" class="card-text"></p>
+        </div>
+    </div>
 
     </div>
     </div>
@@ -351,45 +354,44 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-  const cards = document.querySelectorAll('.card');
-  const popup = document.getElementById('popup');
-  const popupTitle = document.getElementById('popup-title');
-  const popupHMICabang = document.getElementById('popup-hmi-cabang');
-  const popupDate = document.getElementById('popup-date');
-  const popupStatus = document.getElementById('popup-status');
-  const popupDescription = document.getElementById('popup-description');
-  const popupProblem = document.getElementById('popup-problem');
-  const closeBtn = document.querySelector('.close');
+        const cards = document.querySelectorAll('.card');
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popup-title');
+        const popupHMICabang = document.getElementById('popup-hmi-cabang');
+        const popupDate = document.getElementById('popup-date');
+        const popupStatus = document.getElementById('popup-status');
+        const popupDescription = document.getElementById('popup-description');
+        const popupProblem = document.getElementById('popup-problem');
+        const closeBtn = document.querySelector('.close');
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const title = card.querySelector('.card-title').textContent;
-      const hmiCabang = card.querySelector('.card-text').textContent;
-      const date = card.querySelector('.date').textContent;
-      const status = card.querySelector('.status').textContent;
-      const description = card.querySelector('.description').dataset.fullDescription;
-      const problem = card.querySelector('.problem').dataset.fullProblem;
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.card-title').textContent;
+                const hmiCabang = card.querySelector('.card-text').textContent;
+                const date = card.querySelector('.date').textContent;
+                const status = card.querySelector('.status').textContent;
+                const description = card.querySelector('.description').dataset.fullDescription;
+                const problem = card.querySelector('.problem').dataset.fullProblem;
 
-      popupTitle.textContent = title;
-      popupHMICabang.textContent = hmiCabang;
-      popupDate.textContent = date;
-      popupStatus.textContent = status;
-      popupDescription.textContent = description;
-      popupProblem.textContent = problem;
+                popupTitle.textContent = title;
+                popupHMICabang.textContent = hmiCabang;
+                popupDate.textContent = date;
+                popupStatus.textContent = status;
+                popupDescription.textContent = description;
+                popupProblem.textContent = problem;
 
-      popup.style.display = 'block';
-    });
-  });
+                popup.style.display = 'block';
+            });
+        });
 
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
 
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-    }
-  });
-</script>
-
+        window.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
 @endsection
