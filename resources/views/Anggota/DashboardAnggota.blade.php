@@ -3,78 +3,107 @@
 @section('container')
 <div class="container">
     <div class="container">
-    <div class="row mt-5">
-        <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
+        <div class="row mt-5">
+            <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-        @foreach ($data as $item)
-        <div class="col-12 col-lg-6 mb-4">
-            <div class="card horizontal-card">
-                <div class="card-body d-flex align-items-center">
-                    <div class="circle-bar blue pr-1">
-                        <svg class="circle" width="80" height="80">
-                            <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40" r="36"
-                                stroke-dasharray="226"
-                                stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
-                        </svg>
-                        <span class="progress">{{ $item->progressAgenda }}</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div>
-                        <h5 class="card-title">{{ $item->judulAgenda }}</h5>
-                        <p class="card-text">HMI CABANG MAKASSAR</p>
-                        <p class="card-text date">{{ $item->tanggalAgenda }}</p>
-                        <p class="card-text status">
-                            @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progresAgenda ==100)
-                                Selesai @endif </p>
-                        <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
-                            @if (strlen($item->deskripsi) > 0)
-                            <span class="short-description">{{ substr($item->deskripsi, 0, 100) .
-                                (strlen($item->deskripsi) > 100 ? '...' : '') }}</span>
-                            @if (strlen($item->deskripsi) > 100)
-                            <span class="full-description" style="display: none;">{{ $item->deskripsi
-                                }}</span>
-                            @endif
-                            @else
-                            {{ $item->dekripsi }}
-                            @endif
-                        </p>
+            @foreach ($data as $item)
+            <div class="col-12 col-lg-6 mb-4">
+                <div class="card horizontal-card">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="circle-bar blue pr-1">
+                            <svg class="circle" width="80" height="80">
+                                <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40" r="36"
+                                    stroke-dasharray="226"
+                                    stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
+                            </svg>
+                            <span class="progress">{{ $item->progressAgenda }}</span>
+                        </div>
+                        <div class="divider"></div>
+                        <div>
+                            <h5 class="card-title">{{ $item->judulAgenda }}</h5>
+                            <p class="card-text">HMI CABANG MAKASSAR</p>
+                            <p class="card-text date">{{ $item->tanggalAgenda }}</p>
+                            <p class="card-text status">
+                                @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progresAgenda ==100)
+                                    Selesai @endif </p>
+                            <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
+                                @if (strlen($item->deskripsi) > 0)
+                                <span class="short-description">{{ substr($item->deskripsi, 0, 100) .
+                                    (strlen($item->deskripsi) > 100 ? '...' : '') }}</span>
+                                @if (strlen($item->deskripsi) > 100)
+                                <span class="full-description" style="display: none;">{{ $item->deskripsi
+                                    }}</span>
+                                @endif
+                                @else
+                                {{ $item->dekripsi }}
+                                @endif
+                            </p>
 
-                        <p class="card-text problem" data-full-problem="{{ $item->masalah }}">
-                            @if (strlen($item->masalah) > 0)
-                            <span class="short-problem">{{ substr($item->masalah, 0, 100) .
-                                (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
-                            @if (strlen($item->masalah) > 100)
-                            <span class="full-problem" style="display: none;">{{ $item->masalah }}</span>
+                            <p class="card-text problem" data-full-problem="{{ $item->masalah }}">
+                                @if (strlen($item->masalah) > 0)
+                                <span class="short-problem">{{ substr($item->masalah, 0, 100) .
+                                    (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
+                                @if (strlen($item->masalah) > 100)
+                                <span class="full-problem" style="display: none;">{{ $item->masalah }}</span>
+                                @endif
+                                @else
+                                {{ $item->masalah }}
+                                @endif
+                            </p>
+                            @if(auth()->user()->jenisAkun !== 'anggota')
+                            <div class="card-buttons">
+                                <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
+                                    class="btn btn-primary">Edit</a>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
                             @endif
-                            @else
-                            {{ $item->masalah }}
-                            @endif
-                        </p>
-
-                        <div class="card-buttons">
-                            <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
-                                class="btn btn-primary">Edit</a>
-                            <button class="btn btn-danger">Delete</button>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
-</div>
 
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <span class="close">&times;</span>
-        <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
-        <p id="popup-hmi-cabang" class="card-text"></p>
-        <p id="popup-date" class="card-text"></p>
-        <p id="popup-status" class="card-text"></p>
-        <p id="popup-description" class="card-text"></p>
-        <p id="popup-problem" class="card-text"></p>
+        <div class="row mt-5">
+            <h1 class="mb-4">Daftar Komisariat</h1>
+        
+            <div class="row" id="anggota-list">
+                @foreach ($komisariat as $item)
+                <div class="col-md-4 mb-4">
+                    <a class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
+                        style="text-decoration: none">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <i class="fas fa-users"></i>
+                                <span class="space-between-icon">{{ $item->namaKomisariat }}</span>
+                            </h5>
+        
+                            <hr>
+                            <p class="card-text"><strong>Tahun Berdiri:</strong>{{ $item->tahunBerdiri }}
+                            </p>
+                            <p class="card-text"><strong>Status:</strong> <span
+                                    class="badge @if ($item->status === 'Aktif') badge-success @elseif($item->status === 'Nonaktif') badge-danger @endif">{{
+                                    $item->status }}</span>
+                            </p>
+                            <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
+                        </div>
+                    </a>
+                </div>
+                @endforeach
+            </div>
     </div>
-</div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
+            <p id="popup-hmi-cabang" class="card-text"></p>
+            <p id="popup-date" class="card-text"></p>
+            <p id="popup-status" class="card-text"></p>
+            <p id="popup-description" class="card-text"></p>
+            <p id="popup-problem" class="card-text"></p>
+        </div>
+    </div>
 
 
 </div>
