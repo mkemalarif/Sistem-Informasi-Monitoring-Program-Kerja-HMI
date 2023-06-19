@@ -26,9 +26,9 @@ Route::get('/', [Homepage::class, "index"])->middleware('login');
 
 // Routes default
 
-// Route::get('/', function () {
-//     return view('DetailBerita');
-// });
+Route::get('/berita', function () {
+    return view('DetailBerita');
+});
 
 // Route::get('/opini', function () {
 //     return view('Opini');
