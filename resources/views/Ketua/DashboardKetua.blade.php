@@ -32,7 +32,20 @@
                         'progressProker' => 100,
                         'tanggalProker' => '2023-06-20',
                         'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit . ',
-                        'problem' => '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
+                        'problem' => '1 list masalah
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                        KERJA SALAH
+                                       2. List Masalah
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH
+                                       KERJA SALAH'',
                     ],
                 ];
             @endphp
