@@ -68,12 +68,12 @@
             margin: 10px 0;
         }
 
-          .sidebar {
-        background-color: #4CAF50 !important;
-    }
+        .sidebar {
+            background-color: #4CAF50 !important;
+        }
     </style>
 
-     <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 
 
 
@@ -83,9 +83,10 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-       <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #4CAF50;">
+        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar"
+            style="background-color: #4CAF50;">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -111,6 +112,12 @@
                 <a class="nav-link collapsed" href="/admin/tambah-proker">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Tambah Program Kerja</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/list-komisariat">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>List Komisariat</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -185,8 +192,7 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logout" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

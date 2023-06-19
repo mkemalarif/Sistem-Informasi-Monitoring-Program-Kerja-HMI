@@ -48,9 +48,10 @@
         .sidebar .nav-item:hover {
             background-color: #ccc;
         }
-           .sidebar {
-        background-color: #4CAF50 !important;
-    }
+
+        .sidebar {
+            background-color: #4CAF50 !important;
+        }
     </style>
 
 
@@ -67,10 +68,11 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar", style="background-color: #4CAF50 ">
+        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar" ,
+            style="background-color: #4CAF50 ">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>

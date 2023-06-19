@@ -5,6 +5,7 @@
         <div class="row mt-5">
             <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
+<<<<<<< HEAD
             @php
                 $data = [
                     [
@@ -87,12 +88,49 @@
                                     <button class="btn btn-danger">Delete</button>
                                 </div>
                             </div>
+=======
+        @foreach ($data as $item)
+        <div class="col-12 col-lg-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                    <div class="circle-bar blue pr-1">
+                        <svg class="circle" width="80" height="80">
+                            <circle class="bar progress-bar-{{ $loop->iteration }}" cx="40" cy="40" r="36"
+                                stroke-dasharray="226"
+                                stroke-dashoffset="{{ 226 - (226 * $item->progressAgenda) / 100 }}"></circle>
+                        </svg>
+                        <span class="progress">{{ $item->progressAgenda }}</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div>
+                        <h5 class="card-title">{{ $item->judulAgenda }}</h5>
+                        <p class="card-text">HMI CABANG MAKASSAR</p>
+                        <p class="card-text date">{{ $item->tanggalAgenda }}</p>
+                        <p class="card-text status">
+                            @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progressAgenda == 100)
+                                Selesai
+                                @endif
+                        </p>
+                        <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
+                            <span class="short-description">{{ Str::limit($item->deskripsi, 100) }}</span>
+                        </p>
+                        <p>{{ $item->masalah }}</p>
+
+                        <div class="card-buttons">
+                            <a href="/{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
+                                class="btn btn-primary">Edit</a>
+                            <button class="btn btn-danger">Delete</button>
+>>>>>>> 3a442b709eecbcc5f2d00479b0129f5bfa17b3ff
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+<<<<<<< HEAD
     </div>
+=======
+        @endforeach
+>>>>>>> 3a442b709eecbcc5f2d00479b0129f5bfa17b3ff
 
     <div id="popup" class="popup">
         <div class="popup-content">
@@ -410,5 +448,9 @@
 
 
 </script>
+<<<<<<< HEAD
 
 @endsection
+=======
+@endsection
+>>>>>>> 3a442b709eecbcc5f2d00479b0129f5bfa17b3ff

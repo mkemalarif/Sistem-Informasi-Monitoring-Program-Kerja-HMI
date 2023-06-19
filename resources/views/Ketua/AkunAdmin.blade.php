@@ -101,42 +101,22 @@ $section = 'layout.'. auth()->user()->jenisAkun
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h2 class="mb-0" style="color: #fff;">Tambah Program Kerja</h2>
+            <h2 class="mb-0" style="color: #fff;">Tambah Akun Admin</h2>
         </div>
         <div class="card-body">
-            <form action="/{{ auth()->user()->jenisAkun }}/tambah-proker" method="POST">
+            <form action="/ketua/tambah-akun-admin" method="POST">
                 @csrf
-                @method('PUT')
                 <div class="form-group">
-                    <label for="nama">Nama Program Kerja</label>
-                    <input type="text" name="judulAgenda" id="judulAgenda"
-                        value="{{ old('judulAgenda', $data->judulAgenda) }}" class="form-control" required>
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama" id="nama" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="deskripsi">Deskripsi</label>
-                    <textarea name="deskripsi" id="deskripsi" class="form-control" rows="4"
-                        required>{{ old('deskripsi', $data->deskripsi) }}</textarea>
+                    <label for="nama">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="deskripsi">Masalah</label>
-                    <textarea name="masalah" id="masalah" class="form-control" rows="4"
-                        required>{{ old('masalah', $data->masalah) }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="tanggalLahir">Tanggal Terlaksana:</label>
-                    <input id="tanggalAgenda" name="tanggalAgenda" type="date"
-                        class="form-control @error('tanggalAgenda') is-invalid @enderror"
-                        value="{{ old('tanggalAgenda', $data->tanggalAgenda) }}" required>
-                    @error('tanggalLahir')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="nama">Progress Agenda</label>
-                    <input type="number" name="progressAgenda" id="progressAgenda"
-                        value="{{ old('progressAgenda', $data->progressAgenda) }}" class="form-control" required>
+                    <label for="nama">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Simpan</button>
                 <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Batal</button>

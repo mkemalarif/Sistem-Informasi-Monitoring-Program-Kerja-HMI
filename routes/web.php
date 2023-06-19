@@ -70,12 +70,16 @@ Route::middleware('admin')->prefix('admin')
         Route::get('/registrasi-komisariat', 'regisKomisariat');
         Route::get('/tambah-proker', 'tambahProker');
         Route::get('/edit-proker/{id}', 'adminEditProker');
-        Route::get('/validasi-berita', 'editBerita');
+        Route::get('/list-komisariat', 'komisariat');
+        Route::get('/data-anggota/{id}', 'dataAnggota');
+        Route::get('/edit-data-anggota/{id}', 'adminEditAnggota');
+        // Route::get('/validasi-berita', 'editBerita');
         Route::post('/registrasi-member', 'tambahAnggota');
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
         Route::post('/tambah-proker', 'adminTambahProker');
         Route::put('/validasi-berita/{id}', 'validasiBerita');
         Route::put('/edit-proker/{id}', 'editProker');
+        Route::put('/edit-data-anggota/{id}', 'adminEditDataAnggota');
     });
 
 // semua route untuk ketua
@@ -84,8 +88,13 @@ Route::middleware('ketua')->prefix('ketua')
         Route::get('/dashboard', 'index');
         Route::get('/tambah-akun-admin', 'create');
         Route::get('/tambah-proker', 'programKerja');
-        Route::get('/edit-proker', 'ketuaEditProker');
+        Route::get('/tambah-anggota', 'ketuaTambahAnggota');
+        Route::get('/tambah-komisariat', 'ketuaTambahKomisariat');
+        Route::get('/edit-proker/{id}', 'ketuaEditProker');
         Route::get('/data-anggota/{id}', 'dataAnggota');
-        // Route::get('/tambah-anggota',);
+        Route::post('/tambah-akun-admin', 'ketuaTambahAdmin');
+        Route::post('/registrasi-member', 'ketuaAnggotaTambah');
+        Route::post('/registrasi-komisariat', 'ketuaKomisariatTambah');
         Route::post('/tambah-proker', 'ketuaTambahProker');
+        Route::put('/edit-proker/{id}', 'ketuaProkerEdit');
     });

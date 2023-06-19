@@ -5,7 +5,7 @@
 <div class="container-xl mt-5">
     <div class="card bg-light shadow-sm">
         <div class="card-body p-5">
-            <h3 class="card-title text-center mb-4">Tambah Data Anggota</h3>
+            <h3 class="card-title text-center mb-4">Tambah Akun Admin</h3>
             <form action="" method="POST" class="mt-4">
                 @csrf
                 <div class="form-group">
@@ -40,7 +40,7 @@
                     <label for="angkatan" class="form-label">Angkatan</label>
                     <input type="text" class="form-control" id="angkatan" name="angkatan" required>
                 </div>
-                
+
                 <div class="text-center mt-4">
                     <button type="submit" class="btn btn-primary btn-lg px-5">SIMPAN</button>
                 </div>

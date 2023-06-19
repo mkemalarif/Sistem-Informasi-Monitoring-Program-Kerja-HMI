@@ -1,4 +1,10 @@
-@extends('layout.admin')
+<?php
+
+$section = 'layout.'. auth()->user()->jenisAkun
+
+?>
+
+@extends($section)
 <style>
         .card {
         max-width: 600px;

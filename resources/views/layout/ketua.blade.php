@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sb-admin-2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
-     <style>
+    <style>
         /* Ubah warna latar belakang sidebar */
         .sidebar {
             background-color: #e9ecef;
@@ -57,9 +57,10 @@
         .sidebar .nav-item:hover {
             background-color: #ccc;
         }
-           .sidebar {
-        background-color: #4CAF50 !important;
-    }
+
+        .sidebar {
+            background-color: #4CAF50 !important;
+        }
     </style>
 
 </head>
@@ -72,7 +73,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
                 <div class="sidebar-brand-icon rotate-n-15"></div>
                 <div class="sidebar-brand-text mx-3">Ketua</div>
             </a>
@@ -270,7 +271,7 @@
         });
     });
     </script>
- <script>
+    <script>
         // Tambahkan script jQuery untuk menutup sub-menu ketika salah satu item sub-menu di klik
         $(document).ready(function() {
             $('.collapse-item').click(function() {

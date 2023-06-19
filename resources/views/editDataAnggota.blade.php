@@ -1,10 +1,3 @@
-{{-- @if(auth()->user()->jenisAkun === 'admin')
-@extends('layout.admin')
-@section('container')
-@endif
-@if(auth()->user()->jenisAkun !== 'admin')
-@extends('layout.ketua')
-@endif --}}
 <?php
 
 $section = 'layout.'. auth()->user()->jenisAkun
@@ -12,6 +5,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
 ?>
 
 @extends($section)
+
 @section('container')
 
 <style>
@@ -51,13 +45,12 @@ $section = 'layout.'. auth()->user()->jenisAkun
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="/{{ auth()->user()->jenisAkun }}/registrasi-member">
+                    <form method="POST" action="/{{ auth()->user()->jenisAkun }}/edit-data-anggota/{{ $data->id }}">
                         @csrf
-
                         <div class="form-group">
                             <label for="nokader">NOKADER:</label>
                             <input id="nokader" type="text" class="form-control @error('nokader') is-invalid @enderror"
-                                name="nokader" value="{{ old('nokader') }}" required autofocus>
+                                name="nokader" value="{{ old('nokader', $data->nokader) }}" required autofocus>
                             @error('nokader')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -68,7 +61,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
                         <div class="form-group">
                             <label for="nama">NAMA:</label>
                             <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror"
-                                name="nama" value="{{ old('nama') }}" required>
+                                name="nama" value="{{ old('nama', $data->nama) }}" required>
                             @error('nama')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -95,7 +88,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
                             <label for="tempatLahir">TTL:</label>
                             <input id="tempatLahir" type="text"
                                 class="form-control @error('tempatLahir') is-invalid @enderror" name="tempatLahir"
-                                value="{{ old('tempatLahir') }}" required>
+                                value="{{ old('tempatLahir', $data->tempatLahir) }}" required>
                             @error('tempatLahir')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -107,7 +100,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
                             <label for="tanggalLahir">Tanggal Lahir:</label>
                             <input id="tanggalLahir" type="date"
                                 class="form-control @error('tanggalLahir') is-invalid @enderror" name="tanggalLahir"
-                                value="{{ old('tanggalLahir') }}" required>
+                                value="{{ old('tanggalLahir', $data->tanggalLahir) }}" required>
                             @error('tanggalLahir')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -118,7 +111,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
                         <div class="form-group">
                             <label for="alamat">ALAMAT:</label>
                             <textarea id="alamat" class="form-control @error('alamat') is-invalid @enderror"
-                                name="alamat" rows="3" required>{{ old('alamat') }}</textarea>
+                                name="alamat" rows="3" required>{{ old('alamat', $data->alamat) }}</textarea>
                             @error('alamat')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -130,7 +123,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
                             <label for="angkatan">ANGKATAN:</label>
                             <input id="angkatan" type="number"
                                 class="form-control @error('angkatan') is-invalid @enderror" name="angkatan"
-                                value="{{ old('angkatan') }}" required>
+                                value="{{ old('angkatan', $data->angkatan) }}" required>
                             @error('angkatan')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -142,14 +135,14 @@ $section = 'layout.'. auth()->user()->jenisAkun
                             <label for="komisariat_id">ASAL KOMISARIAT:</label>
                             <select id="komisariat_id" class="form-select @error('komisariat_id') is-invalid @enderror"
                                 name="komisariat_id" required>
-                                @foreach ($komisariat as $data)
-                                @if(old('komisariat_id') === $data->id)
-                                <option selected value={{ $data->id }}>
-                                    {{ $data->namaKomisariat }}
+                                @foreach ($komisariat as $item)
+                                @if(old('komisariat_id', $data->komisariat_id) === $item->id)
+                                <option selected value={{ $item->id }}>
+                                    {{ $item->namaKomisariat }}
                                 </option>
                                 @else
-                                <option value="{{ $data->id }}">
-                                    {{ $data->namaKomisariat }}
+                                <option value="{{ $item->id }}">
+                                    {{ $item->namaKomisariat }}
                                 </option>
                                 @endif
                                 @endforeach
@@ -172,4 +165,10 @@ $section = 'layout.'. auth()->user()->jenisAkun
         </div>
     </div>
 </div>
+
+
 @endsection
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('content');
+</script>
