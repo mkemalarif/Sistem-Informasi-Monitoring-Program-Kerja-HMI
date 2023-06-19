@@ -159,6 +159,16 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myCarousel = document.querySelector("#myCarousel");
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 5000, // Adjust slide transition speed as desired
+            });
+        });
+    </script>
 </body>
 
 </html>

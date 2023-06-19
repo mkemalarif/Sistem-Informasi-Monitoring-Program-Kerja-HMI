@@ -75,8 +75,7 @@
     </div>
 </div>
 
-</div>
-</div>
+
 
 <div class="row mt-5">
     <h1 class="mb-4">Daftar Komisariat</h1>

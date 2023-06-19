@@ -51,11 +51,10 @@
     <div id="myCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
         <!-- Slides -->
         <div class="carousel-inner">
-            @foreach($data as $item)
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
+            @foreach($data as $index => $item)
+            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                 <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" class="d-block w-100"
-                    alt="News Image 1">
+                    alt="News Image {{ $index + 1 }}">
                 <div class="carousel-caption">
                     <h5>{{ $item->judul }}</h5>
                     <p>{{ Str::limit($item->isiBerita, 100) }}</p>
@@ -63,46 +62,6 @@
                 </div>
             </div>
             @endforeach
-            <!-- Slide 2 -->
-            {{-- <div class="carousel-item">
-                <img src="https://via.placeholder.com/500x250" class="d-block w-100" alt="News Image 2">
-                <div class="carousel-caption">
-                    <h5>News Title 2</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum magna eget
-                        interdum.</p>
-                    <a class="btn btn-primary" href="#myCarousel" role="button" data-bs-slide="next">Read More</a>
-                </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/500x250" class="d-block w-100" alt="News Image 3">
-                <div class="carousel-caption">
-                    <h5>News Title 3</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum magna eget
-                        interdum.</p>
-                    <a class="btn btn-primary" href="#myCarousel" role="button" data-bs-slide="next">Read More</a>
-                </div>
-            </div>
-            <!-- Slide 4 -->
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/500x250" class="d-block w-100" alt="News Image 4">
-                <div class="carousel-caption">
-                    <h5>News Title 4</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum magna eget
-                        interdum.</p>
-                    <a class="btn btn-primary" href="#myCarousel" role="button" data-bs-slide="next">Read More</a>
-                </div>
-            </div>
-            <!-- Slide 5 -->
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/500x250" class="d-block w-100" alt="News Image 5">
-                <div class="carousel-caption">
-                    <h5>News Title 5</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum magna eget
-                        interdum.</p>
-                    <a class="btn btn-primary" href="#myCarousel" role="button" data-bs-slide="next">Read More</a>
-                </div>
-            </div> --}}
         </div>
 
         <!-- Information Boxes -->
@@ -148,6 +107,9 @@
         </a>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
     // Aktifkan carousel
     document.addEventListener("DOMContentLoaded", function () {
