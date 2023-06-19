@@ -26,9 +26,9 @@ Route::get('/', [Homepage::class, "index"])->middleware('login');
 
 // Routes default
 
-// Route::get('/', function () {
-//     return view('DetailBerita');
-// });
+Route::get('/berita', function () {
+    return view('DetailBerita');
+});
 
 // Route::get('/opini', function () {
 //     return view('Opini');
@@ -73,6 +73,7 @@ Route::middleware('admin')->prefix('admin')
         Route::get('/list-komisariat', 'komisariat');
         Route::get('/data-anggota/{id}', 'dataAnggota');
         Route::get('/edit-data-anggota/{id}', 'adminEditAnggota');
+        Route::get('/admin/edit-proker/{id}', 'adminEditProker');
         // Route::get('/validasi-berita', 'editBerita');
         Route::post('/registrasi-member', 'tambahAnggota');
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
@@ -80,6 +81,7 @@ Route::middleware('admin')->prefix('admin')
         Route::put('/validasi-berita/{id}', 'validasiBerita');
         Route::put('/edit-proker/{id}', 'editProker');
         Route::put('/edit-data-anggota/{id}', 'adminEditDataAnggota');
+        Route::put('/edit-proker/{id}', 'adminProkerEdit');
     });
 
 // semua route untuk ketua
