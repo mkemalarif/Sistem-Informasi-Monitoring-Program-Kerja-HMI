@@ -5,21 +5,24 @@
     <div class="row mt-5">
         <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-        @php
-        $data = [
-        foreach ($item as $data) {
-        [
-        'judulProker' => 'Program Kerja 1',
-        'progressProker' => 75,
-        'tanggalProker' => '2023-06-19',
-        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur
-        adipiscing elit.',
-        'problem' => '1 list masalah Lorem
-        ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
-        ]
-        }
-        ];
-        @endphp
+            @php
+                $data = [
+                    [
+                        'judulProker' => 'Program Kerja 1',
+                        'progressProker' => 75,
+                        'tanggalProker' => '2023-06-19',
+                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
+                        'problem' => '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
+                    ],
+                    [
+                        'judulProker' => 'Program Kerja 2',
+                        'progressProker' => 100,
+                        'tanggalProker' => '2023-06-20',
+                        'penjelasan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit.',
+                        'problem' => '1 list masalah Lorem ipsuasdasdasdasdasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.',
+                    ],
+                ];
+            @endphp
 
         @foreach ($data as $item)
         <div class="col-12 col-lg-6 mb-4">
@@ -56,15 +59,16 @@
 
                                 <p class="card-text problem" data-full-problem="{{ $item['problem'] }}">
                                     @if (strlen($item['problem']) > 0)
-                                    <span class="short-problem">{{ substr($item['problem'], 0, 100) .
-                                        (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
-                                    @if (strlen($item['problem']) > 100)
-                                    <span class="full-problem" style="display: none;">{{ $item['problem'] }}</span>
-                                    @endif
+                                        <span
+                                            class="short-problem">{{ substr($item['problem'], 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
+                                        @if (strlen($item['problem']) > 100)
+                                            <span class="full-problem" style="display: none;">{{ $item['problem'] }}</span>
+                                        @endif
                                     @else
                                     {{ $item['problem'] }}
                                     @endif
                                 </p>
+
 
 
 
@@ -82,16 +86,16 @@
     </div>
 </div>
 
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <span class="close">&times;</span>
-        <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
-        <p id="popup-hmi-cabang" class="card-text"></p>
-        <p id="popup-date" class="card-text"></p>
-        <p id="popup-status" class="card-text"></p>
-        <p id="popup-description" class="card-text"></p>
-        <p id="popup-problem" class="card-text"></p>
-    </div>
+    <div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2 id="popup-title" class="card-title">Judul Kegiatan</h2>
+    <p id="popup-hmi-cabang" class="card-text"></p>
+    <p id="popup-date" class="card-text"></p>
+    <p id="popup-status" class="card-text"></p>
+    <p id="popup-description" class="card-text"></p>
+    <p id="popup-problem" class="card-text"></p>
+  </div>
 </div>
 
 </div>
@@ -332,9 +336,9 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    const cards = document.querySelectorAll('.card');
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+  const cards = document.querySelectorAll('.card');
   const popup = document.getElementById('popup');
   const popupTitle = document.getElementById('popup-title');
   const popupHMICabang = document.getElementById('popup-hmi-cabang');
@@ -344,35 +348,34 @@
   const popupProblem = document.getElementById('popup-problem');
   const closeBtn = document.querySelector('.close');
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const title = card.querySelector('.card-title').textContent;
-      const hmiCabang = card.querySelector('.card-text').textContent;
-      const date = card.querySelector('.date').textContent;
-      const status = card.querySelector('.status').textContent;
-      const description = card.querySelector('.description').dataset.fullDescription;
-      const problem = card.querySelector('.problem').dataset.fullProblem;
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.card-title').textContent;
+                const hmiCabang = card.querySelector('.card-text').textContent;
+                const date = card.querySelector('.date').textContent;
+                const status = card.querySelector('.status').textContent;
+                const description = card.querySelector('.description').dataset.fullDescription;
+                const problem = card.querySelector('.problem').dataset.fullProblem;
 
-      popupTitle.textContent = title;
-      popupHMICabang.textContent = hmiCabang;
-      popupDate.textContent = date;
-      popupStatus.textContent = status;
-      popupDescription.textContent = description;
-      popupProblem.textContent = problem;
+                popupTitle.textContent = title;
+                popupHMICabang.textContent = hmiCabang;
+                popupDate.textContent = date;
+                popupStatus.textContent = status;
+                popupDescription.textContent = description;
+                popupProblem.textContent = problem;
 
-      popup.style.display = 'block';
-    });
-  });
+                popup.style.display = 'block';
+            });
+        });
 
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
 
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-    }
-  });
-</script>
-
+        window.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
 @endsection
