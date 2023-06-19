@@ -148,4 +148,11 @@
         </a>
     </div>
 </div>
+<script>
+    // Aktifkan carousel
+    document.addEventListener("DOMContentLoaded", function () {
+        const myCarousel = document.querySelector("#myCarousel");
+        new bootstrap.Carousel(myCarousel);
+    });
+</script>
 @endsection

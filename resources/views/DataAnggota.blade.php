@@ -9,7 +9,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
 <div class="container mt-5">
     <h1>Data Anggota</h1>
     <div class="table-responsive">
-        <table id="member-table" class="table table-striped table-bordered">
+        <table id="member-table" class="table table-striped table-bordered", style="background-color: #4CAF50">
             <thead>
                 <tr>
                     <th>No</th>
@@ -102,7 +102,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
     }
 
     .table thead th {
-        background-color: #0d6efd;
+        background-color: #4CAF50;
         color: #fff;
         font-weight: bold;
         text-transform: uppercase;
