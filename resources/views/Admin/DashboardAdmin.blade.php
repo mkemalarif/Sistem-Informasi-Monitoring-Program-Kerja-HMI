@@ -5,7 +5,7 @@
     <div class="row mt-5">
         <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
-        @foreach ($data as $item)
+        @foreach ($proker as $item)
         <div class="col-12 col-lg-6 mb-4">
             <div class="card horizontal-card">
                 <div class="card-body d-flex align-items-center">
@@ -130,7 +130,7 @@
 
 
 <style>
-   .circle-bar {
+    .circle-bar {
         position: relative;
         display: inline-block;
     }
