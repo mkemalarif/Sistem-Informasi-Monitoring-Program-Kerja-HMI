@@ -45,7 +45,7 @@
                                        KERJA SALAH
                                        KERJA SALAH
                                        KERJA SALAH
-                                       KERJA SALAH'',
+                                       KERJA SALAH',
                     ],
                 ];
             @endphp
