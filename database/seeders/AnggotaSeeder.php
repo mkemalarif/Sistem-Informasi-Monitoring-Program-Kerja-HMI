@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use App\Models\Agenda;
 use App\Models\Anggota;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class AnggotaSeeder extends Seeder
 {
@@ -22,6 +23,14 @@ class AnggotaSeeder extends Seeder
             'alamat' => 'daya',
             'angkatan' => 2,
             'komisariat_id' => 1,
+        ]);
+
+        Agenda::create([
+            'judulAgenda' => 'diklat',
+            'deskripsi' => 'lorem ipsum',
+            'masalah' => '1. salah',
+            'tanggalAgenda' => '2023-11-22',
+            'progressAgenda' => 0,
         ]);
     }
 }
