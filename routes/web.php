@@ -22,13 +22,13 @@ use App\Http\Controllers\LoginController;
 
 
 // route free for all dan semua kebutuhan homepage
-Route::get('/', [Homepage::class, "index"])->middleware('login');
+// Route::get('/', [Homepage::class, "index"])->middleware('login');
 
 // Routes default
 
-// Route::get('/', function () {
-//     return view('ListKomisariat');
-// });
+Route::get('/', function () {
+    return view('DetailBerita');
+});
 
 // Route::get('/opini', function () {
 //     return view('Opini');
