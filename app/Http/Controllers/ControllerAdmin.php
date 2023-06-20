@@ -59,6 +59,13 @@ class ControllerAdmin extends Controller
         ]);
     }
 
+    public function adminEditKomisariat($id)
+    {
+        return view('Admin.editKomisariat', [
+            "data" => Komisariat::find($id)
+        ]);
+    }
+
     public function adminEditProker($id)
     {
         return view('Admin.editProker', [
@@ -153,5 +160,18 @@ class ControllerAdmin extends Controller
         Agenda::where('id', $id)->update($update);
 
         return redirect('/admin/dashboard');
+    }
+
+    public function adminKomisariatEdit(Request $request, $id)
+    {
+        $update = $request->validate([
+            'nokomisariat' => 'required',
+            'namaKomisariat' => 'required',
+            'tahunBerdiri' => 'required|integer',
+            'status' => 'required',
+            'angkatan' => 'required|integer'
+        ]);
+
+        dd($update);
     }
 }

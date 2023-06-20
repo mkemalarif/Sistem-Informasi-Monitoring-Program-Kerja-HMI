@@ -14,7 +14,7 @@ class ArtikelSeeder extends Seeder
     public function run(): void
     {
         Artikel::create([
-            'judul' => 'Lorem, ipsum dolor.',
+            'judul' => 'Loremiiiii, ipsum dolor.',
             'isiBerita' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ducimus quae repellendus a possimus. Illo.',
             'user_id' => 1,
             'status' => 'acc',

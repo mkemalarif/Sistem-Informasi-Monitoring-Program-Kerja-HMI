@@ -8,23 +8,36 @@
     <div class="row" id="anggota-list">
       @foreach ($komisariat as $item)
       <div class="col-md-4 mb-4">
-        <div class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
-          style="text-decoration: none">
-          <div class="card-body">
-            <h5 class="card-title text-center">
-              <i class="fas fa-users"></i>
-              <span class="space-between-icon">{{ $item->namaKomisariat }}</span>
-            </h5>
+        <div class="card p-3">
+          <a href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
+            style="text-decoration: none">
 
-            <hr>
-            <p class="card-text"><strong>Tahun Berdiri:</strong>{{ $item->tahunBerdiri }}
-            </p>
-            <p class="card-text"><strong>Status:</strong> <span
-                class="badge @if ($item->status === 'Aktif') badge-success @elseif($item->status === 'Nonaktif') badge-danger @endif">{{
-                $item->status }}</span>
-            </p>
-            <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <i class="fas fa-users"></i>
+                <span class="space-between-icon">{{ $item->namaKomisariat }}</span>
+              </h5>
+  
+              <hr>
+              <p class="card-text"><strong>Tahun Berdiri:</strong>{{ $item->tahunBerdiri }}
+              </p>
+              <p class="card-text"><strong>Status:</strong> <span
+                  class="badge @if ($item->status === 'Aktif') badge-success @elseif($item->status === 'Nonaktif') badge-danger @endif">{{
+                  $item->status }}</span>
+              </p>
+              <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
+            </div>
+          </a>
+          @if(auth()->user()->jenisAkun !== 'anggota')
+          <div class="row">
+            <a href="{{ auth()->user()->jenisAkun }}/edit-komisariat/{{ $item->id }}" class="btn btn-primary col-3">edit</a>
+            <form action="" class="col-3">
+              @csrf
+              @method('delete')
+              <button class="btn btn-danger">delete</button>
+            </form>
           </div>
+          @endif
         </div>
       </div>
       @endforeach
