@@ -36,6 +36,21 @@ class ControllerKetua extends Controller
         ]);
     }
 
+    public function ketuaEditAnggota($id)
+    {
+        return view('editDataAnggota', [
+            'data' => Anggota::find($id),
+            'komisariat' => Komisariat::get()
+        ]);
+    }
+
+    public function ketuaEditKomisariat($id)
+    {
+        return view('Admin.editKomisariat', [
+            "data" => Komisariat::find($id)
+        ]);
+    }
+
     public function ketuaTambahAdmin(Request $request)
     {
         $validate = $request->validate([
@@ -89,7 +104,7 @@ class ControllerKetua extends Controller
 
         $user->save();
 
-        return redirect('/admin/dashboard');
+        return redirect('/ketua/dashboard');
     }
 
     public function ketuaKomisariatTambah(Request $request)
@@ -104,7 +119,7 @@ class ControllerKetua extends Controller
 
         Komisariat::create($validate);
 
-        return redirect('/admin/dashboard');
+        return redirect('/ketua/dashboard');
     }
 
     public function ketuaEditProker($id)
@@ -144,6 +159,74 @@ class ControllerKetua extends Controller
         // dd($update);
 
         Agenda::where('id', $id)->update($update);
+
+        return redirect('/ketua/dashboard');
+    }
+
+    public function ketuaKomisariatEdit(Request $request, $id)
+    {
+        $update = $request->validate([
+            'nokomisariat' => 'required',
+            'namaKomisariat' => 'required',
+            'tahunBerdiri' => 'required|integer',
+            'status' => 'required',
+            'angkatan' => 'required|integer'
+        ]);
+
+        Komisariat::where("id", $id)->update($update);
+    }
+
+    public function ketuaEditDataAnggota(Request $request, $id)
+    {
+        $data = Anggota::find($id)->nokader;
+        $newNokader = $request->input('nokader');
+        // dd($data);
+        if ($data !==  $newNokader) {
+            $update = $request->validate([
+                'nokader' => 'required|unique:anggotas',
+                'nama' => 'required',
+                'jenisKelamin' => 'required',
+                'tempatLahir' => 'required',
+                'tanggalLahir' => 'required|date',
+                'alamat' => 'required',
+                'angkatan' => 'required|integer',
+                'komisariat_id' => 'required'
+            ]);
+        } else {
+            $update = $request->validate([
+                // 'nokader' => 'required|unique:anggotas',
+                'nama' => 'required',
+                'jenisKelamin' => 'required',
+                'tempatLahir' => 'required',
+                'tanggalLahir' => 'required|date',
+                'alamat' => 'required',
+                'angkatan' => 'required|integer',
+                'komisariat_id' => 'required'
+            ]);
+        }
+
+
+        Anggota::where("id", $id)->update($update);
+
+        return redirect('ketua/dashboard');
+    }
+
+    public function ketuaDeleteKomisariat($id)
+    {
+        Komisariat::find($id)->delete();
+
+        return redirect('/ketua/dashboard');
+    }
+    public function ketuaDeleteAnggota($id)
+    {
+        Anggota::find($id)->delete();
+
+        return redirect('/ketua/dashboard');
+    }
+
+    public function ketuaDeleteProker($id)
+    {
+        Agenda::find($id)->delete();
 
         return redirect('/ketua/dashboard');
     }

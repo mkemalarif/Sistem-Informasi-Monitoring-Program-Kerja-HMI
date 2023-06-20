@@ -51,9 +51,16 @@
                         </p>
 
                         <div class="card-buttons">
-                            <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
-                                class="btn btn-primary">Edit</a>
-                            <button class="btn btn-danger">Delete</button>
+                            <div class="row">
+
+                                <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
+                                    class="btn btn-primary col-3">Edit</a>
+                                    <form action="/{{ auth()->user()->jenisAkun }}/hapus-proker/{{ $item->id }}" method="POST" class="col-3">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="btn btn-danger">delete</button>
+                                      </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,9 +90,9 @@
     <div class="row" id="anggota-list">
         @foreach ($komisariat as $item)
         <div class="col-md-4 mb-4">
-            <a class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
-                style="text-decoration: none">
-                <div class="card-body">
+            <div class="card p-3">
+                <a href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}" style="text-decoration: none">
+                    <div class="card-body">
                     <h5 class="card-title text-center">
                         <i class="fas fa-users"></i>
                         <span class="space-between-icon">{{ $item->namaKomisariat }}</span>
@@ -100,7 +107,18 @@
                     </p>
                     <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
                 </div>
-            </a>
+                </a>
+                @if(auth()->user()->jenisAkun !== 'anggota')
+          <div class="row">
+            <a href="{{ auth()->user()->jenisAkun }}/edit-komisariat/{{ $item->id }}" class="btn btn-primary col-3">edit</a>
+            <form action="/{{ auth()->user()->jenisAkun }}/hapus-komisariat/{{ $item->id }}" method="POST" class="col-3">
+              @csrf
+              @method('delete')
+              <button class="btn btn-danger">delete</button>
+            </form>
+          </div>
+          @endif
+            </div>
         </div>
         @endforeach
     </div>

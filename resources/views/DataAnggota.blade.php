@@ -44,7 +44,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
                         <div class="btn-group" role="group">
                             <a href="/{{ auth()->user()->jenisAkun }}/edit-data-anggota/{{ $item->id }}" type="button"
                                 class="btn btn-primary">Edit</a>
-                                <form action="/{{ auth()->user()->jenisAkun }}/hapus-data-anggota/{{ $item->id }}" method="POST" class="col-3">
+                                <form action="/{{ auth()->user()->jenisAkun }}/hapus-data-anggota/{{ $item->id }}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-danger">delete</button>
