@@ -1,21 +1,6 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v10.2.2...10.x)
-
-## [v10.2.2](https://github.com/laravel/laravel/compare/v10.2.1...v10.2.2) - 2023-05-23
-
-- Add lock path by @taylorotwell in https://github.com/laravel/laravel/commit/a6bfbc7f90e33fd6cae3cb23f106c9689858c3b5
-
-## [v10.2.1](https://github.com/laravel/laravel/compare/v10.2.0...v10.2.1) - 2023-05-12
-
-- Add hashed cast to user password by @emargareten in https://github.com/laravel/laravel/pull/6171
-- Bring back pusher cluster config option by @jesseleite in https://github.com/laravel/laravel/pull/6174
-
-## [v10.2.0](https://github.com/laravel/laravel/compare/v10.1.1...v10.2.0) - 2023-05-05
-
-- Update welcome.blade.php by @aymanatmeh in https://github.com/laravel/laravel/pull/6163
-- Sets package.json type to module by @timacdonald in https://github.com/laravel/laravel/pull/6090
-- Add url support for mail config by @chu121su12 in https://github.com/laravel/laravel/pull/6170
+## [Unreleased](https://github.com/laravel/laravel/compare/v10.1.1...10.x)
 
 ## [v10.1.1](https://github.com/laravel/laravel/compare/v10.0.7...v10.1.1) - 2023-04-18
 

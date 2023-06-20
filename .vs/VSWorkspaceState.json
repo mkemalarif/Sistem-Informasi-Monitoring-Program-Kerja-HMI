@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Middleware",
+    "\\resources",
+    "\\routes"
+  ],
+  "SelectedNode": "\\app\\Http\\Middleware\\Authenticate.php",
+  "PreviewInSolutionExplorer": false
+}
