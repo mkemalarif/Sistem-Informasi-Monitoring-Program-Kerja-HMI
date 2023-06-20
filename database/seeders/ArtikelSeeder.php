@@ -17,6 +17,18 @@ class ArtikelSeeder extends Seeder
             'judul' => 'Lorem, ipsum dolor.',
             'isiBerita' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ducimus quae repellendus a possimus. Illo.',
             'user_id' => 1,
+            'status' => 'acc',
+        ]);
+        Artikel::create([
+            'judul' => 'Lorem, ipsum dolor.',
+            'isiBerita' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ducimus quae repellendus a possimus. Illo.',
+            'user_id' => 1,
+            'status' => 'acc',
+        ]);
+        Artikel::create([
+            'judul' => 'Lorem, ipsum dolor.',
+            'isiBerita' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ducimus quae repellendus a possimus. Illo.',
+            'user_id' => 1,
             'status' => 'tunda',
         ]);
     }

@@ -26,7 +26,8 @@ class Homepage extends Controller
   public function detailBerita($id)
   {
     return view('DetailBerita', [
-      "data" => Artikel::find($id)
+      "data" => Artikel::find($id),
+      "berita" => Artikel::where('status', 'acc')->get()
     ]);
   }
 }

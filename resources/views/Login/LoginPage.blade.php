@@ -7,15 +7,18 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h1 class="card-title text-center mb-4">Login Form</h1>
-                        <form action="" method="POST" class="needs-validation" novalidate>
+                        @if (session('error'))
+                            <div class="alert alert-danger">{{ session('error') }}</div>
+                        @endif
+                        <form action="{{ route('login') }}" method="POST" class="needs-validation" novalidate>
                             @csrf
                             <div class="mb-3 shadow-sm">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required value="{{ old('username') }}">
                                 <div class="invalid-feedback">Please enter your username.</div>
                             </div>
                             <div class="mb-3 shadow-sm">
-                                <label for="password" class="form-label ">Password</label>
+                                <label for="password" class="form-label">Password</label>
                                 <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
                                 <div class="invalid-feedback">Please enter your password.</div>
                             </div>
@@ -36,81 +39,12 @@
     </div>
 @endsection
 
-<style>
-    .card {
-        border-radius: 10px;
-        border: none;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-title {
-        color: #333;
-        font-size: 32px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    .form-label {
-        font-weight: bold;
-        color: #555;
-        font-size: 18px;
-        margin-bottom: 8px;
-    }
-
-    .form-control {
-        border-color: #ddd;
-        box-shadow: none;
-        transition: border-color 0.3s ease-in-out;
-        font-size: 16px;
-        padding: 12px;
-        border-radius: 8px;
-        background-color: #f7f7f7;
-        color: #333;
-    }
-
-    .form-control:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-        font-size: 18px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        padding: 14px 20px;
-        transition: background-color 0.3s ease-in-out;
-        border-radius: 8px;
-        text-transform: uppercase;
-    }
-
-    .btn-primary:hover {
-        background-color: #0069d9;
-        border-color: #0062cc;
-    }
-
-    .btn-primary:focus {
-        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-    }
-
-    .card-footer {
-        color: #777;
-        font-size: 12px;
-        background-color: #f7f7f7;
-        border-top: none;
-        padding: 12px;
-    }
-
-    .link-forgot-password {
-        text-decoration: none;
-        color: #007bff;
-        font-size: 14px;
-        transition: color 0.3s ease-in-out;
-    }
-
-    .link-forgot-password:hover {
-        color: #0056b3;
-    }
-</style>
+@section('scripts')
+    @if (session('error'))
+        <script>
+            window.onload = function() {
+                alert("{{ session('error') }}");
+            }
+        </script>
+    @endif
+@endsection

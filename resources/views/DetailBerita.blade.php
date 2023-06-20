@@ -8,23 +8,18 @@
                     <h1 class="article__title">Detail Berita</h1>
 
                     <div class="article__image">
-                        <img src="https://dummyimage.com/600x400/000/fff" alt="Gambar Berita">
+                        <img src="{{ asset('berita/'.$data->user_id.'_fotoberita_'.$data->id.'.jpg') }}" alt="Gambar Berita">
                     </div>
 
                     <div class="article__info">
                         <p class="article__category">Kategori: Berita Utama</p>
-                        <p class="article__date">19 Juni 2023</p>
+                        <p class="article__date">{{ $data->created_at->format('d M Y') }}</p>
                     </div>
 
                     <div class="article__content">
-                        <h2 class="article__subtitle">Judul Berita</h2>
+                        <h2 class="article__subtitle">{{ $data->judul }}</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate risus non sem
-                            sollicitudin finibus. Integer quis elit lectus. Mauris sed ipsum ac arcu facilisis rhoncus.
-                            Morbi non dapibus nisi. Nullam sed lacinia nisi. Ut consectetur euismod magna, a lobortis
-                            risus suscipit vel. Aenean sed ante id odio interdum ullamcorper. Proin tincidunt nibh
-                            velit, id venenatis orci tristique vitae. Ut malesuada leo mauris, eget hendrerit velit
-                            eleifend nec.
+                            {{ $data->isiBerita }}
                         </p>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate risus non sem
@@ -80,33 +75,18 @@
                     <h2 class="latest-news__title">Berita Terbaru</h2>
 
                     <ul class="list-group">
+                        @foreach($berita as $item)
                         <li class="list-group-item">
                             <div class="latest-news__item">
-                                <img src="https://dummyimage.com/100x100/000/fff" alt="Gambar Berita">
+                                <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" alt="Gambar Berita">
                                 <div class="latest-news__content">
-                                    <h3 class="latest-news__item-title">Judul Berita 1</h3>
-                                    <p class="latest-news__item-date">19 Juni 2023</p>
+                                    <a class="latest-news__item-title" style="">{{ $item->judul }}</a>
+                                    <br>
+                                    <a class="latest-news__item-date">{{ $item->created_at->format('d M Y') }}</a>
                                 </div>
                             </div>
                         </li>
-                        <li class="list-group-item">
-                            <div class="latest-news__item">
-                                <img src="https://dummyimage.com/100x100/000/fff" alt="Gambar Berita">
-                                <div class="latest-news__content">
-                                    <h3 class="latest-news__item-title">Judul Berita 2</h3>
-                                    <p class="latest-news__item-date">18 Juni 2023</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="latest-news__item">
-                                <img src="https://dummyimage.com/100x100/000/fff" alt="Gambar Berita">
-                                <div class="latest-news__content">
-                                    <h3 class="latest-news__item-title">Judul Berita 3</h3>
-                                    <p class="latest-news__item-date">17 Juni 2023</p>
-                                </div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
