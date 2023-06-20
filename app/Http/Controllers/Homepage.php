@@ -22,8 +22,11 @@ class Homepage extends Controller
     ]);
   }
 
-  public function newIndex()
+
+  public function detailBerita($id)
   {
-    return view('HomePage');
+    return view('DetailBerita', [
+      "data" => Artikel::find($id)
+    ]);
   }
 }
