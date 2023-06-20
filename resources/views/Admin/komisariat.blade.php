@@ -8,7 +8,7 @@
     <div class="row" id="anggota-list">
       @foreach ($komisariat as $item)
       <div class="col-md-4 mb-4">
-        <a class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
+        <div class="card" href="/{{ auth()->user()->jenisAkun }}/data-anggota/{{ $item->id }}"
           style="text-decoration: none">
           <div class="card-body">
             <h5 class="card-title text-center">
@@ -25,7 +25,7 @@
             </p>
             <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
           </div>
-        </a>
+        </div>
       </div>
       @endforeach
     </div>
