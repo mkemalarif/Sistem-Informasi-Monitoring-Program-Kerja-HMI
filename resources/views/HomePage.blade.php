@@ -1,6 +1,5 @@
 @extends('partial.main')
 @section('container')
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         /* Tambahkan gaya tata letak berikut di sini */
@@ -20,14 +19,6 @@
         .carousel-container {
             margin-top: 30px;
         }
-=======
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-<style>
-    /* Tambahkan gaya tata letak berikut di sini */
-    .carousel-container {
-        margin-top: 30px;
-    }
->>>>>>> 51c678eb783787cfb639029043829034b318433a
 
     .info-box-container {
         margin-top: 30px;
@@ -57,7 +48,6 @@
         margin-bottom: 10px;
     }
 
-<<<<<<< HEAD
         .info-box p {
             font-size: 18px;
         }
@@ -86,12 +76,6 @@
             margin-left: 20px;
         }
     </style>
-=======
-    .info-box p {
-        font-size: 18px;
-    }
-</style>
->>>>>>> 51c678eb783787cfb639029043829034b318433a
 
     <div class="container-content">
         <div class="logo-container">
@@ -178,7 +162,6 @@
 <div class="container">
     <h1 class="mt-5">Berita</h1>
 
-<<<<<<< HEAD
         <div class="banner">
             <!-- Content for the banner -->
         </div>
@@ -226,10 +209,6 @@
                 <span class="visually-hidden">Next</span>
             </a>
         </div>
-=======
-    <div class="banner">
-        <!-- Content for the banner -->
->>>>>>> 51c678eb783787cfb639029043829034b318433a
     </div>
 
     <!-- Carousel -->
