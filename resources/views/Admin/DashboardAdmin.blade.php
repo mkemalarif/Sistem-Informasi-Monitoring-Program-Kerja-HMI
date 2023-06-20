@@ -7,6 +7,9 @@
             <div class="card border-0 shadow-sm rounded">
                 <div class="card-body">
                     <h1 class="mb-4">Tabel Entry Berita</h1>
+                    <div class="mb-4">
+                        <input id="searchInput" type="text" class="form-control" placeholder="Search">
+                    </div>
 
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover" id="beritaTable">
@@ -197,6 +200,36 @@
             bar.style.strokeDashoffset = offset;
         });
 </script>
+
+
+<script>
+    function searchTable() {
+        // Get the search input value
+        var input = document.getElementById("searchInput");
+        var filter = input.value.toUpperCase();
+
+        // Get the table and table rows
+        var table = document.getElementById("beritaTable");
+        var rows = table.getElementsByTagName("tr");
+
+        // Loop through all table rows and hide those that do not match the search query
+        for (var i = 0; i < rows.length; i++) {
+            var titleColumn = rows[i].getElementsByTagName("td")[0];
+            if (titleColumn) {
+                var title = titleColumn.textContent || titleColumn.innerText;
+                if (title.toUpperCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    // Add an event listener to the search input
+    document.getElementById("searchInput").addEventListener("keyup", searchTable);
+</script>
+
 
 
 
