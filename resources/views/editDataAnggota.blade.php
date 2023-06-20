@@ -47,6 +47,7 @@ $section = 'layout.'. auth()->user()->jenisAkun
                 <div class="card-body">
                     <form method="POST" action="/{{ auth()->user()->jenisAkun }}/edit-data-anggota/{{ $data->id }}">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="nokader">NOKADER:</label>
                             <input id="nokader" type="text" class="form-control @error('nokader') is-invalid @enderror"

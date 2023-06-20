@@ -31,7 +31,7 @@
           @if(auth()->user()->jenisAkun !== 'anggota')
           <div class="row">
             <a href="{{ auth()->user()->jenisAkun }}/edit-komisariat/{{ $item->id }}" class="btn btn-primary col-3">edit</a>
-            <form action="" class="col-3">
+            <form action="/{{ auth()->user()->jenisAkun }}/hapus-komisariat/{{ $item->id }}" method="POST" class="col-3">
               @csrf
               @method('delete')
               <button class="btn btn-danger">delete</button>

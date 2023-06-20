@@ -172,6 +172,54 @@ class ControllerAdmin extends Controller
             'angkatan' => 'required|integer'
         ]);
 
-        dd($update);
+        Komisariat::where("id", $id)->update($update);
+    }
+
+    public function adminEditDataAnggota(Request $request, $id)
+    {
+        $data = Anggota::find($id)->nokader;
+        $newNokader = $request->input('nokader');
+        // dd($data);
+        if ($data !==  $newNokader) {
+            $update = $request->validate([
+                'nokader' => 'required|unique:anggotas',
+                'nama' => 'required',
+                'jenisKelamin' => 'required',
+                'tempatLahir' => 'required',
+                'tanggalLahir' => 'required|date',
+                'alamat' => 'required',
+                'angkatan' => 'required|integer',
+                'komisariat_id' => 'required'
+            ]);
+        } else {
+            $update = $request->validate([
+                // 'nokader' => 'required|unique:anggotas',
+                'nama' => 'required',
+                'jenisKelamin' => 'required',
+                'tempatLahir' => 'required',
+                'tanggalLahir' => 'required|date',
+                'alamat' => 'required',
+                'angkatan' => 'required|integer',
+                'komisariat_id' => 'required'
+            ]);
+        }
+
+
+        Anggota::where("id", $id)->update($update);
+
+        return redirect('admin/dashboard');
+    }
+
+    public function adminDeleteKomisariat($id)
+    {
+        Komisariat::find($id)->delete();
+
+        return redirect('/admin/dashboard');
+    }
+    public function adminDeleteAnggota($id)
+    {
+        Anggota::find($id)->delete();
+
+        return redirect('/admin/dashboard');
     }
 }
