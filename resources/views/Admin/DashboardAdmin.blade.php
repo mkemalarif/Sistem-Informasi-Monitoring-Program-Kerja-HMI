@@ -101,13 +101,11 @@
                                 {{ $item->masalah }}
                                 @endif
                             </p>
-                            @if(auth()->user()->jenisAkun !== 'anggota')
                             <div class="card-buttons">
                                 <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
                                     class="btn btn-primary">Edit</a>
                                 <button class="btn btn-danger">Delete</button>
                             </div>
-                            @endif
                         </div>
                         </div>
                     </div>

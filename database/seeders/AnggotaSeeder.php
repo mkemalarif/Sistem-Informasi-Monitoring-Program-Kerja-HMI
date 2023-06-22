@@ -24,13 +24,5 @@ class AnggotaSeeder extends Seeder
             'angkatan' => 2,
             'komisariat_id' => 1,
         ]);
-
-        Agenda::create([
-            'judulAgenda' => 'diklat',
-            'deskripsi' => 'lorem ipsum',
-            'masalah' => '1. salah',
-            'tanggalAgenda' => '2023-11-22',
-            'progressAgenda' => 0,
-        ]);
     }
 }

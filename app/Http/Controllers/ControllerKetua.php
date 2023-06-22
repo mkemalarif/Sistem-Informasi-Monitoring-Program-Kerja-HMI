@@ -14,7 +14,7 @@ class ControllerKetua extends Controller
     public function index()
     {
         return view('Ketua.DashboardKetua', [
-            'data' => Agenda::latest()->get(),
+            'data' => Agenda::where('periode', 2023)->get(),
             'komisariat' => Komisariat::get()
         ]);
     }
@@ -139,7 +139,8 @@ class ControllerKetua extends Controller
         $validate = $request->validate([
             'judulAgenda' => 'required',
             'tanggalAgenda' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'periode' => 'required|integer'
         ]);
 
         $validate['progressAgenda'] = 0;
@@ -158,6 +159,7 @@ class ControllerKetua extends Controller
             'deskripsi' => 'required',
             'masalah' => 'required',
             'tanggalAgenda' => 'required',
+            'periode' => 'required|integer',
             'progressAgenda' => 'required|integer'
         ]);
 

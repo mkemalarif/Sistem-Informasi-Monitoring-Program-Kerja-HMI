@@ -16,7 +16,7 @@ class ControllerAdmin extends Controller
     {
         return view('Admin.DashboardAdmin', [
             'data' => Artikel::latest()->get(),
-            'proker' => Agenda::latest()->get()
+            'proker' => Agenda::where('periode', 2023)->get()
         ]);
     }
 
@@ -152,6 +152,7 @@ class ControllerAdmin extends Controller
             'deskripsi' => 'required',
             'masalah' => 'required',
             'tanggalAgenda' => 'required',
+            'periode' => 'required|integer',
             'progressAgenda' => 'required|integer'
         ]);
 

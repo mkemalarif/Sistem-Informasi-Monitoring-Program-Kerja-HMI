@@ -102,6 +102,12 @@
                     <span>Tambah Program Kerja</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/ketua/rekap-proker">
+                    <span class=""></span>
+                    <span>Rekapitulasi-Proker</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/ketua/tambah-akun-admin">

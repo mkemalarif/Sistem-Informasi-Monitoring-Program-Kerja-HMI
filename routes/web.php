@@ -105,10 +105,8 @@ Route::middleware('ketua')->prefix('ketua')
         Route::post('/registrasi-member', 'ketuaAnggotaTambah');
         Route::post('/registrasi-komisariat', 'ketuaKomisariatTambah');
         Route::post('/tambah-proker', 'ketuaTambahProker');
-        Route::put('/edit-proker/{id}', 'ketuaProkerEdit');
         Route::put('edit-komisariat/{id}', 'ketuaKomisariatEdit');
         Route::put('/edit-data-anggota/{id}', 'ketuaEditDataAnggota');
         Route::delete('/hapus-komisariat/{id}', 'ketuaDeleteKomisariat');
         Route::delete('/hapus-data-anggota/{id}', 'ketuaDeleteAnggota');
-        Route::delete('/hapus-proker/{id}', 'ketuaDeleteProker');
     });
