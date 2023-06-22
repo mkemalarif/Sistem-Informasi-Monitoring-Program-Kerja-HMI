@@ -1,8 +1,8 @@
     @extends('layout.ketua')
     @section('container')
-
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Pilih Periode</button>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown",
+                style="background-color: #4CAF50">Pilih Periode</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#" onclick="filterData('2020')">2020</a></li>
                 <li><a class="dropdown-item" href="#" onclick="filterData('2021')">2021</a></li>
@@ -599,6 +599,14 @@
                     <td class="center">2022</td>
                 </tr>
 
+                <tr >
+                    <td  colspan="4" class="text-right">asdasasd</td>
+                    <td class="center"></td>
+                    <td class="center"></td>
+
+
+                </tr>
+
                 <!-- Tambahkan baris tabel lainnya sesuai kebutuhan -->
             </tbody>
         </table>
@@ -785,6 +793,12 @@
                 /* Tambahkan ini untuk menampilkan ... saat konten terpotong */
                 white-space: nowrap;
                 /* Tambahkan ini untuk mencegah konten mengalami wrap */
+            }
+
+            .dropdown {
+                margin-bottom: 30px;
+                margin-left: 810px;
+
             }
         </style>
 
