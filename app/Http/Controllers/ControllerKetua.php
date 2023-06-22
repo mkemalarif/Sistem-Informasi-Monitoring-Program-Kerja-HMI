@@ -81,6 +81,11 @@ class ControllerKetua extends Controller
         ]);
     }
 
+    public function rekapProker()
+    {
+        return view('Ketua.RekapProker');
+    }
+
     public function ketuaAnggotaTambah(Request $request)
     {
         $validate = $request->validate([

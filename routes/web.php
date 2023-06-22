@@ -100,6 +100,7 @@ Route::middleware('ketua')->prefix('ketua')
         Route::get('/ketua/edit-komisariat/{id}', 'ketuaEditKomisariat');
         Route::get('/edit-proker-anggota/{id}', 'ketuaEditAnggota');
         Route::get('/data-anggota/{id}', 'ketuaDataAnggota');
+        Route::get('/rekap-proker', 'rekapProker');
         Route::post('/tambah-akun-admin', 'ketuaTambahAdmin');
         Route::post('/registrasi-member', 'ketuaAnggotaTambah');
         Route::post('/registrasi-komisariat', 'ketuaKomisariatTambah');
