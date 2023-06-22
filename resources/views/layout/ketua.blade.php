@@ -148,14 +148,15 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->nama
-                                    }}</span>
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->nama }}</span>
                                 <img class="img-profile rounded-circle" src="{{ asset('assets/aldi-taher.jpg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <span class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></span>
                                     Logout
                                 </a>
@@ -247,6 +248,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+
+
 
 
 
@@ -258,18 +266,18 @@
 
 
     <script>
-        $(document).ready(function () {
-        $('#beritaTable').DataTable({
-            "pagingType": "numbers",
-            "language": {
-                "search": '<span class="mr-2">Cari:</span> _INPUT_',
-                "paginate": {
-                    "next": "Selanjutnya",
-                    "previous": "Sebelumnya"
+        $(document).ready(function() {
+            $('#beritaTable').DataTable({
+                "pagingType": "numbers",
+                "language": {
+                    "search": '<span class="mr-2">Cari:</span> _INPUT_',
+                    "paginate": {
+                        "next": "Selanjutnya",
+                        "previous": "Sebelumnya"
+                    }
                 }
-            }
+            });
         });
-    });
     </script>
     <script>
         // Tambahkan script jQuery untuk menutup sub-menu ketika salah satu item sub-menu di klik

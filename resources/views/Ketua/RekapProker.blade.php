@@ -1,286 +1,439 @@
-@extends('layout.ketua')
-@section('container')
-    <table class="customTable">
-        <thead>
-            <tr>
-                <th>Judul Agenda</th>
-                <th>Deskripsi</th>
-                <th>Masalah</th>
-                <th>Tanggal Agenda</th>
-                <th>Progress Anda</th>
-                <th>Periode</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="center">Kegiatan</td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">14/03/2023</td>
-                <td class="center">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 10%"></div>
-                        <span class="progress-label">10%</span>
-                    </div>
-                </td>
-                <td class="center">2020</td>
-            </tr>
-            <tr>
-                <td class="center">Kegiatan</td>
-                <td class="center">Lorem, ipsum dolor sit amet consectetur adipisicing </td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">14/03/2023</td>
-                <td class="center">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 10%"></div>
-                        <span class="progress-label">10%</span>
-                    </div>
-                </td>
-                <td class="center">2020</td>
-            </tr>
-            <tr>
-                <td class="center">Kegiatan</td>
-                <td class="center">Lorem, ipsum dolor sit amet consectetur adipisicing </td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">14/03/2023</td>
-                <td class="center">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 10%"></div>
-                        <span class="progress-label">10%</span>
-                    </div>
-                </td>
-                <td class="center">2020</td>
-            </tr>
-            <tr>
-                <td class="center">Kegiatan</td>
-                <td class="center">Lorem, ipsum dolor sit amet consectetur adipisicing </td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">14/03/2023</td>
-                <td class="center">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 10%"></div>
-                        <span class="progress-label">10%</span>
-                    </div>
-                </td>
-                <td class="center">2020</td>
-            </tr>
-            <tr>
-                <td class="center">Kegiatan</td>
-                <td class="center">Lorem, ipsum dolor sit amet consectetur adipisicing </td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">14/03/2023</td>
-                <td class="center">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 10%"></div>
-                        <span class="progress-label">10%</span>
-                    </div>
-                </td>
-                <td class="center">2020</td>
-            </tr>
-            <tr>
-                <td class="center">Kegiatan</td>
-                <td class="center">Lorem, ipsum dolor sit amet consectetur adipisicing </td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">14/03/2023</td>
-                <td class="center">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 10%"></div>
-                        <span class="progress-label">10%</span>
-                    </div>
-                </td>
-                <td class="center">2020</td>
-            </tr>
-            <tr>
-                <td class="center">Kegiatan</td>
-                <td class="center">Lorem, ipsum dolor sit amet consectetur adipisicing </td>
-                <td class="center">
-                    {{ substr('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam loreasdasdasdasdsad.', 0, 100) }}
-                </td>
-                <td class="center">14/03/2023</td>
-                <td class="center">
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 10%"></div>
-                        <span class="progress-label">10%</span>
-                    </div>
-                </td>
-                <td class="center">2020</td>
-            </tr>
-        </tbody>
-    </table>
+    @extends('layout.ketua')
+    @section('container')
+        <table class="customTable">
+            <thead>
+                <tr>
+                    <th>Judul Agenda</th>
+                    <th>Deskripsi</th>
+                    <th>Masalah</th>
+                    <th>Tanggal Agenda</th>
+                    <th>Progress Anda</th>
+                    <th>Periode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center">Kegiatan</td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Expasdasdasdedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem
+                            quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+                            adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore,
+                            amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">14/03/2023</td>
+                    <td class="center">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="progress-label">30</span>
+                        </div>
+                    </td>
+                    <td class="center">2020</td>
+                </tr>
+                 <tr>
+                    <td class="center">Kegiatan</td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Expasdasdasdedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem
+                            quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+                            adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore,
+                            amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">14/03/2023</td>
+                    <td class="center">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="progress-label">30</span>
+                        </div>
+                    </td>
+                    <td class="center">2020</td>
+                </tr>
+                 <tr>
+                    <td class="center">Kegiatan</td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Expasdasdasdedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem
+                            quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+                            adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore,
+                            amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">14/03/2023</td>
+                    <td class="center">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="progress-label">30</span>
+                        </div>
+                    </td>
+                    <td class="center">2020</td>
+                </tr>
+                 <tr>
+                    <td class="center">Kegiatan</td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Expasdasdasdedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem
+                            quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+                            adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore,
+                            amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">14/03/2023</td>
+                    <td class="center">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="progress-label">30</span>
+                        </div>
+                    </td>
+                    <td class="center">2020</td>
+                </tr>
+                 <tr>
+                    <td class="center">Kegiatan</td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Expasdasdasdedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem
+                            quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+                            adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore,
+                            amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">14/03/2023</td>
+                    <td class="center">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="progress-label">30</span>
+                        </div>
+                    </td>
+                    <td class="center">2020</td>
+                </tr>
+                 <tr>
+                    <td class="center">Kegiatan</td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Expasdasdasdedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem
+                            quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+                            adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore,
+                            amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">14/03/2023</td>
+                    <td class="center">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="progress-label">30</span>
+                        </div>
+                    </td>
+                    <td class="center">2020</td>
+                </tr>
+                 <tr>
+                    <td class="center">Kegiatan</td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Expasdasdasdedita, adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem
+                            quisquam dolore, amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">
+                        <span class="full-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+                            adipisci delectus! Quas laboriosam officia at iure reprehenderit voluptatem quisquam dolore,
+                            amet eligendi consequuntur aliquam tenetur provident deleniti illo magni quam
+                            loreasdasdasdasdsad.</span>
+                    </td>
+                    <td class="center">14/03/2023</td>
+                    <td class="center">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="progress-label">30</span>
+                        </div>
+                    </td>
+                    <td class="center">2020</td>
+                </tr>
+            </tbody>
+        </table>
 
- <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close">&times;</span>
-      <h2 id="judulAgenda"></h2>
-      <p id="deskripsi"></p>
-      <p id="masalah"></p>
-      <p id="tanggalAgenda"></p>
-      <p id="progress"></p>
-      <p id="periode"></p>
-    </div>
-  </div>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2>Detail Agenda</h2>
+                <div id="popup-description"></div>
+                <h2 id="judulAgenda"></h2>
+                <p id="deskripsi"></p>
+                <p id="masalah"></p>
+                <p id="tanggalAgenda"></p>
+                <p id="progress"></p>
+                <p id="periode"></p>
+            </div>
+        </div>
 
 
-    <style>
-        table.customTable {
-            width: 100%;
-            background-color: #FFFFFF;
-            border-collapse: collapse;
-            border: 2px ridge #7EA8F8;
-            color: #000000;
-        }
+        <style>
+            table.customTable {
+                width: 100%;
+                background-color: #FFFFFF;
+                border-collapse: collapse;
+                border: 2px ridge #7EA8F8;
+                color: #000000;
+            }
 
-        table.customTable td,
-        table.customTable th {
-            border: 2px ridge #7EA8F8;
-            padding: 10px;
-        }
+            table.customTable td,
+            table.customTable th {
+                border: 2px ridge #7EA8F8;
+                padding: 10px;
+            }
 
-        table.customTable thead {
-            background-color: #4CAF50;
-            color: #FFFFFF;
-            text-align: center;
-        }
+            table.customTable thead {
+                background-color: #4CAF50;
+                color: #FFFFFF;
+                text-align: center;
+            }
 
-        table.customTable tbody tr:nth-child(even) {
-            background-color: #F2F2F2;
-        }
+            table.customTable tbody tr:nth-child(even) {
+                background-color: #F2F2F2;
+            }
 
-        table.customTable tbody tr:hover {
-            background-color: #D4E6F1;
-        }
+            table.customTable tbody tr:hover {
+                background-color: #D4E6F1;
+            }
 
-        td.center {
-            text-align: center;
-        }
+            td.center {
+                text-align: center;
+            }
 
-        .progress-container {
-            position: relative;
-            width: 100%;
-            height: 20px;
-            background-color: #F2F2F2;
-            border-radius: 4px;
-            overflow: hidden;
-        }
+            .progress-container {
+                position: relative;
+                width: 100%;
+                height: 20px;
+                background-color: #F2F2F2;
+                border-radius: 4px;
+                overflow: hidden;
+            }
 
-        .progress-bar {
-            position: absolute;
-            top: 0;
+            .progress-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: #4CAF50;
+                transition: width 0.3s ease-in-out;
+            }
+
+            .progress-label {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                line-height: 20px;
+                color: #FFFFFF;
+                font-weight: bold;
+            }
+
+            .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
             left: 0;
+            top: 0;
+            width: 100%;
             height: 100%;
-            background-color: #4CAF50;
-            transition: width 0.3s ease-in-out;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
-        .progress-label {
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            line-height: 20px;
-            color: #FFFFFF;
-            font-weight: bold;
+            right: 10px;
+            cursor: pointer;
         }
 
-        .popup {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4);
-    }
+        #popup-description {
+            margin-top: 20px;
+            white-space: pre-line; /* Tambahkan ini untuk mempertahankan pemisahan baris dalam teks */
+        }
 
-    .popup-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 60%;
-      max-width: 600px;
-      position: relative;
-    }
+            .close:hover {
+                color: #000;
+            }
 
-    .close {
-      color: #aaa;
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+            .dataTables_wrapper .dataTables_paginate .paginate_button {
+                padding: 0.5em 1em !important;
+            }
 
-    .close:hover {
-      color: #000;
-    }
-    </style>
+            .progress-container {
+                position: relative;
+                width: 100%;
+                height: 20px;
+                background-color: #F2F2F2;
+                border-radius: 4px;
+                overflow: hidden;
+            }
 
-     <script>
-    // Mendapatkan semua baris pada tabel
-    const tableRows = document.querySelectorAll(".customTable tbody tr");
+            .progress-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: #4CAF50;
+                transition: width 0.3s ease-in-out;
+            }
 
-    // Mendapatkan elemen popup
-    const popup = document.getElementById("popup");
-    const judulAgendaElement = document.getElementById("judulAgenda");
-    const deskripsiElement = document.getElementById("deskripsi");
-    const masalahElement = document.getElementById("masalah");
-    const tanggalAgendaElement = document.getElementById("tanggalAgenda");
-    const progressElement = document.getElementById("progress");
-    const periodeElement = document.getElementById("periode");
-    const closeElement = document.querySelector(".close");
+            .progress-label {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                line-height: 20px;
+                color: #FFFFFF;
+                font-weight: bold;
+            }
 
-    // Menambahkan event listener untuk setiap baris pada tabel
-    tableRows.forEach((row) => {
-      row.addEventListener("click", () => {
-        // Mendapatkan data dari tiap kolom pada baris
-        const judulAgenda = row.cells[0].innerText;
-        const deskripsi = row.cells[1].innerText;
-        const masalah = row.cells[2].innerText;
-        const tanggalAgenda = row.cells[3].innerText;
-        const progress = row.cells[4].querySelector(".progress-label").innerText;
-        const periode = row.cells[5].innerText;
 
-        // Menampilkan data pada konten popup
-        judulAgendaElement.textContent = `Judul Agenda: ${judulAgenda}`;
-        deskripsiElement.textContent = `Deskripsi: ${deskripsi}`;
-        masalahElement.textContent = `Masalah: ${masalah}`;
-        tanggalAgendaElement.textContent = `Tanggal Agenda: ${tanggalAgenda}`;
-        progressElement.textContent = `Progress Anda: ${progress}`;
-        periodeElement.textContent = `Periode: ${periode}`;
+            .ellipsis {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100px;
+                /* Sesuaikan lebar maksimal yang diinginkan */
+            }
 
-        // Menampilkan popup
-        popup.style.display = "block";
-      });
-    });
+            table.customTable {
+                width: 100%;
+                background-color: #FFFFFF;
+                border-collapse: collapse;
+                border: 2px ridge #7EA8F8;
+                color: #000000;
+                table-layout: fixed;
+                /* Tambahkan ini untuk membatasi lebar kolom */
+            }
 
-    // Menutup popup ketika tombol close diklik
-    closeElement.addEventListener("click", () => {
-      popup.style.display = "none";
-    });
+            table.customTable td,
+            table.customTable th {
+                border: 2px ridge #7EA8F8;
+                padding: 10px;
+                overflow: hidden;
+                /* Tambahkan ini untuk membatasi konten dalam sel */
+                text-overflow: ellipsis;
+                /* Tambahkan ini untuk menampilkan ... saat konten terpotong */
+                white-space: nowrap;
+                /* Tambahkan ini untuk mencegah konten mengalami wrap */
+            }
+        </style>
 
-    // Menutup popup ketika diklik di luar konten popup
-    window.addEventListener("click", (event) => {
-      if (event.target === popup) {
-        popup.style.display = "none";
-      }
-    });
-  </script>
-@endsection
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".customTable").DataTable({
+                    "paging": true,
+                    "lengthMenu": [10],
+                    "language": {
+                        "lengthMenu": "Show _MENU_ entries per page",
+                        "zeroRecords": "No matching records found",
+                        "info": "Showing page _PAGE_ of _PAGES_",
+                        "infoEmpty": "No records available",
+                        "infoFiltered": "(filtered from _MAX_ total records)",
+                        "search": "Search:",
+                        "paginate": {
+                            "first": "First",
+                            "last": "Last",
+                            "next": "Next",
+                            "previous": "Previous"
+                        }
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            const tableRows = document.querySelectorAll(".customTable tbody tr");
+
+        // Mendapatkan elemen popup
+        const popup = document.getElementById("popup");
+        const judulAgendaElement = document.getElementById("judulAgenda");
+        const deskripsiElement = document.getElementById("deskripsi");
+        const masalahElement = document.getElementById("masalah");
+        const tanggalAgendaElement = document.getElementById("tanggalAgenda");
+        const progressElement = document.getElementById("progress");
+        const periodeElement = document.getElementById("periode");
+
+        // Tambahkan event listener untuk setiap baris pada tabel
+        tableRows.forEach(row => {
+            row.addEventListener("click", () => {
+                // Ambil data dari masing-masing kolom pada baris yang di-klik
+                const judulAgenda = row.cells[0].innerText;
+                const deskripsi = row.cells[1].querySelector(".full-description").innerText;
+                const masalah = row.cells[2].innerText;
+                const tanggalAgenda = row.cells[3].innerText;
+                const progress = row.cells[4].innerText;
+                const periode = row.cells[5].innerText;
+
+                // Isi nilai data ke elemen popup
+                judulAgendaElement.innerText = judulAgenda;
+                deskripsiElement.innerText = deskripsi;
+                masalahElement.innerText = masalah;
+                tanggalAgendaElement.innerText = tanggalAgenda;
+                progressElement.innerText = progress;
+                periodeElement.innerText = periode;
+
+                // Tampilkan popup
+                popup.style.display = "block";
+            });
+        });
+
+        // Fungsi untuk menutup popup
+        function closePopup() {
+            popup.style.display = "none";
+        }
+
+        // Tambahkan event listener untuk tombol close pada popup
+        document.querySelector(".close").addEventListener("click", closePopup);
+
+        // Tambahkan event listener untuk menutup popup saat mengklik di luar area popup
+        window.addEventListener("click", (event) => {
+            if (event.target == popup) {
+                closePopup();
+            }
+        });
+        </script>
+    @endsection
