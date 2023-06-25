@@ -10,4 +10,6 @@ class Agenda extends Model
     use HasFactory;
 
     protected $guarded = ['idAgenda'];
+
+    // public function
 }

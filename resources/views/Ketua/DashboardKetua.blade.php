@@ -50,7 +50,7 @@
                             @endif
                         </p>
 
-                        <div class="card-buttons">
+                        {{-- <div class="card-buttons">
                             <div class="row">
 
                                 <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
@@ -61,7 +61,7 @@
                                         <button class="btn btn-danger">delete</button>
                                       </form>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -108,8 +108,6 @@
                     <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
                 </div>
                 </a>
-          </div>
-          @endif
             </div>
         </div>
         @endforeach

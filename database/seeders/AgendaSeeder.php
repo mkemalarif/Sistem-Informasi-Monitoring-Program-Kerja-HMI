@@ -31,7 +31,7 @@ class AgendaSeeder extends Seeder
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
-            'progressAgenda' => 0,
+            'progressAgenda' => 100,
         ]);
         Agenda::create([
             'judulAgenda' => 'bakti sosial 2022',
@@ -39,7 +39,7 @@ class AgendaSeeder extends Seeder
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
-            'progressAgenda' => 0,
+            'progressAgenda' => 100,
         ]);
         Agenda::create([
             'judulAgenda' => 'diklat2022',
@@ -47,7 +47,7 @@ class AgendaSeeder extends Seeder
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
-            'progressAgenda' => 0,
+            'progressAgenda' => 100,
         ]);
 
         Agenda::create([
@@ -56,7 +56,7 @@ class AgendaSeeder extends Seeder
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
-            'progressAgenda' => 0,
+            'progressAgenda' => 100,
         ]);
 
 
@@ -67,7 +67,7 @@ class AgendaSeeder extends Seeder
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
-            'progressAgenda' => 0,
+            'progressAgenda' => 100,
         ]);
 
         Agenda::create([
@@ -76,7 +76,7 @@ class AgendaSeeder extends Seeder
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2021',
-            'progressAgenda' => 0,
+            'progressAgenda' => 100,
         ]);
 
         Agenda::create([
@@ -85,7 +85,7 @@ class AgendaSeeder extends Seeder
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2021',
-            'progressAgenda' => 0,
+            'progressAgenda' => 100,
         ]);
     }
 }

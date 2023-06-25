@@ -83,7 +83,20 @@ class ControllerKetua extends Controller
 
     public function rekapProker()
     {
-        return view('Ketua.RekapProker');
+        return view('Ketua.RekapProker', [
+            "data" => Agenda::orderBy('periode', 'desc')->get(),
+            "periode" => Agenda::select('periode')->orderBy('periode', 'desc')->distinct()->get(),
+            "counter" => 0
+        ]);
+    }
+
+    public function rekapProkerDariTahun($periode)
+    {
+        return view('Ketua.RekapProker', [
+            "data" => Agenda::where('periode', $periode)->orderBy('periode', 'desc')->get(),
+            "periode" => Agenda::select('periode')->orderBy('periode', 'desc')->distinct()->get(),
+            'counter' => 1
+        ]);
     }
 
     public function ketuaAnggotaTambah(Request $request)

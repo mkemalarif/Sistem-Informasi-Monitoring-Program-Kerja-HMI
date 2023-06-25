@@ -136,7 +136,7 @@ $section = 'layout.' . auth()->user()->jenisAkun;
                     <div class="form-group">
                         <label for="periode">Periode</label>
                         <input type="number" name="periode" id="periode"
-                            value="{{ old('periode', $data->periode) }}" class="form-control" required>
+                            value="{{ old('periode') }}" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Simpan</button>
                     <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Batal</button>
