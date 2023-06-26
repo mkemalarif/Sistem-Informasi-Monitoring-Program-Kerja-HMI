@@ -108,15 +108,30 @@ $section = 'layout.'. auth()->user()->jenisAkun
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" name="nama" id="nama" class="form-control" required>
+                    <input type="text" name="nama" id="nama" class="form-control @error('nama') is-invalid @enderror" required>
+                    @error('nama')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="nama">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" required>
+                    <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" required>
+                    @error('username')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="nama">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" required>
+                    <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror 
                 </div>
                 <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Simpan</button>
                 <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Batal</button>

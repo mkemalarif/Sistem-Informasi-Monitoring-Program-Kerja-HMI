@@ -80,9 +80,9 @@
                             <div class="latest-news__item">
                                 <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" alt="Gambar Berita">
                                 <div class="latest-news__content">
-                                    <a class="latest-news__item-title" style="">{{ $item->judul }}</a>
+                                    <a href="/berita/{{ $item->id }}" class="latest-news__item-title" style="text-decoration: none">{{ $item->judul }}</a>
                                     <br>
-                                    <a class="latest-news__item-date">{{ $item->created_at->format('d M Y') }}</a>
+                                    <a href="/berita/{{ $item->id }}" class="latest-news__item-date" style="text-decoration: none">{{ $item->created_at->format('d M Y') }}</a>
                                 </div>
                             </div>
                         </li>

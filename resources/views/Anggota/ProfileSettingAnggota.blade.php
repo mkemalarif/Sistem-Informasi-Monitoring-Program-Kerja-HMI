@@ -22,20 +22,35 @@
                     <div class="row mt-2">
                         <div class="col-md-6">
                             <label class="labels">Nama</label>
-                            <input type="text" name="nama" class="form-control" value="{{ old('nama', $data->nama) }}"
+                            <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ old('nama', $data->nama) }}"
                                 placeholder="Nama">
+                                @error('nama')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="labels">username</label>
-                            <input name="username" type="text" class="form-control" placeholder="Tempat Tanggal Lahir"
+                            <input name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Tempat Tanggal Lahir"
                                 value="{{ old('username', $data->username) }}">
+                                @error('username')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                         </div>
                         <div class="col-md-12">
                             <label class="labels">password</label>
-                            <input name="password" type="password" class="form-control"
+                            <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"
                                 placeholder="silahkan diisi apabila perlu" value="">
+                                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Unggah Profil</label>
