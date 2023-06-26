@@ -45,23 +45,23 @@ class AgendaSeeder extends Seeder
         Agenda::create([
             'judulAgenda' => 'bakti sosial 2022',
             'deskripsi' => 'HMI akan mengadakan bakti sosial untuk membantu yang sedang kesusahan',
-            'masalah' => "1. belum tercukupi dana\r, ",
+            'masalah' => "1. belum tercukupi dana",
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
             'progressAgenda' => 100,
         ]);
         Agenda::create([
-            'judulAgenda' => 'diklat2022',
-            'deskripsi' => 'lorem ipsum',
-            'masalah' => '1. salah',
+            'judulAgenda' => 'latihan kepemimpinan II 2022',
+            'deskripsi' => 'HMI melatih  kader kader untuk memenuhi nilai nilai kukuh dari HMI',
+            'masalah' => "1. kader yang ditargetkan kurang\r 2. belum lengkap list fasilitator",
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
             'progressAgenda' => 100,
         ]);
 
         Agenda::create([
-            'judulAgenda' => 'rakernas',
-            'deskripsi' => 'lorem ipsum',
+            'judulAgenda' => 'rakernas HMI 2022',
+            'deskripsi' => 'HMI ',
             'masalah' => '1. salah',
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
