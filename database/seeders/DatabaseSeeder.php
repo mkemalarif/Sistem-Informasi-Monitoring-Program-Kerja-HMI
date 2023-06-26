@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             KomisariatSeeder::class,
             AnggotaSeeder::class,
             ArtikelSeeder::class,
+            AgendaSeeder::class,
         ]);
         User::create([
             'nama' => 'andi muhammad kemal',

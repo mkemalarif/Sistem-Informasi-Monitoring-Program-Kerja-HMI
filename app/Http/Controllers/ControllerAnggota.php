@@ -17,7 +17,7 @@ class ControllerAnggota extends Controller
     public function index()
     {
         return view('Anggota.DashboardAnggota', [
-            'data' => Agenda::latest()->get(),
+            'data' => Agenda::where('periode', 2023)->get(),
             'komisariat' => Komisariat::get()
         ]);
     }

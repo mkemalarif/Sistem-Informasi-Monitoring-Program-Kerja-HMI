@@ -50,7 +50,7 @@
                             @endif
                         </p>
 
-                        <div class="card-buttons">
+                        {{-- <div class="card-buttons">
                             <div class="row">
 
                                 <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
@@ -61,7 +61,7 @@
                                         <button class="btn btn-danger">delete</button>
                                       </form>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -108,16 +108,6 @@
                     <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
                 </div>
                 </a>
-                @if(auth()->user()->jenisAkun !== 'anggota')
-          <div class="row">
-            <a href="{{ auth()->user()->jenisAkun }}/edit-komisariat/{{ $item->id }}" class="btn btn-primary col-3">edit</a>
-            <form action="/{{ auth()->user()->jenisAkun }}/hapus-komisariat/{{ $item->id }}" method="POST" class="col-3">
-              @csrf
-              @method('delete')
-              <button class="btn btn-danger">delete</button>
-            </form>
-          </div>
-          @endif
             </div>
         </div>
         @endforeach

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->string('masalah')->nullable();
             $table->date('tanggalAgenda');
+            $table->integer('periode');
             // form edit
             $table->integer('progressAgenda');
             $table->timestamps();

@@ -14,7 +14,7 @@ class ControllerKetua extends Controller
     public function index()
     {
         return view('Ketua.DashboardKetua', [
-            'data' => Agenda::latest()->get(),
+            'data' => Agenda::where('periode', 2023)->get(),
             'komisariat' => Komisariat::get()
         ]);
     }
@@ -81,6 +81,24 @@ class ControllerKetua extends Controller
         ]);
     }
 
+    public function rekapProker()
+    {
+        return view('Ketua.RekapProker', [
+            "data" => Agenda::orderBy('periode', 'desc')->get(),
+            "periode" => Agenda::select('periode')->orderBy('periode', 'desc')->distinct()->get(),
+            "counter" => 0
+        ]);
+    }
+
+    public function rekapProkerDariTahun($periode)
+    {
+        return view('Ketua.RekapProker', [
+            "data" => Agenda::where('periode', $periode)->orderBy('periode', 'desc')->get(),
+            "periode" => Agenda::select('periode')->orderBy('periode', 'desc')->distinct()->get(),
+            'counter' => 1
+        ]);
+    }
+
     public function ketuaAnggotaTambah(Request $request)
     {
         $validate = $request->validate([
@@ -134,7 +152,8 @@ class ControllerKetua extends Controller
         $validate = $request->validate([
             'judulAgenda' => 'required',
             'tanggalAgenda' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'periode' => 'required|integer'
         ]);
 
         $validate['progressAgenda'] = 0;
@@ -153,6 +172,7 @@ class ControllerKetua extends Controller
             'deskripsi' => 'required',
             'masalah' => 'required',
             'tanggalAgenda' => 'required',
+            'periode' => 'required|integer',
             'progressAgenda' => 'required|integer'
         ]);
 

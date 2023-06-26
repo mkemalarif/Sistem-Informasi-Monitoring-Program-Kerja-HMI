@@ -22,11 +22,14 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sb-admin-2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     {{--
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/css/bootstrap.min.css">
@@ -102,6 +105,12 @@
                     <span>Tambah Program Kerja</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/ketua/rekap-proker">
+                    <span class=""></span>
+                    <span>Rekapitulasi-Proker</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/ketua/tambah-akun-admin">
@@ -148,14 +157,15 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->nama
-                                    }}</span>
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->nama }}</span>
                                 <img class="img-profile rounded-circle" src="{{ asset('assets/aldi-taher.jpg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <span class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></span>
                                     Logout
                                 </a>
@@ -247,6 +257,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+
+
 
 
 
@@ -258,18 +275,18 @@
 
 
     <script>
-        $(document).ready(function () {
-        $('#beritaTable').DataTable({
-            "pagingType": "numbers",
-            "language": {
-                "search": '<span class="mr-2">Cari:</span> _INPUT_',
-                "paginate": {
-                    "next": "Selanjutnya",
-                    "previous": "Sebelumnya"
+        $(document).ready(function() {
+            $('#beritaTable').DataTable({
+                "pagingType": "numbers",
+                "language": {
+                    "search": '<span class="mr-2">Cari:</span> _INPUT_',
+                    "paginate": {
+                        "next": "Selanjutnya",
+                        "previous": "Sebelumnya"
+                    }
                 }
-            }
+            });
         });
-    });
     </script>
     <script>
         // Tambahkan script jQuery untuk menutup sub-menu ketika salah satu item sub-menu di klik
