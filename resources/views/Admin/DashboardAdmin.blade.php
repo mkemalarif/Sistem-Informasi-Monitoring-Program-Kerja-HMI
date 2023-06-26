@@ -8,15 +8,7 @@
                 {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-<<<<<<< Updated upstream
          @endif
-=======
-<<<<<<< HEAD
-        @endif
-=======
-         @endif
->>>>>>> cade1e5b9927e292b3f77975fae86fb95b4db9cc
->>>>>>> Stashed changes
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">

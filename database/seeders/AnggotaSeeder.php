@@ -24,5 +24,36 @@ class AnggotaSeeder extends Seeder
             'angkatan' => 2,
             'komisariat_id' => 1,
         ]);
+
+        Anggota::create([
+            'nokader' => '20180262',
+            'nama' => 'Ibnu Zuhud',
+            'jenisKelamin' => 'Laki-laki',
+            'tempatLahir' => 'Makassar',
+            'tanggalLahir' => '2000-11-22',
+            'alamat' => 'daya',
+            'angkatan' => 2,
+            'komisariat_id' => 1,
+        ]);
+        Anggota::create([
+            'nokader' => '20180263',
+            'nama' => 'Ilham',
+            'jenisKelamin' => 'Laki-laki',
+            'tempatLahir' => 'Makassar',
+            'tanggalLahir' => '2000-11-22',
+            'alamat' => 'daya',
+            'angkatan' => 2,
+            'komisariat_id' => 1,
+        ]);
+        Anggota::create([
+            'nokader' => '20180259',
+            'nama' => 'Faidhul Barkah',
+            'jenisKelamin' => 'Laki-laki',
+            'tempatLahir' => 'Makassar',
+            'tanggalLahir' => '2000-11-22',
+            'alamat' => 'daya',
+            'angkatan' => 2,
+            'komisariat_id' => 2,
+        ]);
     }
 }

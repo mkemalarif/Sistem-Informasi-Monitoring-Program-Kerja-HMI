@@ -61,9 +61,9 @@ class AgendaSeeder extends Seeder
 
         Agenda::create([
             'judulAgenda' => 'rakernas HMI 2022',
-            'deskripsi' => 'HMI ',
-            'masalah' => '1. salah',
-            'tanggalAgenda' => '2022-11-22',
+            'deskripsi' => 'HMI akan melakukan rapat kerja nasional dalam rangka mewujudkan program kerja yang terintegrasi',
+            'masalah' => "1. masih kurangnya pendaftar\r 2. diundur dari tanggal yang ditetapkan",
+            'tanggalAgenda' => '2022-01-22',
             'periode' => '2022',
             'progressAgenda' => 100,
         ]);
@@ -71,11 +71,11 @@ class AgendaSeeder extends Seeder
 
         // agenda 2021
         Agenda::create([
-            'judulAgenda' => 'diklat2021',
-            'deskripsi' => 'lorem ipsum',
-            'masalah' => '1. salah',
-            'tanggalAgenda' => '2022-11-22',
-            'periode' => '2022',
+            'judulAgenda' => 'latihan kepemimpinan II 2021',
+            'deskripsi' => 'HMI melatih  kader kader untuk memenuhi nilai nilai kukuh dari HMI',
+            'masalah' => "1. kader yang ditargetkan kurang\r 2. belum lengkap list fasilitator",
+            'tanggalAgenda' => '2021-11-22',
+            'periode' => '2021',
             'progressAgenda' => 100,
         ]);
 
@@ -89,10 +89,10 @@ class AgendaSeeder extends Seeder
         ]);
 
         Agenda::create([
-            'judulAgenda' => 'bakti sosial 2021',
-            'deskripsi' => 'lorem ipsum',
-            'masalah' => '1. salah',
-            'tanggalAgenda' => '2022-11-22',
+            'judulAgenda' => 'rakernas HMI 2021',
+            'deskripsi' => 'HMI akan melakukan rapat kerja nasional dalam rangka mewujudkan program kerja yang terintegrasi',
+            'masalah' => "1. masih kurangnya pendaftar\r 2. diundur dari tanggal yang ditetapkan",
+            'tanggalAgenda' => '2021-01-22',
             'periode' => '2021',
             'progressAgenda' => 100,
         ]);
