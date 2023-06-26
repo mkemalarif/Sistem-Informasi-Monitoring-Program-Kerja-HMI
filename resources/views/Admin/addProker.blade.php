@@ -1,4 +1,4 @@
-@extends('layout.ketua')
+{{-- @extends('layout.ketua')
 @section('container')
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
@@ -126,4 +126,4 @@
             $('#status').select2();
         });
 </script>
-@endsection
+@endsection --}}

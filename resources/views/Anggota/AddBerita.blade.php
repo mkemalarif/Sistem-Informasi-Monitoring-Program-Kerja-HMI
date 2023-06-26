@@ -24,7 +24,7 @@
                                 <label class="font-weight-bold">JUDUL</label>
                                 <input type="text" class="form-control @error('judul') is-invalid @enderror"
                                     name="judul" value="{{ old('judul') }}" placeholder="Masukkan Judul Post">
-                                @error('')
+                                @error('judul')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -35,7 +35,7 @@
                                 <label class="font-weight-bold">KONTEN</label>
                                 <textarea class="form-control ckeditor @error('isiBerita') is-invalid @enderror" name="isiBerita" rows="5"
                                     placeholder="Masukkan Konten Post">{{ old('isiBerita') }}</textarea>
-                                @error('')
+                                @error('isiBerita')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

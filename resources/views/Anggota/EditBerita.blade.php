@@ -20,14 +20,24 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">JUDUL</label>
-                            <input type="text" class="form-control" name="judul"
+                            <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul"
                                 value="{{ old('judul', $data->judul) }}" placeholder="Masukkan Judul Post">
+                            @error('judulAgenda')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <label class="font-weight-bold">KONTEN</label>
-                            <textarea class="form-control ckeditor" name="isiBerita" rows="5"
+                            <textarea class="form-control ckeditor @error('isiBerita') is-invalid @enderror" name="isiBerita" rows="5"
                                 placeholder="Masukkan Konten Post">{{ $data->isiBerita }}</textarea>
+                                @error('isiBerita')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
 
                         <button type="submit" class="btn btn-md btn-primary">UPDATE</button>

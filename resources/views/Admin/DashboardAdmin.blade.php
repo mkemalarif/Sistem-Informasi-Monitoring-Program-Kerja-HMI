@@ -8,7 +8,7 @@
                 {{ session('success') }}
                 <button type="button" class="btn btn-close" data-bs-dismiss="alert"></button>
             </div>
-            @endif
+         @endif
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
