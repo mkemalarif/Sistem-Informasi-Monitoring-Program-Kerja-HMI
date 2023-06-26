@@ -110,13 +110,13 @@
                             </p>
                             <div class="card-buttons">
                                 <div class="row">
-                                    
+
                                     <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
                                         class="btn btn-primary col-3">Edit</a>
                                         <form action="/{{ auth()->user()->jenisAkun }}/hapus-proker/{{ $item->id }}" method="POST" class="col-3">
                                             @csrf
                                             @method('delete')
-                                            <button class="btn btn-danger">delete</button>
+                                            <button class="btn btn-danger ">delete</button>
                                         </form>
                                 </div>
                             </div>
@@ -263,6 +263,16 @@
             font-size: 16px;
             color: #777777;
         }
+        /* .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    } */
+
+    /* .col-md-4 {
+        flex: 0 0 calc(33.33% - 20px);
+        margin-bottom: 20px;
+    } */
     </style>
 
    <script>
