@@ -47,7 +47,7 @@ class ControllerAdmin extends Controller
     public function dataAnggota($id)
     {
         return view('DataAnggota', [
-            'data' => Anggota::where('id', $id)->get(),
+            'data' => Anggota::where('komisariat_id', $id)->get(),
         ]);
     }
 
@@ -158,7 +158,7 @@ class ControllerAdmin extends Controller
             'masalah' => 'required',
             'tanggalAgenda' => 'required',
             'periode' => 'required|integer',
-            'progressAgenda' => 'required|integer'
+            'progressAgenda' => 'required|integer|min:0|max:100'
         ]);
 
         // dd($update);

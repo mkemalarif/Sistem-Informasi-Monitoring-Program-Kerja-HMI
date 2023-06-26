@@ -26,11 +26,11 @@ $section = 'layout.'. auth()->user()->jenisAkun
                 </tr>
             </thead>
             <tbody>
-                @foreach ($data as $item)
-                <tr>
                     @php
                     $i = 1;
                     @endphp
+                @foreach ($data as $item)
+                <tr>
                     <td>{{ $i++ }}</td>
                     <td>NOK: {{ $item->nokader }}</td>
                     <td>{{ $item->nama }}</td>
