@@ -103,10 +103,13 @@ class ControllerAnggota extends Controller
             $validate['password'] = bcrypt($validate['password']);
         }
 
-        $request->file('profile')->storeAs(
-            'profil',
-            'foto-profil' . $request->user()->id . '.jpg'
-        );
+        if ($request->hasFile('photo')) {
+            // ...
+            $request->file('profile')->storeAs(
+                'profil',
+                'foto-profil' . $request->user()->id . '.jpg'
+            );
+        }
 
         User::where('id', $id)->update($validate);
 

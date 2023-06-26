@@ -52,7 +52,7 @@ $section = 'layout.'. auth()->user()->jenisAkun;
                             </div>
                         @endif
 
-                        <form method="POST" action="">
+                        <form method="POST" action="/{{ auth()->user()->jenisAkun }}/registrasi-komisariat">
                             @csrf
 
                             <div class="form-group">

@@ -37,9 +37,6 @@
                             <div class="d-grid shadow-sm">
                                 <button type="submit" class="btn btn-primary btn-block">Login</button>
                             </div>
-                            <div class="text-center mt-3">
-                                <a href="#" class="link-forgot-password">Forgot password?</a>
-                            </div>
                         </form>
                     </div>
                     <div class="card-footer text-center bg-white">
