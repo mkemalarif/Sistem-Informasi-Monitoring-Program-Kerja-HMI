@@ -72,7 +72,7 @@
 
         <div class="row mt-5">
             <h1 class="mb-4">Daftar Komisariat</h1>
-        
+
             <div class="row" id="anggota-list">
                 @foreach ($komisariat as $item)
                 <div class="col-md-4 mb-4">
@@ -83,7 +83,7 @@
                                 <i class="fas fa-users"></i>
                                 <span class="space-between-icon">{{ $item->namaKomisariat }}</span>
                             </h5>
-        
+
                             <hr>
                             <p class="card-text"><strong>Tahun Berdiri:</strong>{{ $item->tahunBerdiri }}
                             </p>
@@ -296,9 +296,14 @@
     }
 
     .row {
-        justify-content: center;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .col-md-4 {
+        flex: 0 0 calc(33.33% - 20px);
+        margin-bottom: 20px;
     }
 
     .mt-5 {
