@@ -52,7 +52,8 @@ class LoginController extends Controller
             return redirect()->intended('/ketua/dashboard');
         }
 
-        return back();
+
+        return back()->with('failed', "login gagal");
     }
 
     public function logout(Request $request)

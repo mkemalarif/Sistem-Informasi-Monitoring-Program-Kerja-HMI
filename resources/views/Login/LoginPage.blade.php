@@ -2,6 +2,12 @@
 
 @section('container')
    <div class="container">
+    @if(session()->has('failed'))
+            <div class="alert alert-danger alert-dismissible fade show col-3">
+                {{ session('failed') }}
+                <button type="button" class="btn btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            @endif
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
                 <div class="card shadow">

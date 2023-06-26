@@ -199,6 +199,7 @@ class ControllerKetua extends Controller
 
     public function ketuaEditDataAnggota(Request $request, $id)
     {
+        // dd($request);
         $data = Anggota::find($id)->nokader;
         $newNokader = $request->input('nokader');
         // dd($data);

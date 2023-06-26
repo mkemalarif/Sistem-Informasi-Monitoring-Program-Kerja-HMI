@@ -35,17 +35,17 @@ class AgendaSeeder extends Seeder
         // agenda 2022
 
         Agenda::create([
-            'judulAgenda' => 'diklat2022',
-            'deskripsi' => 'lorem ipsum',
-            'masalah' => '1. salah',
-            'tanggalAgenda' => '2022-11-22',
+            'judulAgenda' => 'HMI berkurban 2022',
+            'deskripsi' => 'HMI berpegang dengan nilai nilai islami, dalam rangka hari raya kurban, maka HMI akan menyumbangkan 1 ekor sapi dan 3 ekor kambing dalam idul adha ini',
+            'masalah' => "1. masih belum didapatkan penjual sapi \r, 2. masih belum mendapatkan penyalur daging kurban\r 3. belum terkumpul secara keseluruhan",
+            'tanggalAgenda' => '2022-05-26',
             'periode' => '2022',
             'progressAgenda' => 100,
         ]);
         Agenda::create([
             'judulAgenda' => 'bakti sosial 2022',
-            'deskripsi' => 'lorem ipsum',
-            'masalah' => '1. salah',
+            'deskripsi' => 'HMI akan mengadakan bakti sosial untuk membantu yang sedang kesusahan',
+            'masalah' => "1. belum tercukupi dana\r, ",
             'tanggalAgenda' => '2022-11-22',
             'periode' => '2022',
             'progressAgenda' => 100,

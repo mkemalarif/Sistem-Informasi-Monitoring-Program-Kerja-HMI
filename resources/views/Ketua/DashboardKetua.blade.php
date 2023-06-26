@@ -4,11 +4,11 @@
 
 <div class="container">
     @if(session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show col-3">
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-            @endif
+        <div class="alert alert-success alert-dismissible fade show col-3">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    @endif
     <div class="row mt-5">
         <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 
@@ -115,6 +115,16 @@
                     <p class="card-text"><strong>Angkatan Kader:</strong>{{ $item->angkatan }}</p>
                 </div>
                 </a>
+                @if(auth()->user()->jenisAkun !== 'anggota')
+                <div class="row">
+                    <a href="{{ auth()->user()->jenisAkun }}/edit-komisariat/{{ $item->id }}" class="btn btn-primary col-3 ms-4">edit</a>
+                    <form action="/{{ auth()->user()->jenisAkun }}/hapus-komisariat/{{ $item->id }}" method="POST" class="col">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger">delete</button>
+                    </form>
+                </div>
+                @endif
             </div>
         </div>
         @endforeach
