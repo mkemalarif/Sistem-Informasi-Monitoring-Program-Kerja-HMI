@@ -3,12 +3,20 @@
 @section('container')
     <div class="container mt-5 mb-5">
 
-        @if(session()->has('success'))
+        @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show col-3">
                 {{ session('success') }}
-                <button type="button" class="btn btn-close" data-bs-dismiss="alert"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+<<<<<<< Updated upstream
          @endif
+=======
+<<<<<<< HEAD
+        @endif
+=======
+         @endif
+>>>>>>> cade1e5b9927e292b3f77975fae86fb95b4db9cc
+>>>>>>> Stashed changes
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
@@ -78,49 +86,54 @@
                             </div>
                             <div class="divider"></div>
                             <div>
-                            <h5 class="card-title">{{ $item->judulAgenda }}</h5>
-                            <p class="card-text">HMI CABANG MAKASSAR</p>
-                            <p class="card-text date">{{ $item->tanggalAgenda }}</p>
-                            <p class="card-text status">
-                                @if ($item->progressAgenda < 100) Belum Selesai @elseif ($item->progresAgenda ==100)
-                                    Selesai @endif </p>
-                            <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
-                                @if (strlen($item->deskripsi) > 0)
-                                <span class="short-description">{{ substr($item->deskripsi, 0, 100) .
-                                    (strlen($item->deskripsi) > 100 ? '...' : '') }}</span>
-                                @if (strlen($item->deskripsi) > 100)
-                                <span class="full-description" style="display: none;">{{ $item->deskripsi
-                                    }}</span>
-                                @endif
-                                @else
-                                {{ $item->dekripsi }}
-                                @endif
-                            </p>
+                                <h5 class="card-title">{{ $item->judulAgenda }}</h5>
+                                <p class="card-text">HMI CABANG MAKASSAR</p>
+                                <p class="card-text date">{{ $item->tanggalAgenda }}</p>
+                                <p class="card-text status">
+                                    @if ($item->progressAgenda < 100)
+                                        Belum Selesai
+                                    @elseif ($item->progresAgenda == 100)
+                                        Selesai
+                                    @endif
+                                </p>
+                                <p class="card-text description" data-full-description="{{ $item->deskripsi }}">
+                                    @if (strlen($item->deskripsi) > 0)
+                                        <span
+                                            class="short-description">{{ substr($item->deskripsi, 0, 100) . (strlen($item->deskripsi) > 100 ? '...' : '') }}</span>
+                                        @if (strlen($item->deskripsi) > 100)
+                                            <span class="full-description"
+                                                style="display: none;">{{ $item->deskripsi }}</span>
+                                        @endif
+                                    @else
+                                        {{ $item->dekripsi }}
+                                    @endif
+                                </p>
 
-                            <p class="card-text problem" data-full-problem="{{ $item->masalah }}">
-                                @if (strlen($item->masalah) > 0)
-                                <span class="short-problem">{{ substr($item->masalah, 0, 100) .
-                                    (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
-                                @if (strlen($item->masalah) > 100)
-                                <span class="full-problem" style="display: none;">{{ $item->masalah }}</span>
-                                @endif
-                                @else
-                                {{ $item->masalah }}
-                                @endif
-                            </p>
-                            <div class="card-buttons">
-                                <div class="row">
+                                <p class="card-text problem" data-full-problem="{{ $item->masalah }}">
+                                    @if (strlen($item->masalah) > 0)
+                                        <span
+                                            class="short-problem">{{ substr($item->masalah, 0, 100) . (strlen($item['penjelasan']) > 100 ? '...' : '') }}</span>
+                                        @if (strlen($item->masalah) > 100)
+                                            <span class="full-problem" style="display: none;">{{ $item->masalah }}</span>
+                                        @endif
+                                    @else
+                                        {{ $item->masalah }}
+                                    @endif
+                                </p>
+                                <div class="card-buttons">
+                                    <div class="row">
 
-                                    <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
-                                        class="btn btn-primary col-3">Edit</a>
-                                        <form action="/{{ auth()->user()->jenisAkun }}/hapus-proker/{{ $item->id }}" method="POST" class="col-3">
+                                        <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
+                                            class="btn btn-primary col-3">Edit</a>
+                                        <form action="/{{ auth()->user()->jenisAkun }}/hapus-proker/{{ $item->id }}"
+                                            method="POST" class="col-3">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger ">delete</button>
                                         </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -263,28 +276,38 @@
             font-size: 16px;
             color: #777777;
         }
+
         /* .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    } */
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    } */
 
-    /* .col-md-4 {
-        flex: 0 0 calc(33.33% - 20px);
-        margin-bottom: 20px;
-    } */
+        /* .col-md-4 {
+                        flex: 0 0 calc(33.33% - 20px);
+                        margin-bottom: 20px;
+                    } */
+        .alert {
+            margin-right: 10000px
+        }
     </style>
+    <!-- Add jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-   <script>
-    const cards = document.querySelectorAll('.card');
-  const popup = document.getElementById('popup');
-  const popupTitle = document.getElementById('popup-title');
-  const popupHMICabang = document.getElementById('popup-hmi-cabang');
-  const popupDate = document.getElementById('popup-date');
-  const popupStatus = document.getElementById('popup-status');
-  const popupDescription = document.getElementById('popup-description');
-  const popupProblem = document.getElementById('popup-problem');
-  const closeBtn = document.querySelector('.close');
+    <!-- Add Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popup-title');
+        const popupHMICabang = document.getElementById('popup-hmi-cabang');
+        const popupDate = document.getElementById('popup-date');
+        const popupStatus = document.getElementById('popup-status');
+        const popupDescription = document.getElementById('popup-description');
+        const popupProblem = document.getElementById('popup-problem');
+        const closeBtn = document.querySelector('.close');
 
         cards.forEach(card => {
             card.addEventListener('click', () => {
@@ -315,7 +338,7 @@
                 popup.style.display = 'none';
             }
         });
-</script>
+    </script>
 
 
     <script>
