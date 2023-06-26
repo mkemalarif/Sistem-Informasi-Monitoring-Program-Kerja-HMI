@@ -321,6 +321,10 @@
         color: #333333;
     }
 </style>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Add Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 
 <script>
     // Ambil semua elemen circle-bar
