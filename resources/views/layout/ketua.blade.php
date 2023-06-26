@@ -99,12 +99,12 @@
             <div class="sidebar-heading">Menu</div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="/ketua/tambah-proker">
                     <span class=""></span>
                     <span>Tambah Program Kerja</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/ketua/rekap-proker">
                     <span class=""></span>
