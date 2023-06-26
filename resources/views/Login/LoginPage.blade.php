@@ -20,7 +20,7 @@
                             @csrf
                             <div class="mb-3 shadow-sm">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" id="username" name="username" class="form-control"
+                                <input type="text" id="username" name="username" class="form-control  @error('username') is-invalid @enderror"
                                     placeholder="Enter your username" required value="{{ old('username') }}">
                                 @error('username')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -28,7 +28,7 @@
                             </div>
                             <div class="mb-3 shadow-sm">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" id="password" name="password" class="form-control"
+                                <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror"
                                     placeholder="Enter your password" required>
                                 @error('password')
                                     <div class="invalid-feedback">{{ $message }}</div>
