@@ -2,6 +2,12 @@
 
 @section('container')
 <div class="container">
+    @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show col-3">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            @endif
     <div class="row mt-5">
         <h1 class="mb-4">Program Kerja Yang Sedang Berlangsung</h1>
 

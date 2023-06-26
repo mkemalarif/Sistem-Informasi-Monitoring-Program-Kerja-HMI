@@ -80,10 +80,10 @@ Route::middleware('admin')->prefix('admin')
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
         Route::post('/tambah-proker', 'adminTambahProker');
         Route::put('/validasi-berita/{id}', 'validasiBerita');
-        Route::put('/edit-proker/{id}', 'editProker');
+        Route::put('/edit-proker/{id}', 'adminProkerEdit');
         Route::put('edit-komisariat/{id}', 'adminKomisariatEdit');
         Route::put('/edit-data-anggota/{id}', 'adminEditDataAnggota');
-        Route::put('/edit-proker/{id}', 'adminProkerEdit');
+        // Route::put('/admin/edit-proker/{id}', 'adminProkerEdit');
         Route::delete('/hapus-komisariat/{id}', 'adminDeleteKomisariat');
         Route::delete('/hapus-data-anggota/{id}', 'adminDeleteAnggota');
         Route::delete('/hapus-proker/{id}', 'prokerHapus');

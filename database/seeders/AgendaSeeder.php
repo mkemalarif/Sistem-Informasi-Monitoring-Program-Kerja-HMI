@@ -23,6 +23,15 @@ class AgendaSeeder extends Seeder
             'progressAgenda' => 0,
         ]);
 
+        Agenda::create([
+            'judulAgenda' => 'diklat',
+            'deskripsi' => 'lorem ipsum',
+            'masalah' => '1. salah',
+            'tanggalAgenda' => '2023-11-22',
+            'periode' => '2023',
+            'progressAgenda' => 0,
+        ]);
+
         // agenda 2022
 
         Agenda::create([

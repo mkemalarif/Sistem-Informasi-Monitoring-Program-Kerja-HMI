@@ -1,7 +1,14 @@
 @extends('layout.admin')
 
 @section('container')
-    <div class="container" mt-5 mb-5">
+    <div class="container mt-5 mb-5">
+
+        @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show col-3">
+                {{ session('success') }}
+                <button type="button" class="btn btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            @endif
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
@@ -102,13 +109,16 @@
                                 @endif
                             </p>
                             <div class="card-buttons">
-                                <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
-                                    class="btn btn-primary">Edit</a>
-                                <form action="/{{ auth()->user()->jenisAkun }}/hapus-proker/{{ $item->id }}" method="POST" class="col-3">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-danger">delete</button>
-                                  </form>
+                                <div class="row">
+                                    
+                                    <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
+                                        class="btn btn-primary col-3">Edit</a>
+                                        <form action="/{{ auth()->user()->jenisAkun }}/hapus-proker/{{ $item->id }}" method="POST" class="col-3">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger">delete</button>
+                                        </form>
+                                </div>
                             </div>
                         </div>
                         </div>

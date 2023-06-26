@@ -87,7 +87,7 @@ class ControllerAnggota extends Controller
         );
 
 
-        return redirect('/anggota/dashboard');
+        return redirect('/anggota/dashboard')->with("success", "berita berhasil ditambahkan");
     }
 
     public function profileEdit(Request $request, $id)
@@ -110,7 +110,7 @@ class ControllerAnggota extends Controller
 
         User::where('id', $id)->update($validate);
 
-        return redirect('/anggota/dashboard');
+        return redirect('/anggota/dashboard')->with("success", "profile berhasil di update");
     }
 
     public function editBerita(Request $request, $id)
@@ -133,13 +133,13 @@ class ControllerAnggota extends Controller
             );
         }
 
-        return redirect('/anggota/dashboard');
+        return redirect('/anggota/dashboard')->with("success", "berita berhasil di edit");
     }
 
     public function hapusBerita($id)
     {
         Artikel::find($id)->delete();
 
-        return redirect('/anggota/dashboard');
+        return redirect('/anggota/dashboard')->with("success", "berita berhasil di hapus");
     }
 }

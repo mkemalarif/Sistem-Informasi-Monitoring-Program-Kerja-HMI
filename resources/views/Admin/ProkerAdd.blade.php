@@ -117,17 +117,27 @@ $section = 'layout.' . auth()->user()->jenisAkun;
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama Program Kerja</label>
-                        <input type="text" name="judulAgenda" id="judulAgenda" class="form-control" required>
+                        <input type="text" name="judulAgenda" id="judulAgenda" class="form-control  @error('judulAgenda') is-invalid @enderror" required>
                     </div>
+                    @error('judulAgenda')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
-                        <textarea name="deskripsi" id="deskripsi" class="form-control" rows="4" required></textarea>
+                        <textarea name="deskripsi" id="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" required></textarea>
                     </div>
+                    @error('deskripsi')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     <div class="form-group">
                         <label for="tanggalLahir">Tanggal Terlaksana:</label>
                         <input id="tanggalAgenda" name="tanggalAgenda" type="date"
                             class="form-control @error('tanggalAgenda') is-invalid @enderror" value="" required>
-                        @error('tanggalLahir')
+                        @error('tanggalAgenda')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -136,7 +146,12 @@ $section = 'layout.' . auth()->user()->jenisAkun;
                     <div class="form-group">
                         <label for="periode">Periode</label>
                         <input type="number" name="periode" id="periode"
-                            value="{{ old('periode') }}" class="form-control" required>
+                            value="{{ old('periode') }}" class="form-control @error('periode') is-invalid @enderror" required>
+                            @error('periode')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                     </div>
                     <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Simpan</button>
                     <button type="submit" class="btn btn-primary" , style="background-color: #4CAF50">Batal</button>

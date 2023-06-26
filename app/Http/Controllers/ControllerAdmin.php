@@ -91,7 +91,7 @@ class ControllerAdmin extends Controller
 
         Agenda::create($validate);
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "proker berhasil ditambahkan");
     }
 
 
@@ -118,7 +118,7 @@ class ControllerAdmin extends Controller
 
         $user->save();
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "anggota berhasil ditambah");
     }
 
     public function tambahKomisariat(Request $request)
@@ -133,7 +133,7 @@ class ControllerAdmin extends Controller
 
         Komisariat::create($validate);
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "komisariat berhasil ditambah");
     }
 
     // put function
@@ -145,11 +145,13 @@ class ControllerAdmin extends Controller
         ]);
 
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "berita telah di acc");
     }
 
     public function adminProkerEdit(Request $request, $id)
     {
+        // dd($request);
+
         $update = $request->validate([
             'judulAgenda' => 'required',
             'deskripsi' => 'required',
@@ -161,9 +163,11 @@ class ControllerAdmin extends Controller
 
         // dd($update);
 
+        // dd($update);
+
         Agenda::where('id', $id)->update($update);
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "proker berhasil di edit");
     }
 
     public function adminKomisariatEdit(Request $request, $id)
@@ -177,6 +181,8 @@ class ControllerAdmin extends Controller
         ]);
 
         Komisariat::where("id", $id)->update($update);
+
+        return redirect('/admin/dashboard')->with("success", "komisariat berhasil di edit");
     }
 
     public function adminEditDataAnggota(Request $request, $id)
@@ -211,26 +217,26 @@ class ControllerAdmin extends Controller
 
         Anggota::where("id", $id)->update($update);
 
-        return redirect('admin/dashboard');
+        return redirect('admin/dashboard')->with("success", "data anggota berhasil di edit");
     }
 
     public function adminDeleteKomisariat($id)
     {
         Komisariat::find($id)->delete();
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "komisariat telah dihapus");
     }
     public function adminDeleteAnggota($id)
     {
         Anggota::find($id)->delete();
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "anggota berhasil dihapus");
     }
 
     public function prokerHapus($id)
     {
         Agenda::find($id)->delete();
 
-        return redirect('/admin/dashboard');
+        return redirect('/admin/dashboard')->with("success", "proker telah dihapus");
     }
 }

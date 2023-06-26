@@ -39,8 +39,18 @@
                     <td class="center">{{ date('d M Y', strtotime($item->tanggalAgenda)) }}</td>
                     <td class="center">
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: {{ $item->progressAgenda }}%"></div>
-                            <span class="progress-label text-dark">{{ $item->progressAgenda }}% <?php $count=$count+$item->progressAgenda ?></span>
+                            <div class="progress-bar" style="
+                            @if($item->progressAgenda === 0)
+                             background-color: #c52828;
+                             width: 100%;
+                             @else
+                             background-color: #4CAF50;
+                             width: {{ $item->progressAgenda }}%;
+                             @endif"></div>
+                            <span class="progress-label 
+                            @if( 0 < $item->progressAgenda &&   $item->progressAgenda < 100)
+                            text-dark
+                            @endif">{{ $item->progressAgenda }}% <?php $count=$count+$item->progressAgenda ?></span>
                         </div>
                     </td>
                     <td class="center">{{ $item->periode }}</td>
@@ -121,7 +131,7 @@
                 top: 0;
                 left: 0;
                 height: 100%;
-                background-color: #4CAF50;
+                /* background-color: #c52828; */
                 transition: width 0.3s ease-in-out;
             }
 

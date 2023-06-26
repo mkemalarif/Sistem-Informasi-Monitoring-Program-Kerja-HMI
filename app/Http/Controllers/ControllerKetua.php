@@ -122,7 +122,7 @@ class ControllerKetua extends Controller
 
         $user->save();
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "data anggota berhasil di tambahkan");
     }
 
     public function ketuaKomisariatTambah(Request $request)
@@ -137,7 +137,7 @@ class ControllerKetua extends Controller
 
         Komisariat::create($validate);
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "Komisariat berhasil ditambahkan");
     }
 
     public function ketuaEditProker($id)
@@ -162,7 +162,7 @@ class ControllerKetua extends Controller
 
         Agenda::create($validate);
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "agenda berhasil ditambahkan");
     }
 
     public function ketuaProkerEdit(Request $request, $id)
@@ -180,7 +180,7 @@ class ControllerKetua extends Controller
 
         Agenda::where('id', $id)->update($update);
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "program kerja berhasil di edit");
     }
 
     public function ketuaKomisariatEdit(Request $request, $id)
@@ -194,6 +194,7 @@ class ControllerKetua extends Controller
         ]);
 
         Komisariat::where("id", $id)->update($update);
+        return redirect('/ketua/dashboard')->with("success", "komisariat berhasil di edit");
     }
 
     public function ketuaEditDataAnggota(Request $request, $id)
@@ -228,26 +229,26 @@ class ControllerKetua extends Controller
 
         Anggota::where("id", $id)->update($update);
 
-        return redirect('ketua/dashboard');
+        return redirect('ketua/dashboard')->with("success", "data anggota berhasil di edit");
     }
 
     public function ketuaDeleteKomisariat($id)
     {
         Komisariat::find($id)->delete();
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "komisariat berhasil di hapus");
     }
     public function ketuaDeleteAnggota($id)
     {
         Anggota::find($id)->delete();
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "data anggota berhasil di hapus");
     }
 
     public function ketuaDeleteProker($id)
     {
         Agenda::find($id)->delete();
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "program kerja berhasil dihapus");
     }
 }
