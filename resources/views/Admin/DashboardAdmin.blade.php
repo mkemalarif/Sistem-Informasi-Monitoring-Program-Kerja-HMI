@@ -104,7 +104,11 @@
                             <div class="card-buttons">
                                 <a href="{{ auth()->user()->jenisAkun }}/edit-proker/{{ $item->id }}"
                                     class="btn btn-primary">Edit</a>
-                                <button class="btn btn-danger">Delete</button>
+                                <form action="/{{ auth()->user()->jenisAkun }}/hapus-proker/{{ $item->id }}" method="POST" class="col-3">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn btn-danger">delete</button>
+                                  </form>
                             </div>
                         </div>
                         </div>

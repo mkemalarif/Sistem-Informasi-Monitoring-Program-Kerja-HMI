@@ -79,10 +79,13 @@ class ControllerAdmin extends Controller
         $validate = $request->validate([
             'judulAgenda' => 'required',
             'tanggalAgenda' => 'required',
-            'progressAgenda' => 'required|min:0|max:100'
+            'deskripsi' => 'required',
+            "periode" => 'required'
         ]);
 
-        $validate['masalah'] = '';
+        $validate['progressAgenda'] = 0;
+
+        // $validate['masalah'] = '';
 
         // dd($validate);
 
@@ -220,6 +223,13 @@ class ControllerAdmin extends Controller
     public function adminDeleteAnggota($id)
     {
         Anggota::find($id)->delete();
+
+        return redirect('/admin/dashboard');
+    }
+
+    public function prokerHapus($id)
+    {
+        Agenda::find($id)->delete();
 
         return redirect('/admin/dashboard');
     }

@@ -86,6 +86,7 @@ Route::middleware('admin')->prefix('admin')
         Route::put('/edit-proker/{id}', 'adminProkerEdit');
         Route::delete('/hapus-komisariat/{id}', 'adminDeleteKomisariat');
         Route::delete('/hapus-data-anggota/{id}', 'adminDeleteAnggota');
+        Route::delete('/hapus-proker/{id}', 'prokerHapus');
     });
 
 // semua route untuk ketua
