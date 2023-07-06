@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('artikels', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('isiBerita');
+            $table->longText('isiBerita');
             $table->enum('status', ['acc', 'tunda', 'tolak']);
             // $table->integer('periode');
             $table->foreignId('user_id');

@@ -31,22 +31,24 @@
                                 <tbody>
                                     @foreach ($data as $item)
                                         <tr>
-                                            <td class="align-middle">{{ $item->judul }}</td>
-                                            <td class="align-middle text-center">
-                                                <img class="img-fluid"
+                                            
+                                            
+                                            <td class="align-middle"><a style="text-decoration: none; color:black" href="/admin/cek-berita/{{ $item->id }}">{{ $item->judul }}</a></td>
+                                                <td class="align-middle text-center">
+                                                    <img class="img-fluid"
                                                     src="{{ asset('berita/' . $item->user_id . '_fotoberita_' . $item->id . '.jpg') }}"
                                                     alt="">
-                                            </td>
-                                            <td class="align-middle">{{ $item->status }}</td>
-                                            <td class="align-middle text-center">
-                                                <form method="POST" action="/admin/validasi-berita/{{ $item->id }}">
-                                                    @csrf
-                                                    @method('PUT')
-
-                                                    <button class="btn btn-sm btn-success" type="submit"><i
-                                                            class="fas fa-check"></i> Terima</button>
-                                                </form>
-                                            </td>
+                                                </td>
+                                                <td class="align-middle">{{ $item->status }}</td>
+                                                <td class="align-middle text-center">
+                                                    <form method="POST" action="/admin/validasi-berita/{{ $item->id }}">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        
+                                                        <button class="btn btn-sm btn-success" type="submit"><i
+                                                            class="fa fa-check"></i> Terima</button>
+                                                    </form>
+                                                </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

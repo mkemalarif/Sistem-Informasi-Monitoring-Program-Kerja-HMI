@@ -73,6 +73,13 @@ class ControllerAdmin extends Controller
         ]);
     }
 
+    public function adminTampilBerita($id)
+    {
+        return view('DetailBerita', [
+            'data' => Artikel::find($id)
+        ]);
+    }
+
     // post function
     public function adminTambahProker(Request $request)
     {

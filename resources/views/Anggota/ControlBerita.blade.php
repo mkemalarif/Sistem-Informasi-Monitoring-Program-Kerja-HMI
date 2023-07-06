@@ -23,7 +23,7 @@
                             @foreach ($data as $item)
 
                             <tr>
-                                <td>{{ $item->judul }}</td>
+                                <td><a href="/anggota/cek-berita/{{ $item->id }}" style="text-decoration: none; color:black">{{ $item->judul }}</a></td>
                                 <td>{{ $item->created_at }}</td>
                                 <td>{{ $item->status }}</td>
                                 <td>

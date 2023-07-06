@@ -56,6 +56,7 @@ Route::middleware('anggota')->prefix('anggota')
         Route::get('/data-anggota/{id}', 'listAnggota');
         Route::get('/program-kerja', 'proker');
         Route::get('/kontrol-berita', 'controlBerita');
+        Route::get('/cek-berita/{id}', 'cekBerita');
         Route::post('/tambah-berita', 'post');
         Route::put('/profile-setting/{id}', 'profileEdit');
         Route::put('/edit-berita/{id}', 'editBerita');
@@ -76,6 +77,7 @@ Route::middleware('admin')->prefix('admin')
         Route::get('/edit-data-anggota/{id}', 'adminEditAnggota');
         Route::get('/admin/edit-komisariat/{id}', 'adminEditKomisariat');
         Route::get('/admin/edit-proker/{id}', 'adminEditProker');
+        Route::get('/cek-berita/{id}', 'adminTampilBerita');
         Route::post('/registrasi-member', 'tambahAnggota');
         Route::post('/registrasi-komisariat', 'tambahKomisariat');
         Route::post('/tambah-proker', 'adminTambahProker');

@@ -69,6 +69,13 @@ class ControllerAnggota extends Controller
         return view('ProkerCek');
     }
 
+    public function cekBerita($id)
+    {
+        return view('DetailBerita', [
+            "data" => Artikel::find($id)
+        ]);
+    }
+
     public function post(Request $request)
     {
         $validate = $request->validate([

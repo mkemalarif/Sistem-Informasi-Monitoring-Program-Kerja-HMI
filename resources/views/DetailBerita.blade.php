@@ -8,7 +8,7 @@
                     <h1 class="article__title">Detail Berita</h1>
 
                     <div class="article__image">
-                        <img src="{{ asset('berita/'.$data->user_id.'_fotoberita_'.$data->id.'.jpg') }}" alt="Gambar Berita">
+                        <img src="{{ asset('berita/'.$data->user_id.'_fotoberita_'.$data->id.'.jpg') }}" style="max-width: 100%" alt="Gambar Berita">
                     </div>
 
                     <div class="article__info">
@@ -19,36 +19,25 @@
                     <div class="article__content">
                         <h2 class="article__subtitle">{{ $data->judul }}</h2>
                         <p>
-                            {{ $data->isiBerita }}
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate risus non sem
-                            sollicitudin finibus. Integer quis elit lectus. Mauris sed ipsum ac arcu facilisis rhoncus.
-                            Morbi non dapibus nisi. Nullam sed lacinia nisi. Ut consectetur euismod magna, a lobortis
-                            risus suscipit vel. Aenean sed ante id odio interdum ullamcorper. Proin tincidunt nibh
-                            velit, id venenatis orci tristique vitae. Ut malesuada leo mauris, eget hendrerit velit
-                            eleifend nec.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate risus non sem
-                            sollicitudin finibus. Integer quis elit lectus. Mauris sed ipsum ac arcu facilisis rhoncus.
-                            Morbi non dapibus nisi. Nullam sed lacinia nisi. Ut consectetur euismod magna, a lobortis
-                            risus suscipit vel. Aenean sed ante id odio interdum ullamcorper. Proin tincidunt nibh
-                            velit, id venenatis orci tristique vitae. Ut malesuada leo mauris, eget hendrerit velit
-                            eleifend nec.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate risus non sem
-                            sollicitudin finibus. Integer quis elit lectus. Mauris sed ipsum ac arcu facilisis rhoncus.
-                            Morbi non dapibus nisi. Nullam sed lacinia nisi. Ut consectetur euismod magna, a lobortis
-                            risus suscipit vel. Aenean sed ante id odio interdum ullamcorper. Proin tincidunt nibh
-                            velit, id venenatis orci tristique vitae. Ut malesuada leo mauris, eget hendrerit velit
-                            eleifend nec.
+                            {!! $data->isiBerita !!}
                         </p>
                     </div>
                 </article>
-
-                <nav class="article__pagination" aria-label="Halaman">
+                
+                @if(auth()->user()->jenisAkun === 'admin')
+                <form method="POST" action="/admin/validasi-berita/{{ $data->id }}">
+                    @csrf
+                    @method('PUT')
+                    
+                    <button class="btn btn-success" type="submit"><i
+                        class="fa fa-check"></i> Terima</button>
+                    <a class="btn btn-danger" href="/admin/dashboard">Kembali</a>
+                </form>
+                @elseif(auth()->user()->jenisAkun === 'anggota')
+                <a href="/anggota/edit-berita/{{ $data->id }}" class="btn btn-primary">Edit</a>
+                <a class="btn btn-danger" href="/anggota/dashboard">Kembali</a>
+                @elseif(!auth()->check())
+                {{-- <nav class="article__pagination" aria-label="Halaman">
                     <ul class="pagination">
                         <li class="page-item disabled">
                             <span class="page-link">Sebelumnya</span>
@@ -66,7 +55,7 @@
                             <a class="page-link" href="/berita?page=2">Berikutnya</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> --}}
             </div>
 
             <div class="col-lg-4">
@@ -75,7 +64,7 @@
                     <h2 class="latest-news__title">Berita Terbaru</h2>
 
                     <ul class="list-group">
-                        @foreach($berita as $item)
+                        @foreach($berita->take(5) as $item)
                         <li class="list-group-item">
                             <div class="latest-news__item">
                                 <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" alt="Gambar Berita">
@@ -90,6 +79,7 @@
                     </ul>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 
