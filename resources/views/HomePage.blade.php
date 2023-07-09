@@ -167,7 +167,7 @@
         <div class="carousel-inner">
             @foreach($data as $item)
             <div class="carousel-item active">
-                <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" class="d-block w-100"
+                <img src="{{ asset('berita/'.$item->user_id.'_fotoBerita_'.$item->id.'.jpg') }}" class="d-block w-100"
                     alt="Slide 1">
                 <div class="carousel-caption">
                     <h5>{{ $item->judul }}</h5>
