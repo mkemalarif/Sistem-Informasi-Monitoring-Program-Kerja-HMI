@@ -110,7 +110,7 @@ class ControllerAnggota extends Controller
             $validate['password'] = bcrypt($validate['password']);
         }
 
-        if ($request->hasFile('photo')) {
+        if ($request->hasFile('profile')) {
             // ...
             $request->file('profile')->storeAs(
                 'profil',
@@ -118,7 +118,7 @@ class ControllerAnggota extends Controller
             );
         }
 
-        // dd($request->photo);
+        dd($request->profile);
 
         User::where('id', $id)->update($validate);
 
