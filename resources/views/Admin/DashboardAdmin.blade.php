@@ -36,7 +36,7 @@
                                             <td class="align-middle"><a style="text-decoration: none; color:black" href="/admin/cek-berita/{{ $item->id }}">{{ $item->judul }}</a></td>
                                                 <td class="align-middle text-center">
                                                     <img class="img-fluid"
-                                                    src="{{ asset('berita/' . $item->user_id . '_fotoberita_' . $item->id . '.jpg') }}"
+                                                    src="{{ asset('berita/' . $item->user_id . '_fotoBerita_' . $item->id . '.jpg') }}"
                                                     alt="">
                                                 </td>
                                                 <td class="align-middle">{{ $item->status }}</td>

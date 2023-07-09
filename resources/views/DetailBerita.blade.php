@@ -55,7 +55,7 @@
                         @foreach($berita->take(5) as $item)
                         <li class="list-group-item">
                             <div class="latest-news__item">
-                                <img src="{{ asset('berita/'.$item->user_id.'_fotoberita_'.$item->id.'.jpg') }}" alt="Gambar Berita">
+                                <img src="{{ asset('berita/'.$item->user_id.'_fotoBerita_'.$item->id.'.jpg') }}" alt="Gambar Berita">
                                 <div class="latest-news__content">
                                     <a href="/berita/{{ $item->id }}" class="latest-news__item-title" style="text-decoration: none">{{ $item->judul }}</a>
                                     <br>

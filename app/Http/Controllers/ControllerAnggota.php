@@ -90,7 +90,7 @@ class ControllerAnggota extends Controller
 
         $foto = $request->file('image')->storeAs(
             'berita',
-            $request->user()->id . '_fotoberita_' . $id . '.jpg'
+            $request->user()->id . '_fotoBerita_' . $id . '.jpg'
         );
 
 
