@@ -1,4 +1,11 @@
-@extends('partial.main')
+<?php
+if(auth()->check())
+$anggota = 'layout.'. auth()->user()->jenisAkun;
+else
+$anggota = 'partial.main';
+?>
+
+@extends($anggota)
 
 @section('container')
     <div class="container">

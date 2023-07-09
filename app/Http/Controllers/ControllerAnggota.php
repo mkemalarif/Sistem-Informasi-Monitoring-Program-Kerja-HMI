@@ -118,7 +118,7 @@ class ControllerAnggota extends Controller
             );
         }
 
-        dd($request->profile);
+        // dd($request->profile);
 
         User::where('id', $id)->update($validate);
 
