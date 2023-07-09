@@ -15,7 +15,7 @@ $anggota = 'partial.main';
                     <h1 class="article__title">Detail Berita</h1>
 
                     <div class="article__image">
-                        <img src="{{ asset('berita/'.$data->user_id.'_fotoBerita_'.$data->id.'.jpg') }}" style="max-width: 100%" alt="Gambar Berita">
+                        <img src="{{ asset('berita/'.$data->user_id.'_fotoBerita_'.$data->id.'.jpg') }}" style="max-width: 70%" alt="Gambar Berita">
                     </div>
 
                     <div class="article__info">

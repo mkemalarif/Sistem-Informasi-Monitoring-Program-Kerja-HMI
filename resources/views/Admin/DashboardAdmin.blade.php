@@ -37,7 +37,7 @@
                                                 <td class="align-middle text-center">
                                                     <img class="img-fluid"
                                                     src="{{ asset('berita/' . $item->user_id . '_fotoBerita_' . $item->id . '.jpg') }}"
-                                                    alt="">
+                                                    alt="" style="max-height:12cm; max-width:12cm">
                                                 </td>
                                                 <td class="align-middle">{{ $item->status }}</td>
                                                 <td class="align-middle text-center">

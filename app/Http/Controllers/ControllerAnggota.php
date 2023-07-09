@@ -102,7 +102,8 @@ class ControllerAnggota extends Controller
         $validate = $request->validate([
             'nama' => 'required',
             'username' => 'required',
-            'password' => 'exclude_if:password,null'
+            'password' => 'exclude_if:password,null',
+            'profile' => 'size:1080'
         ]);
 
         if ($request->password !== null) {
