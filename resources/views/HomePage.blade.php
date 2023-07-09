@@ -160,7 +160,7 @@
 
 
 <div class="container">
-    <h1 class="mt-5">Berita</h1>
+    <h1 class="mt-5 text-center">Berita</h1>
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
         <!-- Slides -->
@@ -168,7 +168,7 @@
             @foreach($data as $item)
             <div class="carousel-item active">
                 <img src="{{ asset('berita/'.$item->user_id.'_fotoBerita_'.$item->id.'.jpg') }}" class="d-block w-100"
-                    alt="Slide 1">
+                    alt="Slide 1" style="max-height:17cm">
                 <div class="carousel-caption">
                     <h5>{{ $item->judul }}</h5>
                     <p>{{ Str::limit($item->deskripsi, 10) }}</p>
