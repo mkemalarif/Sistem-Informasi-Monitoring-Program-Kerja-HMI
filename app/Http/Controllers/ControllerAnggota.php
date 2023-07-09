@@ -118,6 +118,8 @@ class ControllerAnggota extends Controller
             );
         }
 
+        // dd($request->photo);
+
         User::where('id', $id)->update($validate);
 
         return redirect('/anggota/dashboard')->with("success", "profile berhasil di update");

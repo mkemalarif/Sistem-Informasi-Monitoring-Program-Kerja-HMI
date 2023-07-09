@@ -23,20 +23,8 @@
                         </p>
                     </div>
                 </article>
-                
-                @if(auth()->user()->jenisAkun === 'admin')
-                <form method="POST" action="/admin/validasi-berita/{{ $data->id }}">
-                    @csrf
-                    @method('PUT')
-                    
-                    <button class="btn btn-success" type="submit"><i
-                        class="fa fa-check"></i> Terima</button>
-                    <a class="btn btn-danger" href="/admin/dashboard">Kembali</a>
-                </form>
-                @elseif(auth()->user()->jenisAkun === 'anggota')
-                <a href="/anggota/edit-berita/{{ $data->id }}" class="btn btn-primary">Edit</a>
-                <a class="btn btn-danger" href="/anggota/dashboard">Kembali</a>
-                @elseif(!auth()->check())
+            
+                @if(!auth()->check())
                 {{-- <nav class="article__pagination" aria-label="Halaman">
                     <ul class="pagination">
                         <li class="page-item disabled">
@@ -79,6 +67,18 @@
                     </ul>
                 </div>
             </div>
+            @elseif( auth()->check() && auth()->user()->jenisAkun === 'admin')
+                <form method="POST" action="/admin/validasi-berita/{{ $data->id }}">
+                    @csrf
+                    @method('PUT')
+                    
+                    <button class="btn btn-success" type="submit"><i
+                        class="fa fa-check"></i> Terima</button>
+                    <a class="btn btn-danger" href="/admin/dashboard">Kembali</a>
+                </form>
+                @elseif(auth()->user()->jenisAkun === 'anggota')
+                <a href="/anggota/edit-berita/{{ $data->id }}" class="btn btn-primary">Edit</a>
+                <a class="btn btn-danger" href="/anggota/dashboard">Kembali</a>
             @endif
         </div>
     </div>
