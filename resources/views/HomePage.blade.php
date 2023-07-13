@@ -123,6 +123,36 @@
     </div>
 </div>
 
+<div class="container info-box-container mt-5">
+            {{-- <div class="row">
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h5 class="card-title">Badan Koordinasi (Badko)</h5>
+                        <p class="card-text">6</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h5 class="card-title">Cabang</h5>
+                        <p class="card-text">1</p>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h5 class="card-title">Total Komisariat</h5>
+                        <p class="card-text">{{ $komisariat }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h5 class="card-title">Total Anggota</h5>
+                        <p class="card-text">{{ $anggota }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 {{-- 
 
 
@@ -179,36 +209,7 @@
         </div>
 
         <!-- Information Boxes -->
-        <div class="container info-box-container mt-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="info-box">
-                        <h5 class="card-title">Badan Koordinasi (Badko)</h5>
-                        <p class="card-text">6</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="info-box">
-                        <h5 class="card-title">Cabang</h5>
-                        <p class="card-text">1</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="info-box">
-                        <h5 class="card-title">Komisariat</h5>
-                        <p class="card-text">{{ $komisariat }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="info-box">
-                        <h5 class="card-title">Total Anggota</h5>
-                        <p class="card-text">{{ $anggota }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Controls -->
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
