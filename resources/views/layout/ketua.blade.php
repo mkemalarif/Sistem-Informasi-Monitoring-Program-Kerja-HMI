@@ -120,6 +120,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="/ketua/list-akun-admin">
+                    <span class="">List Akun</span>
+                    <span></span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <span class=""></span>

@@ -90,6 +90,20 @@ class ControllerKetua extends Controller
         ]);
     }
 
+    public function editDataAdmin($id)
+    {
+        return view('Ketua.EditAkunAdmin', [
+            "data" => User::find($id)
+        ]);
+    }
+
+    public function akunAdmin()
+    {
+        return view('Ketua.DaftarAdmin', [
+            "data" => User::get()
+        ]);
+    }
+
     public function rekapProkerDariTahun($periode)
     {
         return view('Ketua.RekapProker', [
@@ -233,6 +247,23 @@ class ControllerKetua extends Controller
         return redirect('ketua/dashboard')->with("success", "data anggota berhasil di edit");
     }
 
+    public function editAdmin($id, Request $request)
+    {
+        $data = User::find($id);
+
+        $update = $request->validate([
+            "nama" => "required",
+            "username" => "required",
+            "password" => "required",
+        ]);
+
+        $request["password"] = bcrypt($request["password"]);
+
+        User::where("id", $id)->update($update);
+
+        return redirect("ketua/dashboard")->with("success", "Akun Berhasil diperbarui");
+    }
+
     public function ketuaDeleteKomisariat($id)
     {
         Komisariat::find($id)->delete();
@@ -251,5 +282,11 @@ class ControllerKetua extends Controller
         Agenda::find($id)->delete();
 
         return redirect('/ketua/dashboard')->with("success", "program kerja berhasil dihapus");
+    }
+
+    public function hapusAdmin($id)
+    {
+        User::find($id)->delete();
+        return redirect('/ketua/dashboard')->with("success", "Akun berhasil dihapus");
     }
 }
