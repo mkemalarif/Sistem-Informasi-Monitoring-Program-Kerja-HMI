@@ -65,7 +65,7 @@ class ControllerKetua extends Controller
         // dd($validate);
         User::create($validate);
 
-        return redirect('/ketua/dashboard');
+        return redirect('/ketua/dashboard')->with("success", "Akun admin terbaru berhasil ditambahkan");
     }
 
     public function ketuaTambahAnggota()
